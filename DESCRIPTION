@@ -1,0 +1,16 @@
+Package: caffsim 
+Title: Monte Carlo Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
+Version: 0.1.0
+Authors@R: person("Sungpil", "Han", email = "shan@acp.kr", role = c("aut", "cre"))
+Description: Comparing CRF and data dictionary for now.
+Depends:
+    R (>= 3.3.2)
+Encoding: UTF-8
+License: GPL-3 | file LICENSE
+LazyData: true
+Copyright: 2017, Sungpil Han
+Imports: dplyr, tidyr, xlsx 
+NeedsCompilation: no
+URL: https://github.com/asancpt/caffsim
+BugReports: https://github.com/asancpt/caffsim/issues
+RoxygenNote: 6.0.1
