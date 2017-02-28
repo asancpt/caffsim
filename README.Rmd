@@ -21,7 +21,7 @@ knitr::opts_chunk$set(fig.width=8, fig.height=4, dev = 'png', dpi = 150,
                #out.width = '5%', out.height = '5%',# For word dpi = 72
                #out.extra ='WIDTH="10%"', 
                fig.path='Figures/', echo=TRUE, warning=FALSE, message=FALSE, 
-               # cache=TRUE, 
+               cache=TRUE, 
                results = 'asis')
 ```
 

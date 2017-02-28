@@ -34,5 +34,7 @@ ConcTimeMulti <- function(Weight, Dose, N = 20, Tau = 8, Repeat = 4){
             mutate(Conc = Conc + ConcTemp) %>% 
             mutate(ConcTemp = lag(ConcOrig, n = Frame, default = 0))
     }
+    
+    ggsuper <- ggsuper %>% select(Subject, Time, Conc)
     return(ggsuper)
 }
