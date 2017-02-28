@@ -32,14 +32,13 @@ Get_os <- function(){
     tolower(os)
 }
 
-devtools::use_data(UnitTable, 
-                   CaffSigma, 
+devtools::use_data(CaffSigma, 
                    CaffMu,
                    Seed,
                    round_df,
                    Get_os,
                    internal = TRUE, overwrite = TRUE)
-
+devtools::use_data(UnitTable, overwrite = TRUE)
 
 Weight <- 20
 Dose <- 400
@@ -59,3 +58,6 @@ caffsim::Dataset(Weight = 20, Dose = 200, N = 1000)
 caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 1000, Tau = 12) 
 
 remove.packages("caffsim")
+
+
+devtools::install_github("asancpt/caffsim")
