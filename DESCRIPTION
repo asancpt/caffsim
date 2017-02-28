@@ -3,15 +3,16 @@ Title: Monte Carlo Simulation of Plasma Caffeine Concentrations by Using Populat
 Version: 0.1.0
 Date: 2017-02-27
 Authors@R: person("Sungpil", "Han", email = "shan@acp.kr", role = c("aut", "cre"))
-Description: Comparing CRF and data dictionary for now.
+Description: This package is used for publication of the paper about pharmacokinetics of plasma caffeine. Gitbook <http://asancpt.github.io/CaffeineEdison> is created solely dependent on this R package.
 Depends:
     R (>= 3.3.2)
 Encoding: UTF-8
 License: GPL-3 | file LICENSE
 LazyData: true
 Copyright: 2017, Sungpil Han
-Imports: mgcv, dplyr
+Imports: mgcv, dplyr, ggplot2
 NeedsCompilation: no
 URL: https://github.com/asancpt/caffsim
 BugReports: https://github.com/asancpt/caffsim/issues
 RoxygenNote: 6.0.1
+Maintainer: Sungpil Han <shan@acp.kr>

@@ -54,8 +54,6 @@ lapply(edisonlib, library, character.only = TRUE) # if needed # install.packages
 library(roxygen2)
 roxygenize()
 
-caffsim::Dataset(Weight = 20, Dose = 200, N = 1000) 
-caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 1000, Tau = 12) 
 
 remove.packages("caffsim")
 

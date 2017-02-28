@@ -4,10 +4,12 @@
 \alias{Plot}
 \title{Create concentration-time curve after single dose of caffeine}
 \usage{
-Plot(ConcTime, log = TRUE)
+Plot(ConcTime, log = FALSE)
 }
 \arguments{
 \item{ConcTime}{Concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)}
+
+\item{log}{y axis log}
 }
 \value{
 The concentration-time curve

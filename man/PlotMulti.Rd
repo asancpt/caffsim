@@ -4,10 +4,12 @@
 \alias{PlotMulti}
 \title{Create concentration-time curve after multiple doses of caffeine}
 \usage{
-PlotMulti(ggsuper)
+PlotMulti(ConcTimeMulti, log = FALSE)
 }
 \arguments{
-\item{ConcTime}{Concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)}
+\item{ConcTimeMulti}{Concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)}
+
+\item{log}{y axis log}
 }
 \value{
 The concentration-time curve

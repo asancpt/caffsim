@@ -7,3 +7,5 @@
 ^data-raw$
 ^packrat/
 ^\.Rprofile$
+^README.*$
+^Figures$

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="README_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="README_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="README_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="README_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="README_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="README_files/navigation-1.1/tabsets.js"></script>
+<link href="README_files/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="README_files/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="r-package-caffsim" class="section level1">
+<h1>R package: caffsim</h1>
+<blockquote>
+<p>Monte Carlo Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model</p>
+</blockquote>
+<ul>
+<li>This package is used for publication of the paper about pharmacokinetics of plasma caffeine.</li>
+<li>Gitbook <a href="http://asancpt.github.io/CaffeineEdison" class="uri">http://asancpt.github.io/CaffeineEdison</a> is created solely dependent on this R package.</li>
+<li>Reproducible research is expected.</li>
+</ul>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+<pre class="r"><code>install.pacakges(&quot;devtools&quot;)
+devtools::install_github(&quot;asancpt/caffsim&quot;)
+
+# Simply create single dose dataset
+caffsim::Dataset(Weight = 20, Dose = 200, N = 20) 
+
+# Simply create multiple dose dataset
+caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) </code></pre>
+</div>
+<div id="single-dose" class="section level2">
+<h2>Single dose</h2>
+<div id="create-a-pk-dataset-for-caffeine-single-dose" class="section level3">
+<h3>Create a PK dataset for caffeine single dose</h3>
+<pre class="r"><code>MyDataset &lt;- caffsim::Dataset(Weight = 20, Dose = 200, N = 20)
+knitr::kable(head(MyDataset))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Tmax</th>
+<th align="right">Cmax</th>
+<th align="right">AUC</th>
+<th align="right">Half_life</th>
+<th align="right">CL</th>
+<th align="right">V</th>
+<th align="right">Ka</th>
+<th align="right">Ke</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.4541990</td>
+<td align="right">16.46882</td>
+<td align="right">130.65865</td>
+<td align="right">5.173522</td>
+<td align="right">1.530706</td>
+<td align="right">11.42733</td>
+<td align="right">9.521546</td>
+<td align="right">0.1339513</td>
+</tr>
+<tr class="even">
+<td align="right">0.6745180</td>
+<td align="right">10.02211</td>
+<td align="right">68.06539</td>
+<td align="right">4.212161</td>
+<td align="right">2.938351</td>
+<td align="right">17.85975</td>
+<td align="right">5.317354</td>
+<td align="right">0.1645236</td>
+</tr>
+<tr class="odd">
+<td align="right">0.5132871</td>
+<td align="right">15.47555</td>
+<td align="right">113.63005</td>
+<td align="right">4.718932</td>
+<td align="right">1.760098</td>
+<td align="right">11.98526</td>
+<td align="right">7.914429</td>
+<td align="right">0.1468553</td>
+</tr>
+<tr class="even">
+<td align="right">0.9029560</td>
+<td align="right">13.37353</td>
+<td align="right">93.67009</td>
+<td align="right">4.178842</td>
+<td align="right">2.135153</td>
+<td align="right">12.87513</td>
+<td align="right">3.562795</td>
+<td align="right">0.1658354</td>
+</tr>
+<tr class="odd">
+<td align="right">0.9850155</td>
+<td align="right">12.10619</td>
+<td align="right">101.36777</td>
+<td align="right">5.071957</td>
+<td align="right">1.973014</td>
+<td align="right">14.44017</td>
+<td align="right">3.399654</td>
+<td align="right">0.1366337</td>
+</tr>
+<tr class="even">
+<td align="right">0.1857226</td>
+<td align="right">16.82389</td>
+<td align="right">163.59497</td>
+<td align="right">6.608742</td>
+<td align="right">1.222532</td>
+<td align="right">11.65858</td>
+<td align="right">30.681544</td>
+<td align="right">0.1048611</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="create-a-dataset-for-concentration-time-curve" class="section level3">
+<h3>Create a dataset for concentration-time curve</h3>
+<pre class="r"><code>MyConcTime &lt;- ConcTime(Weight = 20, Dose = 200, N = 20)
+knitr::kable(head(MyConcTime))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Subject</th>
+<th align="right">Time</th>
+<th align="right">Conc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.0</td>
+<td align="right">0.000000</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.1</td>
+<td align="right">1.276234</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.2</td>
+<td align="right">2.451772</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.3</td>
+<td align="right">3.533573</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.4</td>
+<td align="right">4.528126</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.5</td>
+<td align="right">5.441481</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="create-a-concentration-time-curve" class="section level3">
+<h3>Create a concentration-time curve</h3>
+<pre class="r"><code>Plot(MyConcTime)</code></pre>
+<p><img src="Figures/MyPlotMyConcTime-1.png" /><!-- --></p>
+</div>
+<div id="create-plots-for-publication-according-to-the-amount-of-caffeine" class="section level3">
+<h3>Create plots for publication (according to the amount of caffeine)</h3>
+<ul>
+<li><code>cowplot</code> package is required</li>
+</ul>
+<pre class="r"><code>#install.packages(&quot;cowplot&quot;) # if you don&#39;t have it
+library(cowplot)
+
+MyPlotPub &lt;- lapply(
+    c(seq(100, 800, by = 100)), 
+    function(x) PlotMulti(ConcTime(20, x, 20)) + 
+        theme(legend.position=&quot;none&quot;) + 
+        labs(title = paste0(&quot;Single Dose &quot;, x, &quot;mg&quot;)))
+
+plot(plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
+               MyPlotPub[[3]], MyPlotPub[[4]],
+               MyPlotPub[[5]], MyPlotPub[[6]],
+               MyPlotPub[[7]], MyPlotPub[[8]],
+               labels=LETTERS[1:8], ncol = 2, nrow = 4))</code></pre>
+<p><img src="Figures/MyPlotPub-1.png" /><!-- --></p>
+</div>
+</div>
+<div id="multiple-dose" class="section level2">
+<h2>Multiple dose</h2>
+<div id="create-a-pk-dataset-for-caffeine-multiple-doses" class="section level3">
+<h3>Create a PK dataset for caffeine multiple doses</h3>
+<pre class="r"><code>MyDatasetMulti &lt;- DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
+knitr::kable(head(MyDatasetMulti))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">TmaxS</th>
+<th align="right">CmaxS</th>
+<th align="right">AUCS</th>
+<th align="right">AI</th>
+<th align="right">Aavss</th>
+<th align="right">Cavss</th>
+<th align="right">Cmaxss</th>
+<th align="right">Cminss</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.9672339</td>
+<td align="right">12.619490</td>
+<td align="right">83.99915</td>
+<td align="right">1.132942</td>
+<td align="right">93.14789</td>
+<td align="right">6.999929</td>
+<td align="right">16.992378</td>
+<td align="right">1.993930</td>
+</tr>
+<tr class="even">
+<td align="right">0.4522879</td>
+<td align="right">14.299054</td>
+<td align="right">98.96153</td>
+<td align="right">1.184420</td>
+<td align="right">107.31511</td>
+<td align="right">8.246794</td>
+<td align="right">18.165845</td>
+<td align="right">2.828508</td>
+</tr>
+<tr class="odd">
+<td align="right">0.0704218</td>
+<td align="right">18.424888</td>
+<td align="right">102.17318</td>
+<td align="right">1.125741</td>
+<td align="right">91.05209</td>
+<td align="right">8.514431</td>
+<td align="right">21.010178</td>
+<td align="right">2.346749</td>
+</tr>
+<tr class="even">
+<td align="right">0.3557365</td>
+<td align="right">21.127091</td>
+<td align="right">229.36221</td>
+<td align="right">1.467814</td>
+<td align="right">174.54408</td>
+<td align="right">19.113518</td>
+<td align="right">32.079839</td>
+<td align="right">10.224316</td>
+</tr>
+<tr class="odd">
+<td align="right">0.9765485</td>
+<td align="right">7.375711</td>
+<td align="right">49.08763</td>
+<td align="right">1.132235</td>
+<td align="right">92.94357</td>
+<td align="right">4.090636</td>
+<td align="right">9.945664</td>
+<td align="right">1.161566</td>
+</tr>
+<tr class="even">
+<td align="right">5.3823675</td>
+<td align="right">10.540067</td>
+<td align="right">214.54069</td>
+<td align="right">1.719125</td>
+<td align="right">229.00267</td>
+<td align="right">17.878391</td>
+<td align="right">26.786811</td>
+<td align="right">11.205155</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="create-a-dataset-for-concentration-time-curve-1" class="section level3">
+<h3>Create a dataset for concentration-time curve</h3>
+<pre class="r"><code>MyConcTimeMulti &lt;- ConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
+knitr::kable(head(MyConcTimeMulti))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">CL</th>
+<th align="right">V</th>
+<th align="right">Ka</th>
+<th align="right">Ke</th>
+<th align="right">Subject</th>
+<th align="right">Time</th>
+<th align="right">Conc</th>
+<th align="right">ConcOrig</th>
+<th align="right">ConcTemp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1.758682</td>
+<td align="right">10.94079</td>
+<td align="right">1.16128</td>
+<td align="right">0.1607454</td>
+<td align="right">1</td>
+<td align="right">0.0</td>
+<td align="right">0.000000</td>
+<td align="right">0.000000</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1.758682</td>
+<td align="right">10.94079</td>
+<td align="right">1.16128</td>
+<td align="right">0.1607454</td>
+<td align="right">1</td>
+<td align="right">0.2</td>
+<td align="right">3.726128</td>
+<td align="right">3.726128</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">1.758682</td>
+<td align="right">10.94079</td>
+<td align="right">1.16128</td>
+<td align="right">0.1607454</td>
+<td align="right">1</td>
+<td align="right">0.4</td>
+<td align="right">6.562104</td>
+<td align="right">6.562104</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1.758682</td>
+<td align="right">10.94079</td>
+<td align="right">1.16128</td>
+<td align="right">0.1607454</td>
+<td align="right">1</td>
+<td align="right">0.6</td>
+<td align="right">8.696147</td>
+<td align="right">8.696147</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">1.758682</td>
+<td align="right">10.94079</td>
+<td align="right">1.16128</td>
+<td align="right">0.1607454</td>
+<td align="right">1</td>
+<td align="right">0.8</td>
+<td align="right">10.277350</td>
+<td align="right">10.277350</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1.758682</td>
+<td align="right">10.94079</td>
+<td align="right">1.16128</td>
+<td align="right">0.1607454</td>
+<td align="right">1</td>
+<td align="right">1.0</td>
+<td align="right">11.423790</td>
+<td align="right">11.423790</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="create-a-concentration-time-curve-1" class="section level3">
+<h3>Create a concentration-time curve</h3>
+<pre class="r"><code>PlotMulti(MyConcTimeMulti)</code></pre>
+<p><img src="Figures/MyPlotMultiMyConcTimeMulti-1.png" /><!-- --></p>
+</div>
+<div id="create-plots-for-publication-according-to-dosing-interval" class="section level3">
+<h3>Create plots for publication (according to dosing interval)</h3>
+<ul>
+<li><code>cowplot</code> package is required</li>
+</ul>
+<pre class="r"><code>#install.packages(&quot;cowplot&quot;) # if you don&#39;t have it
+library(cowplot)
+
+MyPlotMultiPub &lt;- lapply(
+    c(seq(4, 32, by = 4)), 
+    function(x) PlotMulti(ConcTimeMulti(20, 250, 20, x, 15)) + 
+        theme(legend.position=&quot;none&quot;) + 
+        labs(title = paste0(&quot;q&quot;, x, &quot;hr&quot; )))
+
+plot(plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
+               MyPlotMultiPub[[3]], MyPlotMultiPub[[4]],
+               MyPlotMultiPub[[5]], MyPlotMultiPub[[6]],
+               MyPlotMultiPub[[7]], MyPlotMultiPub[[8]],
+               labels=LETTERS[1:8], ncol = 2, nrow = 4))</code></pre>
+<p><img src="Figures/MyPlotMultiPub-1.png" /><!-- --></p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
