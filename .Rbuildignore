@@ -4,3 +4,6 @@
 ^.*\.xlsx$
 ^.*\.pdf$
 ^tests$
+^data-raw$
+^packrat/
+^\.Rprofile$

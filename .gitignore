@@ -5,3 +5,4 @@
 *.xlsx
 *.pdf
 tests
+packrat/lib*/

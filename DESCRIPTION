@@ -1,4 +1,4 @@
-Package: caffsim 
+Package: caffsim
 Title: Monte Carlo Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
 Version: 0.1.0
 Date: 2017-02-27
@@ -10,7 +10,7 @@ Encoding: UTF-8
 License: GPL-3 | file LICENSE
 LazyData: true
 Copyright: 2017, Sungpil Han
-Imports: dplyr, tidyr, xlsx 
+Imports: mgcv, dplyr
 NeedsCompilation: no
 URL: https://github.com/asancpt/caffsim
 BugReports: https://github.com/asancpt/caffsim/issues
