@@ -44,14 +44,14 @@ caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 
 ```{r}
 MyDataset <- caffsim::Dataset(Weight = 20, Dose = 200, N = 20)
-knitr::kable(head(MyDataset))
+knitr::kable(head(MyDataset), format = "markdown")
 ```
 
 ### Create a dataset for concentration-time curve
 
 ```{r}
 MyConcTime <- ConcTime(Weight = 20, Dose = 200, N = 20)
-knitr::kable(head(MyConcTime))
+knitr::kable(head(MyConcTime), format = "markdown")
 ```
 
 ### Create a concentration-time curve
@@ -87,14 +87,14 @@ plot(plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
 
 ```{r}
 MyDatasetMulti <- DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
-knitr::kable(head(MyDatasetMulti))
+knitr::kable(head(MyDatasetMulti), format = "markdown")
 ```
 
 ### Create a dataset for concentration-time curve
 
 ```{r}
 MyConcTimeMulti <- ConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
-knitr::kable(head(MyConcTimeMulti))
+knitr::kable(head(MyConcTimeMulti), format = "markdown")
 ```
 
 ### Create a concentration-time curve
