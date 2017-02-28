@@ -3,6 +3,5 @@
 .RData
 *.csv
 *.xlsx
-*.pdf
 tests
 packrat/lib*/

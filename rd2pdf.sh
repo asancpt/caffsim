@@ -1,3 +1,3 @@
-rm crftools.pdf
-R CMD rd2pdf ../crftools
+rm caffsim.pdf
+R CMD rd2pdf ../caffsim
 
