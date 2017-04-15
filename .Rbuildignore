@@ -10,3 +10,4 @@
 ^README.*$
 ^Figures$
 ^rd2pdf\.sh$
+^docs$

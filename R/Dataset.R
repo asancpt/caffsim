@@ -14,7 +14,7 @@
 #' @importFrom mgcv rmvn
 #' @import dplyr
 
-Dataset <- function(Weight, Dose, N){
+Dataset <- function(Weight, Dose, N = 20){
   MVN <- rmvn(N, CaffMu, CaffSigma);  
   MVNdata <- data.frame(MVN, stringsAsFactors = FALSE) %>% 
     select(eta1 = X1, eta2 = X2, eta3 = X3) %>% 
