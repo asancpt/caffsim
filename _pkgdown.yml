@@ -1,0 +1,10 @@
+template:
+  params:
+    bootswatch: flatly
+
+# navbar:
+#   left:
+#   - text: Intro
+#     href: articles/pkgdown.html
+#   - text: Reference
+#     href: reference/index.html
