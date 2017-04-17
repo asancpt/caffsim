@@ -7,6 +7,11 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, #comment = "#>", 
+        fig.width = 7, fig.height = 7, fig.align = "center")
+```
+
 # R package: caffsim
 
 > Monte Carlo Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model

@@ -1,6 +1,8 @@
 template:
-  params:
-    bootswatch: flatly
+    package: tidytemplate
+
+#  params:
+#    bootswatch: flatly
 
 # navbar:
 #   left:
