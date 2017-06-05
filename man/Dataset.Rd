@@ -4,7 +4,7 @@
 \alias{Dataset}
 \title{Create a dataset for simulation of single dose of caffeine}
 \usage{
-Dataset(Weight, Dose, N)
+Dataset(Weight, Dose, N = 20)
 }
 \arguments{
 \item{Weight}{Body weight (kg)}
