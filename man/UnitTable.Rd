@@ -9,13 +9,13 @@
   \item{Parameters}{Abbreviated pharmacokinetic parameters}
   \item{Parameter}{Pharmacokinetic parameters in full name}
 }}
-\source{
-\url{http://asancpt.github.io/CaffeineEdison}
-}
 \usage{
 UnitTable
 }
 \description{
 A dataset containing information regarding unit data of pharmacokinetic parameters
+}
+\seealso{
+\url{https://asancpt.github.io/caffsim}
 }
 \keyword{datasets}

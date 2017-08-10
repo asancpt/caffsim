@@ -135,16 +135,17 @@ $(document).ready(function () {
 devtools::install_github(&quot;asancpt/caffsim&quot;)
 
 # Simply create single dose dataset
-caffsim::Dataset(Weight = 20, Dose = 200, N = 20) 
+caffsim::caffDataset(Weight = 20, Dose = 200, N = 20) 
 
 # Simply create multiple dose dataset
-caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) </code></pre>
+caffsim::caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) </code></pre>
 </div>
 <div id="single-dose" class="section level2">
 <h2>Single dose</h2>
 <div id="create-a-pk-dataset-for-caffeine-single-dose" class="section level3">
 <h3>Create a PK dataset for caffeine single dose</h3>
-<pre class="r"><code>MyDataset &lt;- caffsim::Dataset(Weight = 20, Dose = 200, N = 20)
+<pre class="r"><code>library(caffsim)
+MyDataset &lt;- caffDataset(Weight = 20, Dose = 200, N = 20)
 knitr::kable(head(MyDataset), format = &quot;markdown&quot;)</code></pre>
 <table>
 <thead>
@@ -161,71 +162,71 @@ knitr::kable(head(MyDataset), format = &quot;markdown&quot;)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">0.8107159</td>
-<td align="right">11.825709</td>
-<td align="right">103.74446</td>
-<td align="right">5.487952</td>
-<td align="right">1.927814</td>
-<td align="right">15.26659</td>
-<td align="right">4.5466571</td>
-<td align="right">0.1262766</td>
+<td align="right">0.7506950</td>
+<td align="right">10.904556</td>
+<td align="right">99.33949</td>
+<td align="right">5.768755</td>
+<td align="right">2.013298</td>
+<td align="right">16.75934</td>
+<td align="right">5.118124</td>
+<td align="right">0.1201299</td>
 </tr>
 <tr class="even">
-<td align="right">0.9437568</td>
-<td align="right">10.871493</td>
-<td align="right">71.34713</td>
-<td align="right">3.834897</td>
-<td align="right">2.803196</td>
-<td align="right">15.51222</td>
-<td align="right">3.2387631</td>
-<td align="right">0.1807089</td>
+<td align="right">0.9756280</td>
+<td align="right">9.535194</td>
+<td align="right">78.96550</td>
+<td align="right">5.015262</td>
+<td align="right">2.532751</td>
+<td align="right">18.32960</td>
+<td align="right">3.430260</td>
+<td align="right">0.1381782</td>
 </tr>
 <tr class="odd">
-<td align="right">1.0632196</td>
-<td align="right">11.995621</td>
-<td align="right">191.43411</td>
-<td align="right">10.295538</td>
-<td align="right">1.044746</td>
-<td align="right">15.52124</td>
-<td align="right">3.8806768</td>
-<td align="right">0.0673107</td>
+<td align="right">0.8869807</td>
+<td align="right">14.091555</td>
+<td align="right">81.22170</td>
+<td align="right">3.319075</td>
+<td align="right">2.462396</td>
+<td align="right">11.79347</td>
+<td align="right">3.331590</td>
+<td align="right">0.2087931</td>
 </tr>
 <tr class="even">
-<td align="right">1.4997904</td>
-<td align="right">9.448541</td>
-<td align="right">78.29334</td>
-<td align="right">4.575526</td>
-<td align="right">2.554496</td>
-<td align="right">16.86603</td>
-<td align="right">1.8029281</td>
-<td align="right">0.1514580</td>
+<td align="right">0.6458470</td>
+<td align="right">12.058570</td>
+<td align="right">95.70897</td>
+<td align="right">5.032268</td>
+<td align="right">2.089668</td>
+<td align="right">15.17427</td>
+<td align="right">5.975385</td>
+<td align="right">0.1377113</td>
 </tr>
 <tr class="odd">
-<td align="right">2.7669409</td>
-<td align="right">12.938048</td>
-<td align="right">148.35886</td>
-<td align="right">5.664566</td>
-<td align="right">1.348083</td>
-<td align="right">11.01920</td>
-<td align="right">0.8018213</td>
-<td align="right">0.1223395</td>
+<td align="right">0.2466091</td>
+<td align="right">8.607292</td>
+<td align="right">72.15405</td>
+<td align="right">5.635830</td>
+<td align="right">2.771847</td>
+<td align="right">22.54208</td>
+<td align="right">20.959415</td>
+<td align="right">0.1229632</td>
 </tr>
 <tr class="even">
-<td align="right">0.7004863</td>
-<td align="right">7.447735</td>
-<td align="right">67.33372</td>
-<td align="right">5.758812</td>
-<td align="right">2.970280</td>
-<td align="right">24.68295</td>
-<td align="right">5.6034382</td>
-<td align="right">0.1203373</td>
+<td align="right">0.2747344</td>
+<td align="right">12.558457</td>
+<td align="right">67.17518</td>
+<td align="right">3.511209</td>
+<td align="right">2.977290</td>
+<td align="right">15.08498</td>
+<td align="right">16.252669</td>
+<td align="right">0.1973679</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="create-a-dataset-for-concentration-time-curve" class="section level3">
 <h3>Create a dataset for concentration-time curve</h3>
-<pre class="r"><code>MyConcTime &lt;- ConcTime(Weight = 20, Dose = 200, N = 20)
+<pre class="r"><code>MyConcTime &lt;- caffConcTime(Weight = 20, Dose = 200, N = 20)
 knitr::kable(head(MyConcTime), format = &quot;markdown&quot;)</code></pre>
 <table>
 <thead>
@@ -244,35 +245,35 @@ knitr::kable(head(MyConcTime), format = &quot;markdown&quot;)</code></pre>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.1</td>
-<td align="right">5.568253</td>
+<td align="right">5.117929</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.2</td>
-<td align="right">8.377897</td>
+<td align="right">7.721610</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.3</td>
-<td align="right">9.752320</td>
+<td align="right">9.025087</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.4</td>
-<td align="right">10.380720</td>
+<td align="right">9.656359</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.5</td>
-<td align="right">10.622008</td>
+<td align="right">9.940279</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="create-a-concentration-time-curve" class="section level3">
 <h3>Create a concentration-time curve</h3>
-<pre class="r"><code>Plot(MyConcTime)</code></pre>
-<p><img src="Figures/MyPlotMyConcTime-1.png" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>caffPlot(MyConcTime)</code></pre>
+<p><img src="assets/figures/MyPlotMyConcTime-1.png" style="display: block; margin: auto;" /></p>
 </div>
 <div id="create-plots-for-publication-according-to-the-amount-of-caffeine" class="section level3">
 <h3>Create plots for publication (according to the amount of caffeine)</h3>
@@ -283,24 +284,24 @@ knitr::kable(head(MyConcTime), format = &quot;markdown&quot;)</code></pre>
 library(cowplot)
 
 MyPlotPub &lt;- lapply(
-    c(seq(100, 800, by = 100)), 
-    function(x) PlotMulti(ConcTime(20, x, 20)) + 
-        theme(legend.position=&quot;none&quot;) + 
-        labs(title = paste0(&quot;Single Dose &quot;, x, &quot;mg&quot;)))
+  c(seq(100, 800, by = 100)), 
+  function(x) caffPlotMulti(caffConcTime(20, x, 20)) + 
+    theme(legend.position=&quot;none&quot;) + 
+    labs(title = paste0(&quot;Single Dose &quot;, x, &quot;mg&quot;)))
 
-plot(plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
-               MyPlotPub[[3]], MyPlotPub[[4]],
-               MyPlotPub[[5]], MyPlotPub[[6]],
-               MyPlotPub[[7]], MyPlotPub[[8]],
-               labels=LETTERS[1:8], ncol = 2, nrow = 4))</code></pre>
-<p><img src="Figures/MyPlotPub-1.png" style="display: block; margin: auto;" /></p>
+plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
+          MyPlotPub[[3]], MyPlotPub[[4]],
+          MyPlotPub[[5]], MyPlotPub[[6]],
+          MyPlotPub[[7]], MyPlotPub[[8]],
+          labels=LETTERS[1:8], ncol = 2, nrow = 4)</code></pre>
+<p><img src="assets/figures/MyPlotPub-1.png" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="multiple-dose" class="section level2">
 <h2>Multiple dose</h2>
 <div id="create-a-pk-dataset-for-caffeine-multiple-doses" class="section level3">
 <h3>Create a PK dataset for caffeine multiple doses</h3>
-<pre class="r"><code>MyDatasetMulti &lt;- DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
+<pre class="r"><code>MyDatasetMulti &lt;- caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 knitr::kable(head(MyDatasetMulti), format = &quot;markdown&quot;)</code></pre>
 <table>
 <thead>
@@ -317,71 +318,71 @@ knitr::kable(head(MyDatasetMulti), format = &quot;markdown&quot;)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1.0555879</td>
-<td align="right">13.14951</td>
-<td align="right">176.40173</td>
-<td align="right">1.606035</td>
-<td align="right">204.78857</td>
-<td align="right">14.700144</td>
-<td align="right">23.00894</td>
-<td align="right">8.6823945</td>
+<td align="right">0.9236100</td>
+<td align="right">12.730981</td>
+<td align="right">122.83645</td>
+<td align="right">1.334606</td>
+<td align="right">144.26677</td>
+<td align="right">10.236371</td>
+<td align="right">18.89986</td>
+<td align="right">4.7384847</td>
 </tr>
 <tr class="even">
-<td align="right">2.0282514</td>
-<td align="right">11.49687</td>
-<td align="right">125.47653</td>
-<td align="right">1.331292</td>
-<td align="right">143.49219</td>
-<td align="right">10.456378</td>
-<td align="right">19.36208</td>
-<td align="right">4.8182540</td>
+<td align="right">2.2515756</td>
+<td align="right">12.207227</td>
+<td align="right">158.30692</td>
+<td align="right">1.464930</td>
+<td align="right">173.90274</td>
+<td align="right">13.192243</td>
+<td align="right">22.17966</td>
+<td align="right">7.0392348</td>
 </tr>
 <tr class="odd">
-<td align="right">1.2128837</td>
-<td align="right">12.64804</td>
-<td align="right">119.42226</td>
-<td align="right">1.296532</td>
-<td align="right">135.28433</td>
-<td align="right">9.951855</td>
-<td align="right">19.03556</td>
-<td align="right">4.3536552</td>
+<td align="right">0.2178431</td>
+<td align="right">12.469114</td>
+<td align="right">83.51313</td>
+<td align="right">1.185915</td>
+<td align="right">107.70968</td>
+<td align="right">6.959427</td>
+<td align="right">15.29319</td>
+<td align="right">2.3974994</td>
 </tr>
 <tr class="even">
-<td align="right">0.8960638</td>
-<td align="right">15.90481</td>
-<td align="right">153.63180</td>
-<td align="right">1.337576</td>
-<td align="right">144.95968</td>
-<td align="right">12.802650</td>
-<td align="right">23.57744</td>
-<td align="right">5.9504468</td>
+<td align="right">0.6228740</td>
+<td align="right">7.487806</td>
+<td align="right">43.61323</td>
+<td align="right">1.108450</td>
+<td align="right">85.86370</td>
+<td align="right">3.634436</td>
+<td align="right">9.36417</td>
+<td align="right">0.9161845</td>
 </tr>
 <tr class="odd">
-<td align="right">0.7942288</td>
-<td align="right">10.96006</td>
-<td align="right">106.00448</td>
-<td align="right">1.346524</td>
-<td align="right">147.04176</td>
-<td align="right">8.833706</td>
-<td align="right">16.14516</td>
-<td align="right">4.1549125</td>
+<td align="right">4.0027303</td>
+<td align="right">9.990159</td>
+<td align="right">146.93629</td>
+<td align="right">1.413289</td>
+<td align="right">162.32568</td>
+<td align="right">12.244691</td>
+<td align="right">21.27733</td>
+<td align="right">6.2221419</td>
 </tr>
 <tr class="even">
-<td align="right">1.2072415</td>
-<td align="right">11.38633</td>
-<td align="right">63.23708</td>
-<td align="right">1.058868</td>
-<td align="right">69.06829</td>
-<td align="right">5.269757</td>
-<td align="right">16.12424</td>
-<td align="right">0.8964275</td>
+<td align="right">0.7494883</td>
+<td align="right">9.448188</td>
+<td align="right">55.46029</td>
+<td align="right">1.103058</td>
+<td align="right">84.19326</td>
+<td align="right">4.621691</td>
+<td align="right">12.08503</td>
+<td align="right">1.1291008</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="create-a-dataset-for-concentration-time-curve-1" class="section level3">
 <h3>Create a dataset for concentration-time curve</h3>
-<pre class="r"><code>MyConcTimeMulti &lt;- ConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
+<pre class="r"><code>MyConcTimeMulti &lt;- caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
 knitr::kable(head(MyConcTimeMulti), format = &quot;markdown&quot;)</code></pre>
 <table>
 <thead>
@@ -400,35 +401,35 @@ knitr::kable(head(MyConcTimeMulti), format = &quot;markdown&quot;)</code></pre>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.2</td>
-<td align="right">10.503041</td>
+<td align="right">2.974553</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.4</td>
-<td align="right">10.144504</td>
+<td align="right">5.015058</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.6</td>
-<td align="right">9.766257</td>
+<td align="right">6.390925</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.8</td>
-<td align="right">9.402012</td>
+<td align="right">7.294470</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">9.051352</td>
+<td align="right">7.862957</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="create-a-concentration-time-curve-1" class="section level3">
 <h3>Create a concentration-time curve</h3>
-<pre class="r"><code>PlotMulti(MyConcTimeMulti)</code></pre>
-<p><img src="Figures/MyPlotMultiMyConcTimeMulti-1.png" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>caffPlotMulti(MyConcTimeMulti)</code></pre>
+<p><img src="assets/figures/MyPlotMultiMyConcTimeMulti-1.png" style="display: block; margin: auto;" /></p>
 </div>
 <div id="create-plots-for-publication-according-to-dosing-interval" class="section level3">
 <h3>Create plots for publication (according to dosing interval)</h3>
@@ -439,17 +440,17 @@ knitr::kable(head(MyConcTimeMulti), format = &quot;markdown&quot;)</code></pre>
 library(cowplot)
 
 MyPlotMultiPub &lt;- lapply(
-    c(seq(4, 32, by = 4)), 
-    function(x) PlotMulti(ConcTimeMulti(20, 250, 20, x, 15)) + 
-        theme(legend.position=&quot;none&quot;) + 
-        labs(title = paste0(&quot;q&quot;, x, &quot;hr&quot; )))
+  c(seq(4, 32, by = 4)), 
+  function(x) caffPlotMulti(caffConcTimeMulti(20, 250, 20, x, 15)) + 
+    theme(legend.position=&quot;none&quot;) + 
+    labs(title = paste0(&quot;q&quot;, x, &quot;hr&quot; )))
 
-plot(plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
-               MyPlotMultiPub[[3]], MyPlotMultiPub[[4]],
-               MyPlotMultiPub[[5]], MyPlotMultiPub[[6]],
-               MyPlotMultiPub[[7]], MyPlotMultiPub[[8]],
-               labels=LETTERS[1:8], ncol = 2, nrow = 4))</code></pre>
-<p><img src="Figures/MyPlotMultiPub-1.png" style="display: block; margin: auto;" /></p>
+plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
+          MyPlotMultiPub[[3]], MyPlotMultiPub[[4]],
+          MyPlotMultiPub[[5]], MyPlotMultiPub[[6]],
+          MyPlotMultiPub[[7]], MyPlotMultiPub[[8]],
+          labels=LETTERS[1:8], ncol = 2, nrow = 4)</code></pre>
+<p><img src="assets/figures/MyPlotMultiPub-1.png" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
@@ -477,7 +478,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

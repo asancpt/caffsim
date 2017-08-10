@@ -9,7 +9,7 @@ editor_options:
 
 ```{r include = FALSE}
 knitr::opts_chunk$set(collapse = TRUE, #comment = "#>", 
-        fig.width = 7, fig.height = 7, fig.align = "center")
+                      fig.width = 7, fig.height = 7, fig.align = "center")
 ```
 
 # R package: caffsim
@@ -21,13 +21,13 @@ knitr::opts_chunk$set(collapse = TRUE, #comment = "#>",
 - Reproducible research is expected.
 
 ```{r setup, include = FALSE}
-library(caffsim)
+
 knitr::opts_chunk$set(fig.width=8, fig.height=4, dev = 'png', dpi = 150, 
-               #out.width = '5%', out.height = '5%',# For word dpi = 72
-               #out.extra ='WIDTH="10%"', 
-               fig.path='Figures/', echo=TRUE, warning=FALSE, message=FALSE, 
-               cache=TRUE, 
-               results = 'asis')
+                      #out.width = '5%', out.height = '5%',# For word dpi = 72
+                      #out.extra ='WIDTH="10%"', 
+                      fig.path='assets/figures/', echo=TRUE, warning=FALSE, message=FALSE, 
+                      cache=TRUE, 
+                      results = 'asis')
 ```
 
 ## Installation
@@ -37,10 +37,10 @@ install.pacakges("devtools")
 devtools::install_github("asancpt/caffsim")
 
 # Simply create single dose dataset
-caffsim::Dataset(Weight = 20, Dose = 200, N = 20) 
+caffsim::caffDataset(Weight = 20, Dose = 200, N = 20) 
 
 # Simply create multiple dose dataset
-caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) 
+caffsim::caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) 
 ```
 
 ## Single dose
@@ -48,21 +48,22 @@ caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 ### Create a PK dataset for caffeine single dose
 
 ```{r}
-MyDataset <- caffsim::Dataset(Weight = 20, Dose = 200, N = 20)
+library(caffsim)
+MyDataset <- caffDataset(Weight = 20, Dose = 200, N = 20)
 knitr::kable(head(MyDataset), format = "markdown")
 ```
 
 ### Create a dataset for concentration-time curve
 
 ```{r}
-MyConcTime <- ConcTime(Weight = 20, Dose = 200, N = 20)
+MyConcTime <- caffConcTime(Weight = 20, Dose = 200, N = 20)
 knitr::kable(head(MyConcTime), format = "markdown")
 ```
 
 ### Create a concentration-time curve
 
 ```{r MyPlotMyConcTime}
-Plot(MyConcTime)
+caffPlot(MyConcTime)
 ```
 
 ### Create plots for publication (according to the amount of caffeine)
@@ -74,16 +75,16 @@ Plot(MyConcTime)
 library(cowplot)
 
 MyPlotPub <- lapply(
-    c(seq(100, 800, by = 100)), 
-    function(x) PlotMulti(ConcTime(20, x, 20)) + 
-        theme(legend.position="none") + 
-        labs(title = paste0("Single Dose ", x, "mg")))
+  c(seq(100, 800, by = 100)), 
+  function(x) caffPlotMulti(caffConcTime(20, x, 20)) + 
+    theme(legend.position="none") + 
+    labs(title = paste0("Single Dose ", x, "mg")))
 
-plot(plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
-               MyPlotPub[[3]], MyPlotPub[[4]],
-               MyPlotPub[[5]], MyPlotPub[[6]],
-               MyPlotPub[[7]], MyPlotPub[[8]],
-               labels=LETTERS[1:8], ncol = 2, nrow = 4))
+plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
+          MyPlotPub[[3]], MyPlotPub[[4]],
+          MyPlotPub[[5]], MyPlotPub[[6]],
+          MyPlotPub[[7]], MyPlotPub[[8]],
+          labels=LETTERS[1:8], ncol = 2, nrow = 4)
 ```
 
 ## Multiple dose
@@ -91,21 +92,21 @@ plot(plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
 ### Create a PK dataset for caffeine multiple doses
 
 ```{r}
-MyDatasetMulti <- DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
+MyDatasetMulti <- caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 knitr::kable(head(MyDatasetMulti), format = "markdown")
 ```
 
 ### Create a dataset for concentration-time curve
 
 ```{r}
-MyConcTimeMulti <- ConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
+MyConcTimeMulti <- caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
 knitr::kable(head(MyConcTimeMulti), format = "markdown")
 ```
 
 ### Create a concentration-time curve
 
 ```{r MyPlotMultiMyConcTimeMulti}
-PlotMulti(MyConcTimeMulti)
+caffPlotMulti(MyConcTimeMulti)
 ```
 
 ### Create plots for publication (according to dosing interval)
@@ -117,14 +118,14 @@ PlotMulti(MyConcTimeMulti)
 library(cowplot)
 
 MyPlotMultiPub <- lapply(
-    c(seq(4, 32, by = 4)), 
-    function(x) PlotMulti(ConcTimeMulti(20, 250, 20, x, 15)) + 
-        theme(legend.position="none") + 
-        labs(title = paste0("q", x, "hr" )))
+  c(seq(4, 32, by = 4)), 
+  function(x) caffPlotMulti(caffConcTimeMulti(20, 250, 20, x, 15)) + 
+    theme(legend.position="none") + 
+    labs(title = paste0("q", x, "hr" )))
 
-plot(plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
-               MyPlotMultiPub[[3]], MyPlotMultiPub[[4]],
-               MyPlotMultiPub[[5]], MyPlotMultiPub[[6]],
-               MyPlotMultiPub[[7]], MyPlotMultiPub[[8]],
-               labels=LETTERS[1:8], ncol = 2, nrow = 4))
+plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
+          MyPlotMultiPub[[3]], MyPlotMultiPub[[4]],
+          MyPlotMultiPub[[5]], MyPlotMultiPub[[6]],
+          MyPlotMultiPub[[7]], MyPlotMultiPub[[8]],
+          labels=LETTERS[1:8], ncol = 2, nrow = 4)
 ```

@@ -6,9 +6,8 @@
 ^.*\.sh$
 ^tests$
 ^data-raw$
-^packrat/
 ^\.Rprofile$
 ^README.*$
-^Figures$
-^rd2pdf\.sh$
+^assets$
+^Makefile$
 ^docs$

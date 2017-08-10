@@ -1,6 +1,6 @@
-#' Create a dataset of the concentration-time curve
+#' Create a dataset of the concentration-time curve of single oral administration of caffeine
 #'
-#' \code{ConcTime} will create a dataset of the concentration-time curve
+#' \code{caffConcTime} will create a dataset of the concentration-time curve
 #' 
 #' @param Weight Body weight (kg)
 #' @param Dose Dose of single caffeine (mg)
@@ -8,29 +8,29 @@
 #' @return The dataset of concentration and time of simulated subjects
 #' @export
 #' @examples 
-#' ConcTime(Weight = 20, Dose = 200, N = 20)
-#' ConcTime(20, 200)
-#' @seealso \url{http://asancpt.github.io/CaffeineEdison}
+#' caffConcTime(Weight = 20, Dose = 200, N = 20)
+#' caffConcTime(20, 200)
 #' @import dplyr
+#' @seealso \url{https://asancpt.github.io/caffsim}
 
-ConcTime <- function(Weight, Dose, N = 20){
-    #set.seed(Seed)
-    ggConc <- Dataset(Weight, Dose, N) %>% 
-        select(CL, V, Ka, Ke) %>% 
-        mutate(Subject = row_number()) %>% 
-        left_join(expand.grid(
-            x = seq(1, N, length.out = N),  #Subjecti
-            y = seq(0,24, by = 0.1)) %>% # Time
-                select(Subject=x, Time=y), by = "Subject") %>% 
-        mutate(Conc = Dose / V * Ka / (Ka - Ke) * (exp(-Ke * Time) - exp(-Ka * Time))) %>% 
-        select(Subject, Time, Conc)
-    return(ggConc)
+caffConcTime <- function(Weight, Dose, N = 20){
+  #set.seed(Seed)
+  ggConc <- caffDataset(Weight, Dose, N) %>% 
+    select(CL, V, Ka, Ke) %>% 
+    mutate(Subject = row_number()) %>% 
+    left_join(expand.grid(
+      x = seq(1, N, length.out = N),  #Subjecti
+      y = seq(0,24, by = 0.1)) %>% # Time
+        select(Subject=x, Time=y), by = "Subject") %>% 
+    mutate(Conc = Dose / V * Ka / (Ka - Ke) * (exp(-Ke * Time) - exp(-Ka * Time))) %>% 
+    select(Subject, Time, Conc)
+  return(ggConc)
 }
 
 
-#' Create a dataset of the concentration-time curve of multiple dosing
+#' Create a dataset of the concentration-time curve of multiple dosing of caffeine
 #'
-#' \code{ConcTimeMulti} will create a dataset of the concentration-time curve of multiple dosing
+#' \code{caffConcTimeMulti} will create a dataset of the concentration-time curve of multiple oral administrations of caffeine
 #' 
 #' @param Weight Body weight (kg)
 #' @param Dose Dose of single caffeine (mg)
@@ -40,31 +40,33 @@ ConcTime <- function(Weight, Dose, N = 20){
 #' @return The dataset of concentration and time of simulated subjects of multiple dosing
 #' @export
 #' @examples 
-#' ConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 8, Repeat = 4)
-#' ConcTimeMulti(20, 200)
-#' @seealso \url{http://asancpt.github.io/CaffeineEdison}
+#' caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 8, Repeat = 4)
+#' caffConcTimeMulti(20, 200)
 #' @import dplyr
+#' @seealso \url{https://asancpt.github.io/caffsim}
 
-ConcTimeMulti <- function(Weight, Dose, N = 20, Tau = 8, Repeat = 4){
-    Subject <- seq(1, N, length.out = N) # 
-    Time <- seq(0, 96, length.out = 481) # 
-    Grid <- expand.grid(x = Subject, y = Time) %>% select(Subject=x, Time=y)
-    
-    ggsuper <- Dataset(Weight, Dose, N) %>% select(CL, V, Ka, Ke) %>% 
-        mutate(Subject = row_number()) %>% 
-        left_join(Grid, by = "Subject") %>% 
-        mutate(Conc = Dose / V * Ka / (Ka - Ke) * (exp(-Ke * Time) - exp(-Ka * Time))) %>% 
-        group_by(Subject) %>% 
-        mutate(ConcOrig = Conc, 
-               ConcTemp = 0)
-    ## Superposition
-    for (i in 1:Repeat){
-        Frame <- Tau * 5 * i
-        ggsuper <- ggsuper %>% 
-            mutate(Conc = Conc + ConcTemp) %>% 
-            mutate(ConcTemp = lag(ConcOrig, n = Frame, default = 0))
-    }
-    
-    ggsuper <- ggsuper %>% select(Subject, Time, Conc)
-    return(ggsuper)
+caffConcTimeMulti <- function(Weight, Dose, N = 20, Tau = 8, Repeat = 4){
+  Subject <- seq(1, N, length.out = N) # 
+  Time <- seq(0, 96, length.out = 481) # 
+  Grid <- expand.grid(x = Subject, y = Time) %>% select(Subject=x, Time=y)
+  
+  ggsuper <- caffDataset(Weight, Dose, N) %>% 
+    select(CL, V, Ka, Ke) %>% 
+    mutate(Subject = row_number()) %>% 
+    left_join(Grid, by = "Subject") %>% 
+    mutate(Conc = Dose / V * Ka / (Ka - Ke) * (exp(-Ke * Time) - exp(-Ka * Time))) %>% 
+    group_by(Subject) %>% 
+    mutate(ConcOrig = Conc, 
+           ConcTemp = 0)
+  
+  ## Superposition
+  for (i in 1:Repeat){
+    Frame <- Tau * 5 * i
+    ggsuper <- ggsuper %>% 
+      mutate(Conc = Conc + ConcTemp) %>% 
+      mutate(ConcTemp = lag(ConcOrig, n = Frame, default = 0))
+  }
+  
+  ggsuper <- ggsuper %>% select(Subject, Time, Conc)
+  return(ggsuper)
 }

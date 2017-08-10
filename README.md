@@ -19,10 +19,10 @@ install.pacakges("devtools")
 devtools::install_github("asancpt/caffsim")
 
 # Simply create single dose dataset
-caffsim::Dataset(Weight = 20, Dose = 200, N = 20) 
+caffsim::caffDataset(Weight = 20, Dose = 200, N = 20) 
 
 # Simply create multiple dose dataset
-caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) 
+caffsim::caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) 
 ```
 
 ## Single dose
@@ -31,48 +31,49 @@ caffsim::DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 
 
 ```r
-MyDataset <- caffsim::Dataset(Weight = 20, Dose = 200, N = 20)
+library(caffsim)
+MyDataset <- caffDataset(Weight = 20, Dose = 200, N = 20)
 knitr::kable(head(MyDataset), format = "markdown")
 ```
 
 
 
-|      Tmax|      Cmax|       AUC| Half_life|       CL|        V|        Ka|        Ke|
-|---------:|---------:|---------:|---------:|--------:|--------:|---------:|---------:|
-| 0.8107159| 11.825709| 103.74446|  5.487952| 1.927814| 15.26659| 4.5466571| 0.1262766|
-| 0.9437568| 10.871493|  71.34713|  3.834897| 2.803196| 15.51222| 3.2387631| 0.1807089|
-| 1.0632196| 11.995621| 191.43411| 10.295538| 1.044746| 15.52124| 3.8806768| 0.0673107|
-| 1.4997904|  9.448541|  78.29334|  4.575526| 2.554496| 16.86603| 1.8029281| 0.1514580|
-| 2.7669409| 12.938048| 148.35886|  5.664566| 1.348083| 11.01920| 0.8018213| 0.1223395|
-| 0.7004863|  7.447735|  67.33372|  5.758812| 2.970280| 24.68295| 5.6034382| 0.1203373|
+|      Tmax|      Cmax|      AUC| Half_life|       CL|        V|        Ka|        Ke|
+|---------:|---------:|--------:|---------:|--------:|--------:|---------:|---------:|
+| 0.7506950| 10.904556| 99.33949|  5.768755| 2.013298| 16.75934|  5.118124| 0.1201299|
+| 0.9756280|  9.535194| 78.96550|  5.015262| 2.532751| 18.32960|  3.430260| 0.1381782|
+| 0.8869807| 14.091555| 81.22170|  3.319075| 2.462396| 11.79347|  3.331590| 0.2087931|
+| 0.6458470| 12.058570| 95.70897|  5.032268| 2.089668| 15.17427|  5.975385| 0.1377113|
+| 0.2466091|  8.607292| 72.15405|  5.635830| 2.771847| 22.54208| 20.959415| 0.1229632|
+| 0.2747344| 12.558457| 67.17518|  3.511209| 2.977290| 15.08498| 16.252669| 0.1973679|
 
 ### Create a dataset for concentration-time curve
 
 
 ```r
-MyConcTime <- ConcTime(Weight = 20, Dose = 200, N = 20)
+MyConcTime <- caffConcTime(Weight = 20, Dose = 200, N = 20)
 knitr::kable(head(MyConcTime), format = "markdown")
 ```
 
 
 
-| Subject| Time|      Conc|
-|-------:|----:|---------:|
-|       1|  0.0|  0.000000|
-|       1|  0.1|  5.568253|
-|       1|  0.2|  8.377897|
-|       1|  0.3|  9.752320|
-|       1|  0.4| 10.380720|
-|       1|  0.5| 10.622008|
+| Subject| Time|     Conc|
+|-------:|----:|--------:|
+|       1|  0.0| 0.000000|
+|       1|  0.1| 5.117929|
+|       1|  0.2| 7.721610|
+|       1|  0.3| 9.025087|
+|       1|  0.4| 9.656359|
+|       1|  0.5| 9.940279|
 
 ### Create a concentration-time curve
 
 
 ```r
-Plot(MyConcTime)
+caffPlot(MyConcTime)
 ```
 
-<img src="Figures/MyPlotMyConcTime-1.png" style="display: block; margin: auto;" />
+<img src="assets/figures/MyPlotMyConcTime-1.png" style="display: block; margin: auto;" />
 
 ### Create plots for publication (according to the amount of caffeine)
 
@@ -84,19 +85,19 @@ Plot(MyConcTime)
 library(cowplot)
 
 MyPlotPub <- lapply(
-    c(seq(100, 800, by = 100)), 
-    function(x) PlotMulti(ConcTime(20, x, 20)) + 
-        theme(legend.position="none") + 
-        labs(title = paste0("Single Dose ", x, "mg")))
+  c(seq(100, 800, by = 100)), 
+  function(x) caffPlotMulti(caffConcTime(20, x, 20)) + 
+    theme(legend.position="none") + 
+    labs(title = paste0("Single Dose ", x, "mg")))
 
-plot(plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
-               MyPlotPub[[3]], MyPlotPub[[4]],
-               MyPlotPub[[5]], MyPlotPub[[6]],
-               MyPlotPub[[7]], MyPlotPub[[8]],
-               labels=LETTERS[1:8], ncol = 2, nrow = 4))
+plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
+          MyPlotPub[[3]], MyPlotPub[[4]],
+          MyPlotPub[[5]], MyPlotPub[[6]],
+          MyPlotPub[[7]], MyPlotPub[[8]],
+          labels=LETTERS[1:8], ncol = 2, nrow = 4)
 ```
 
-<img src="Figures/MyPlotPub-1.png" style="display: block; margin: auto;" />
+<img src="assets/figures/MyPlotPub-1.png" style="display: block; margin: auto;" />
 
 ## Multiple dose
 
@@ -104,48 +105,48 @@ plot(plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
 
 
 ```r
-MyDatasetMulti <- DatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
+MyDatasetMulti <- caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 knitr::kable(head(MyDatasetMulti), format = "markdown")
 ```
 
 
 
-|     TmaxS|    CmaxS|      AUCS|       AI|     Aavss|     Cavss|   Cmaxss|    Cminss|
-|---------:|--------:|---------:|--------:|---------:|---------:|--------:|---------:|
-| 1.0555879| 13.14951| 176.40173| 1.606035| 204.78857| 14.700144| 23.00894| 8.6823945|
-| 2.0282514| 11.49687| 125.47653| 1.331292| 143.49219| 10.456378| 19.36208| 4.8182540|
-| 1.2128837| 12.64804| 119.42226| 1.296532| 135.28433|  9.951855| 19.03556| 4.3536552|
-| 0.8960638| 15.90481| 153.63180| 1.337576| 144.95968| 12.802650| 23.57744| 5.9504468|
-| 0.7942288| 10.96006| 106.00448| 1.346524| 147.04176|  8.833706| 16.14516| 4.1549125|
-| 1.2072415| 11.38633|  63.23708| 1.058868|  69.06829|  5.269757| 16.12424| 0.8964275|
+|     TmaxS|     CmaxS|      AUCS|       AI|     Aavss|     Cavss|   Cmaxss|    Cminss|
+|---------:|---------:|---------:|--------:|---------:|---------:|--------:|---------:|
+| 0.9236100| 12.730981| 122.83645| 1.334606| 144.26677| 10.236371| 18.89986| 4.7384847|
+| 2.2515756| 12.207227| 158.30692| 1.464930| 173.90274| 13.192243| 22.17966| 7.0392348|
+| 0.2178431| 12.469114|  83.51313| 1.185915| 107.70968|  6.959427| 15.29319| 2.3974994|
+| 0.6228740|  7.487806|  43.61323| 1.108450|  85.86370|  3.634436|  9.36417| 0.9161845|
+| 4.0027303|  9.990159| 146.93629| 1.413289| 162.32568| 12.244691| 21.27733| 6.2221419|
+| 0.7494883|  9.448188|  55.46029| 1.103058|  84.19326|  4.621691| 12.08503| 1.1291008|
 
 ### Create a dataset for concentration-time curve
 
 
 ```r
-MyConcTimeMulti <- ConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
+MyConcTimeMulti <- caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
 knitr::kable(head(MyConcTimeMulti), format = "markdown")
 ```
 
 
 
-| Subject| Time|      Conc|
-|-------:|----:|---------:|
-|       1|  0.0|  0.000000|
-|       1|  0.2| 10.503041|
-|       1|  0.4| 10.144504|
-|       1|  0.6|  9.766257|
-|       1|  0.8|  9.402012|
-|       1|  1.0|  9.051352|
+| Subject| Time|     Conc|
+|-------:|----:|--------:|
+|       1|  0.0| 0.000000|
+|       1|  0.2| 2.974553|
+|       1|  0.4| 5.015058|
+|       1|  0.6| 6.390925|
+|       1|  0.8| 7.294470|
+|       1|  1.0| 7.862957|
 
 ### Create a concentration-time curve
 
 
 ```r
-PlotMulti(MyConcTimeMulti)
+caffPlotMulti(MyConcTimeMulti)
 ```
 
-<img src="Figures/MyPlotMultiMyConcTimeMulti-1.png" style="display: block; margin: auto;" />
+<img src="assets/figures/MyPlotMultiMyConcTimeMulti-1.png" style="display: block; margin: auto;" />
 
 ### Create plots for publication (according to dosing interval)
 
@@ -157,16 +158,16 @@ PlotMulti(MyConcTimeMulti)
 library(cowplot)
 
 MyPlotMultiPub <- lapply(
-    c(seq(4, 32, by = 4)), 
-    function(x) PlotMulti(ConcTimeMulti(20, 250, 20, x, 15)) + 
-        theme(legend.position="none") + 
-        labs(title = paste0("q", x, "hr" )))
+  c(seq(4, 32, by = 4)), 
+  function(x) caffPlotMulti(caffConcTimeMulti(20, 250, 20, x, 15)) + 
+    theme(legend.position="none") + 
+    labs(title = paste0("q", x, "hr" )))
 
-plot(plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
-               MyPlotMultiPub[[3]], MyPlotMultiPub[[4]],
-               MyPlotMultiPub[[5]], MyPlotMultiPub[[6]],
-               MyPlotMultiPub[[7]], MyPlotMultiPub[[8]],
-               labels=LETTERS[1:8], ncol = 2, nrow = 4))
+plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
+          MyPlotMultiPub[[3]], MyPlotMultiPub[[4]],
+          MyPlotMultiPub[[5]], MyPlotMultiPub[[6]],
+          MyPlotMultiPub[[7]], MyPlotMultiPub[[8]],
+          labels=LETTERS[1:8], ncol = 2, nrow = 4)
 ```
 
-<img src="Figures/MyPlotMultiPub-1.png" style="display: block; margin: auto;" />
+<img src="assets/figures/MyPlotMultiPub-1.png" style="display: block; margin: auto;" />

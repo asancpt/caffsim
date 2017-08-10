@@ -6,30 +6,34 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a dataset for simulation of multiple dose of caffeine <U+2014> DatasetMulti bcaffsim</title>
+<title>Create a dataset for simulation of multiple dose of caffeine <U+2014> caffDatasetMulti <e2><80><a2> caffsim</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-
 <!-- Bootstrap -->
-<link href="../tidyverse.css" rel="stylesheet">
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
-<!-- tidyverse -->
+
+<!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -43,17 +47,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      <div class="navbar-brand-container">
-        <a class="navbar-brand" href="../index.html">caffsim</a>
-        <small class="tidyverse">part of the <a href="http://tidyverse.org">tidyverse</a></small>
-      </div>
+      <a class="navbar-brand" href="../index.html">caffsim</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
         <li>
+  <a href="..//index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/asancpt/caffsim">
     <span class="fa fa-github fa-lg"></span>
@@ -75,10 +84,10 @@
     </div>
 
     
-    <p><code>DatasetMulti</code> will create a dataset for simulation of multiple dose of caffeine</p>
+    <p><code>caffDatasetMulti</code> will create a dataset for simulation of multiple dose of caffeine</p>
     
 
-    <pre class="usage"><span class='fu'>DatasetMulti</span>(<span class='no'>Weight</span>, <span class='no'>Dose</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Tau</span> <span class='kw'>=</span> <span class='fl'>24</span>)</pre>
+    <pre class="usage"><span class='fu'>caffDatasetMulti</span>(<span class='no'>Weight</span>, <span class='no'>Dose</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Tau</span> <span class='kw'>=</span> <span class='fl'>24</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -107,11 +116,11 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href = 'http://asancpt.github.io/CaffeineEdison'>http://asancpt.github.io/CaffeineEdison</a></p>
+    <p><a href='https://asancpt.github.io/caffsim'>https://asancpt.github.io/caffsim</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>DatasetMulti</span>(<span class='kw'>Weight</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Dose</span> <span class='kw'>=</span> <span class='fl'>200</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Tau</span> <span class='kw'>=</span> <span class='fl'>8</span>)</div><div class='output co'>#&gt;        TmaxS     CmaxS      AUCS       AI    Aavss     Cavss   Cmaxss    Cminss
+    <pre class="examples"><div class='input'><span class='fu'>caffDatasetMulti</span>(<span class='kw'>Weight</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Dose</span> <span class='kw'>=</span> <span class='fl'>200</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Tau</span> <span class='kw'>=</span> <span class='fl'>8</span>)</div><div class='output co'>#&gt;        TmaxS     CmaxS      AUCS       AI    Aavss     Cavss   Cmaxss    Cminss
 #&gt; 1  1.0465498  8.921906  69.88118 1.434696 167.1472  8.735147 14.96431  4.534010
 #&gt; 2  0.2041821 11.496640  89.41407 1.532771 188.8675 11.176759 18.10346  6.292525
 #&gt; 3  3.2675552 10.413368 166.35163 2.082768 305.0916 20.793954 28.33175 14.728813
@@ -131,7 +140,7 @@
 #&gt; 17 1.4716263 15.800664 204.32401 1.978225 283.4132 25.540501 35.58039 17.594372
 #&gt; 18 1.3996019 14.131917 141.07121 1.635202 211.0708 17.633901 27.26575 10.591509
 #&gt; 19 0.2897304 10.876492  70.25021 1.375545 153.7359  8.781276 15.68133  4.281248
-#&gt; 20 2.7810179  8.099173  85.46025 1.485396 178.4434 10.682531 17.74767  5.799562</div><div class='input'><span class='fu'>DatasetMulti</span>(<span class='fl'>20</span>,<span class='fl'>500</span>)</div><div class='output co'>#&gt;        TmaxS    CmaxS     AUCS       AI     Aavss     Cavss   Cmaxss     Cminss
+#&gt; 20 2.7810179  8.099173  85.46025 1.485396 178.4434 10.682531 17.74767  5.799562</div><div class='input'><span class='fu'>caffDatasetMulti</span>(<span class='fl'>20</span>,<span class='fl'>500</span>)</div><div class='output co'>#&gt;        TmaxS    CmaxS     AUCS       AI     Aavss     Cavss   Cmaxss     Cminss
 #&gt; 1  0.5506126 29.46363 258.6709 1.056808 170.68243 10.777953 33.29734  1.7898890
 #&gt; 2  2.1992528 43.63522 879.3395 1.351167 370.29614 36.639146 66.70692 17.3370654
 #&gt; 3  1.5998776 40.59759 569.5358 1.166263 256.14127 23.730657 53.91288  7.6858573
@@ -169,24 +178,14 @@
 </div>
 
       <footer>
-      <div class="tidyverse">
-  <p>caffsim is a part of the <strong>tidyverse</strong>, an ecosystem of packages designed with common APIs and a shared philosophy. Learn more at <a href="http://tidyverse.org">tidyverse.org</a>.</p>
-</div>
-
-<div class="author">
+      <div class="copyright">
   <p>Developed by Sungpil Han.</p>
-  <p>Site built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<div class="pkgdown">
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+</div>
 
-  ga('create', 'UA-67989-18', 'auto');
-  ga('send', 'pageview');
-</script>
       </footer>
    </div>
 

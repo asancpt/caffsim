@@ -34,6 +34,8 @@ Get_os <- function(){
     tolower(os)
 }
 
+# save ----
+
 devtools::use_data(CaffSigma, 
                    CaffMu,
                    Seed,
@@ -41,4 +43,3 @@ devtools::use_data(CaffSigma,
                    Get_os,
                    UnitTable,
                    internal = TRUE, overwrite = TRUE)
-
