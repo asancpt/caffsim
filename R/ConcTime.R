@@ -14,7 +14,6 @@
 #' @seealso \url{https://asancpt.github.io/caffsim}
 
 caffConcTime <- function(Weight, Dose, N = 20){
-  #set.seed(Seed)
   ggConc <- caffDataset(Weight, Dose, N) %>% 
     select(CL, V, Ka, Ke) %>% 
     mutate(Subject = row_number()) %>% 
@@ -70,3 +69,6 @@ caffConcTimeMulti <- function(Weight, Dose, N = 20, Tau = 8, Repeat = 4){
   ggsuper <- ggsuper %>% select(Subject, Time, Conc)
   return(ggsuper)
 }
+
+globVar <- utils::globalVariables(c('CL', 'V', 'Ka', 'Ke', 'x', 'y', 'Time', 'Subject', 'Conc', 'AI', 'AUC', 'Aavss', 'Cavss', 'Cmax', 'Cmaxss', 'Cminss', 'ConcOrig', 'ConcTemp', 'Half_life', 'Tmax', 'X1', 'X2', 'X3', 'eta1', 'eta2', 'eta3'))
+

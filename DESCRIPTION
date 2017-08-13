@@ -1,9 +1,9 @@
 Package: caffsim
-Title: Monte Carlo Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
+Title: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
 Version: 0.1.0
-Date: 2017-02-27
+Date: 2017-08-13
 Authors@R: person("Sungpil", "Han", email = "shan@acp.kr", role = c("aut", "cre"))
-Description: This package is used for publication of the paper about pharmacokinetics of plasma caffeine. Gitbook <http://asancpt.github.io/CaffeineEdison> is created solely dependent on this R package.
+Description: Simulate plasma caffeine concentrations using population pharmacokinetic model.
 Depends:
     R (>= 3.3.2)
 Encoding: UTF-8
