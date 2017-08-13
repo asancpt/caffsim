@@ -4,6 +4,7 @@ tests
 packrat/lib*/
 README_files/
 README_cache/
+README.html
 
 # History files
 .Rhistory

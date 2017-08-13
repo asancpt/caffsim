@@ -11,3 +11,4 @@
 ^assets$
 ^Makefile$
 ^docs$
+^releases$
