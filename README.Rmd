@@ -3,13 +3,18 @@ output:
   html_document: 
     self_contained: no
     keep_md: yes
+    df_print: kable
 editor_options: 
   chunk_output_type: console
 ---
 
-```{r include = FALSE}
-knitr::opts_chunk$set(collapse = TRUE, #comment = "#>", 
-                      fig.width = 7, fig.height = 7, fig.align = "center")
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=4, dev = 'png', dpi = 150, 
+                      #out.width = '5%', out.height = '5%',# For word dpi = 72
+                      #out.extra ='WIDTH="10%"', 
+                      fig.path='assets/figures/', echo=TRUE, warning=FALSE, message=FALSE, 
+                      #cache=TRUE, 
+                      results = 'asis')
 ```
 
 # R package: caffsim
@@ -19,16 +24,6 @@ knitr::opts_chunk$set(collapse = TRUE, #comment = "#>",
 - This package is used for publication of the paper about pharmacokinetics of plasma caffeine.
 - Gitbook <http://asancpt.github.io/CaffeineEdison> is created solely dependent on this R package.
 - Reproducible research is expected.
-
-```{r setup, include = FALSE}
-
-knitr::opts_chunk$set(fig.width=8, fig.height=4, dev = 'png', dpi = 150, 
-                      #out.width = '5%', out.height = '5%',# For word dpi = 72
-                      #out.extra ='WIDTH="10%"', 
-                      fig.path='assets/figures/', echo=TRUE, warning=FALSE, message=FALSE, 
-                      cache=TRUE, 
-                      results = 'asis')
-```
 
 ## Installation
 
@@ -50,14 +45,14 @@ caffsim::caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 ```{r}
 library(caffsim)
 MyDataset <- caffDataset(Weight = 20, Dose = 200, N = 20)
-knitr::kable(head(MyDataset), format = "markdown")
+head(MyDataset)
 ```
 
 ### Create a dataset for concentration-time curve
 
 ```{r}
 MyConcTime <- caffConcTime(Weight = 20, Dose = 200, N = 20)
-knitr::kable(head(MyConcTime), format = "markdown")
+head(MyConcTime)
 ```
 
 ### Create a concentration-time curve
@@ -93,14 +88,14 @@ plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
 
 ```{r}
 MyDatasetMulti <- caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
-knitr::kable(head(MyDatasetMulti), format = "markdown")
+head(MyDatasetMulti)
 ```
 
 ### Create a dataset for concentration-time curve
 
 ```{r}
 MyConcTimeMulti <- caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
-knitr::kable(head(MyConcTimeMulti), format = "markdown")
+head(MyConcTimeMulti)
 ```
 
 ### Create a concentration-time curve
