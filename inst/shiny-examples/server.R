@@ -4,7 +4,6 @@ library(dplyr)
 library(markdown)
 library(mgcv)
 library(psych)
-library(ggforce)
 
 CaffSigma <- matrix(c(0.1599, 6.095e-2, 9.650e-2, 
                       6.095e-2, 4.746e-2, 1.359e-2, 

@@ -124,3 +124,10 @@ plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
           MyPlotMultiPub[[7]], MyPlotMultiPub[[8]],
           labels=LETTERS[1:8], ncol = 2, nrow = 4)
 ```
+
+## Interactive shiny app
+
+```r
+caffShiny()
+```
+
