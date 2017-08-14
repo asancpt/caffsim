@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a dataset of the concentration-time curve of multiple dosing of caffeine <U+2014> caffConcTimeMulti <e2><80><a2> caffsim</title>
+<title>Run shiny app to interactively simulate plasma caffeine concentration. <U+2014> caffShiny <e2><80><a2> caffsim</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -83,91 +83,33 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a dataset of the concentration-time curve of multiple dosing of caffeine</h1>
+    <h1>Run shiny app to interactively simulate plasma caffeine concentration.</h1>
     </div>
 
     
-    <p><code>caffConcTimeMulti</code> will create a dataset of the concentration-time curve of multiple oral administrations of caffeine</p>
+    <p><code>caffShiny</code> will run an internal shiny app <code>Caffeine Concentration Predictor</code> in order to interactively simulate plasma caffeine concentration.</p>
     
 
-    <pre class="usage"><span class='fu'>caffConcTimeMulti</span>(<span class='no'>Weight</span>, <span class='no'>Dose</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Tau</span> <span class='kw'>=</span> <span class='fl'>8</span>, <span class='kw'>Repeat</span> <span class='kw'>=</span> <span class='fl'>4</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>Weight</th>
-      <td><p>Body weight (kg)</p></td>
-    </tr>
-    <tr>
-      <th>Dose</th>
-      <td><p>Dose of single caffeine (mg)</p></td>
-    </tr>
-    <tr>
-      <th>N</th>
-      <td><p>The number of simulated subjects</p></td>
-    </tr>
-    <tr>
-      <th>Tau</th>
-      <td><p>The interval of multiple dosing (hour)</p></td>
-    </tr>
-    <tr>
-      <th>Repeat</th>
-      <td><p>The number of dosing</p></td>
-    </tr>
-    </table>
-    
+    <pre class="usage"><span class='fu'>caffShiny</span>()</pre>
+        
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The dataset of concentration and time of simulated subjects of multiple dosing</p>
+    <p>shiny app</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href='https://asancpt.github.io/caffsim'>https://asancpt.github.io/caffsim</a></p>
+    <p><a href='https://asan.shinyapps.io/caff/'>https://asan.shinyapps.io/caff/</a></p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>caffConcTimeMulti</span>(<span class='kw'>Weight</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Dose</span> <span class='kw'>=</span> <span class='fl'>200</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Tau</span> <span class='kw'>=</span> <span class='fl'>8</span>, <span class='kw'>Repeat</span> <span class='kw'>=</span> <span class='fl'>4</span>)</div><div class='output co'>#&gt; # A tibble: 9,620 x 3
-#&gt; # Groups:   Subject [20]
-#&gt;    Subject  Time     Conc
-#&gt;      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
-#&gt;  1       1   0.0 0.000000
-#&gt;  2       1   0.2 9.892721
-#&gt;  3       1   0.4 9.625438
-#&gt;  4       1   0.6 9.352134
-#&gt;  5       1   0.8 9.086573
-#&gt;  6       1   1.0 8.828552
-#&gt;  7       1   1.2 8.577857
-#&gt;  8       1   1.4 8.334282
-#&gt;  9       1   1.6 8.097623
-#&gt; 10       1   1.8 7.867684
-#&gt; # ... with 9,610 more rows</div><div class='input'><span class='fu'>caffConcTimeMulti</span>(<span class='fl'>20</span>, <span class='fl'>200</span>)</div><div class='output co'>#&gt; # A tibble: 9,620 x 3
-#&gt; # Groups:   Subject [20]
-#&gt;    Subject  Time      Conc
-#&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;
-#&gt;  1       1   0.0  0.000000
-#&gt;  2       1   0.2  5.556672
-#&gt;  3       1   0.4  9.535670
-#&gt;  4       1   0.6 12.349859
-#&gt;  5       1   0.8 14.304842
-#&gt;  6       1   1.0 15.626806
-#&gt;  7       1   1.2 16.483139
-#&gt;  8       1   1.4 16.997703
-#&gt;  9       1   1.6 17.262127
-#&gt; 10       1   1.8 17.344186
-#&gt; # ... with 9,610 more rows</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
 
       <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>

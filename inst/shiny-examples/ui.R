@@ -1,13 +1,19 @@
-library(shiny)
-library(markdown)
+# setup ----
+
+# input <- list()
+# input$concBWT <- 50; input$concDose <- 200; input$concNum <- 20
+# input$cmaxDose <- 50; input$cmaxNum <- 20
+# input$aucDose <- 50; input$aucNum <- 20
+# input$Log <- FALSE
+# input$superBWT <- 20; input$superDose <- 500; input$superNum <- 20; input$superTau <- 5; input$superRepeat <- 3
 
 shinyUI(
   navbarPage(
     title = "Caffeine Concentration Predictor",
     tabPanel(
       
-# single ----
-
+      # single ----
+      
       title = "Single",
       sidebarLayout(
         sidebarPanel(
@@ -43,9 +49,9 @@ shinyUI(
         )
       )
     ),
-
-# multiple ----
-
+    
+    # multiple ----
+    
     tabPanel(
       title = "Multiple",
       sidebarLayout(
@@ -84,8 +90,8 @@ shinyUI(
       )
     ),
     
-# Cmax ----
-
+    # Cmax ----
+    
     tabPanel(
       title = "Cmax",
       sidebarLayout(
@@ -101,9 +107,9 @@ shinyUI(
           radioButtons(
             inputId = "pformat", label = "Plot Format",
             choices = c(#"Sina" = "Sina", 
-                        "Jitter" = "Jitter",
-                        "Point" = "Point",
-                        "Boxplot" = "Boxplot"),
+              "Jitter" = "Jitter",
+              "Point" = "Point",
+              "Boxplot" = "Boxplot"),
             selected = "Jitter")
           
         ),
@@ -116,9 +122,9 @@ shinyUI(
         )
       )
     ),
-
-# AUC ----
-
+    
+    # AUC ----
+    
     tabPanel(
       title = "AUC",
       sidebarLayout(
@@ -134,9 +140,9 @@ shinyUI(
           radioButtons(
             inputId = "paucformat", label = "Plot Format",
             choices = c(#"Sina" = "Sina",
-                        "Jitter" = "Jitter",
-                        "Point" = "Point",
-                        "Boxplot" = "Boxplot"),
+              "Jitter" = "Jitter",
+              "Point" = "Point",
+              "Boxplot" = "Boxplot"),
             selected = "Jitter")
         ),
         
@@ -147,15 +153,15 @@ shinyUI(
         )
       )
     ),
-
-# help ----
-
+    
+    # help ----
+    
     tabPanel(
       title = "Help", 
       withMathJax(includeMarkdown("README.md"))
     ),
-
-# contact ----
+    
+    # contact ----
     
     tabPanel(
       title = "Contact", 

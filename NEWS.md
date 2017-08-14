@@ -1,7 +1,7 @@
 caffsim 0.2.1
 ===========
 
-* Introduce a `shiny` example
+* Introduce a `shiny` example - `Caffeine Concentration Predictor`
 
 
 caffsim 0.2.0
