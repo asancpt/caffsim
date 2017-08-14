@@ -8,5 +8,6 @@
 #'   \item{Parameter}{Pharmacokinetic parameters in full name}
 #' }
 #' @seealso \url{https://asancpt.github.io/caffsim}
+#' @export
 
 "UnitTable"

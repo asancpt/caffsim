@@ -7,7 +7,7 @@
 #' @return The concentration-time curve
 #' @export
 #' @examples 
-#' \donttest{caffPlot(caffConcTime(Weight = 20, Dose = 200, N = 20))}
+#' caffPlot(caffConcTime(Weight = 20, Dose = 200, N = 20))
 #' @import dplyr
 #' @import ggplot2
 #' @seealso \url{https://asancpt.github.io/caffsim}
@@ -36,7 +36,7 @@ caffPlot <- function(caffConcTimeData, log = FALSE){
 #' @return The concentration-time curve
 #' @export
 #' @examples 
-#' \donttest{caffPlotMulti(ConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 8, Repeat = 4))}
+#' caffPlotMulti(caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 8, Repeat = 4))
 #' @import dplyr
 #' @import ggplot2
 #' @seealso \url{https://asancpt.github.io/caffsim}
