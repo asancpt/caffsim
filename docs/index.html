@@ -92,7 +92,7 @@ caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumenta
 <a href="#create-a-pk-dataset-for-caffeine-single-dose" class="anchor"></a>Create a PK dataset for caffeine single dose</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(caffsim)
 MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffDataset.html">caffDataset</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDataset))</code></pre></div>
+knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDataset), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Tmax</th>
@@ -106,64 +106,64 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="right">5.6905611</td>
-<td align="right">11.763310</td>
-<td align="right">200.18333</td>
-<td align="right">6.317024</td>
-<td align="right">0.9990842</td>
-<td align="right">9.107126</td>
-<td align="right">0.2640704</td>
-<td align="right">0.1097036</td>
+<td align="right">0.4611556</td>
+<td align="right">12.962627</td>
+<td align="right">68.54261</td>
+<td align="right">3.328959</td>
+<td align="right">2.9178932</td>
+<td align="right">14.01666</td>
+<td align="right">8.1647224</td>
+<td align="right">0.2081732</td>
 </tr>
 <tr class="even">
-<td align="right">2.0202069</td>
-<td align="right">12.881877</td>
-<td align="right">127.86373</td>
-<td align="right">5.275260</td>
-<td align="right">1.5641653</td>
-<td align="right">11.906751</td>
-<td align="right">1.2442781</td>
-<td align="right">0.1313679</td>
+<td align="right">0.6828350</td>
+<td align="right">12.553752</td>
+<td align="right">148.67278</td>
+<td align="right">7.719117</td>
+<td align="right">1.3452362</td>
+<td align="right">14.98418</td>
+<td align="right">6.3198666</td>
+<td align="right">0.0897771</td>
 </tr>
 <tr class="odd">
-<td align="right">1.7212173</td>
-<td align="right">12.480329</td>
-<td align="right">143.02602</td>
-<td align="right">6.635117</td>
-<td align="right">1.3983469</td>
-<td align="right">13.388449</td>
-<td align="right">1.7381153</td>
-<td align="right">0.1044443</td>
+<td align="right">0.7573864</td>
+<td align="right">9.701986</td>
+<td align="right">61.96046</td>
+<td align="right">3.863562</td>
+<td align="right">3.2278647</td>
+<td align="right">17.99575</td>
+<td align="right">4.4061672</td>
+<td align="right">0.1793681</td>
 </tr>
 <tr class="even">
-<td align="right">0.8886363</td>
-<td align="right">10.878033</td>
-<td align="right">106.08152</td>
-<td align="right">6.110141</td>
-<td align="right">1.8853425</td>
-<td align="right">16.622955</td>
-<td align="right">4.1696382</td>
-<td align="right">0.1134180</td>
+<td align="right">1.2017974</td>
+<td align="right">18.189870</td>
+<td align="right">260.27682</td>
+<td align="right">9.043660</td>
+<td align="right">0.7684127</td>
+<td align="right">10.02780</td>
+<td align="right">3.1755433</td>
+<td align="right">0.0766283</td>
 </tr>
 <tr class="odd">
-<td align="right">1.6844107</td>
-<td align="right">8.779467</td>
-<td align="right">92.90618</td>
-<td align="right">6.045874</td>
-<td align="right">2.1527092</td>
-<td align="right">18.780675</td>
-<td align="right">1.7239074</td>
-<td align="right">0.1146236</td>
+<td align="right">2.8607972</td>
+<td align="right">8.003287</td>
+<td align="right">73.54778</td>
+<td align="right">3.757371</td>
+<td align="right">2.7193208</td>
+<td align="right">14.74386</td>
+<td align="right">0.5922068</td>
+<td align="right">0.1844375</td>
 </tr>
 <tr class="even">
-<td align="right">0.3998371</td>
-<td align="right">20.013646</td>
-<td align="right">156.56895</td>
-<td align="right">5.136718</td>
-<td align="right">1.2773925</td>
-<td align="right">9.468406</td>
-<td align="right">11.1833181</td>
-<td align="right">0.1349110</td>
+<td align="right">0.5226542</td>
+<td align="right">12.361976</td>
+<td align="right">86.38453</td>
+<td align="right">4.465336</td>
+<td align="right">2.3152293</td>
+<td align="right">14.91815</td>
+<td align="right">7.6004084</td>
+<td align="right">0.1551955</td>
 </tr>
 </tbody>
 </table>
@@ -172,7 +172,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <h3 class="hasAnchor">
 <a href="#create-a-dataset-for-concentration-time-curve" class="anchor"></a>Create a dataset for concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyConcTime &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffConcTime.html">caffConcTime</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTime))</code></pre></div>
+knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTime), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Subject</th>
@@ -183,32 +183,32 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.0</td>
-<td align="right">0.000000</td>
+<td align="right">0.00000</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.1</td>
-<td align="right">4.804026</td>
+<td align="right">10.30907</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.2</td>
-<td align="right">8.183896</td>
+<td align="right">12.15218</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.3</td>
-<td align="right">10.551014</td>
+<td align="right">12.30813</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.4</td>
-<td align="right">12.198019</td>
+<td align="right">12.13141</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.5</td>
-<td align="right">13.333073</td>
+<td align="right">11.89259</td>
 </tr>
 </tbody>
 </table>
@@ -250,7 +250,7 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <h3 class="hasAnchor">
 <a href="#create-a-pk-dataset-for-caffeine-multiple-doses" class="anchor"></a>Create a PK dataset for caffeine multiple doses</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyDatasetMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffDatasetMulti.html">caffDatasetMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDatasetMulti))</code></pre></div>
+knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDatasetMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">TmaxS</th>
@@ -264,64 +264,64 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="right">0.9587593</td>
-<td align="right">10.85319</td>
-<td align="right">112.82013</td>
-<td align="right">1.385890</td>
-<td align="right">156.10245</td>
-<td align="right">9.401678</td>
-<td align="right">16.65905</td>
-<td align="right">4.638581</td>
+<td align="right">1.2029469</td>
+<td align="right">8.579716</td>
+<td align="right">50.62085</td>
+<td align="right">1.075717</td>
+<td align="right">75.20861</td>
+<td align="right">4.218404</td>
+<td align="right">12.04216</td>
+<td align="right">0.8476183</td>
 </tr>
 <tr class="even">
-<td align="right">0.4440396</td>
-<td align="right">12.12077</td>
-<td align="right">88.61423</td>
-<td align="right">1.210001</td>
-<td align="right">113.96574</td>
-<td align="right">7.384519</td>
-<td align="right">15.64802</td>
-<td align="right">2.715786</td>
+<td align="right">1.0019286</td>
+<td align="right">12.224148</td>
+<td align="right">97.86719</td>
+<td align="right">1.214941</td>
+<td align="right">115.22740</td>
+<td align="right">8.155599</td>
+<td align="right">17.16252</td>
+<td align="right">3.0363000</td>
 </tr>
 <tr class="odd">
-<td align="right">0.4965853</td>
-<td align="right">15.88455</td>
-<td align="right">133.86951</td>
-<td align="right">1.281347</td>
-<td align="right">131.64500</td>
-<td align="right">11.155793</td>
-<td align="right">21.67148</td>
-<td align="right">4.758441</td>
+<td align="right">0.9590761</td>
+<td align="right">11.637888</td>
+<td align="right">78.46068</td>
+<td align="right">1.138553</td>
+<td align="right">94.75755</td>
+<td align="right">6.538390</td>
+<td align="right">15.67964</td>
+<td align="right">1.9080910</td>
 </tr>
 <tr class="even">
-<td align="right">2.1032832</td>
-<td align="right">13.04232</td>
-<td align="right">137.79841</td>
-<td align="right">1.298803</td>
-<td align="right">135.82555</td>
-<td align="right">11.483201</td>
-<td align="right">21.91545</td>
-<td align="right">5.041874</td>
+<td align="right">0.3737093</td>
+<td align="right">11.446757</td>
+<td align="right">66.73172</td>
+<td align="right">1.123953</td>
+<td align="right">90.52650</td>
+<td align="right">5.560976</td>
+<td align="right">13.78000</td>
+<td align="right">1.5197047</td>
 </tr>
 <tr class="odd">
-<td align="right">0.3585760</td>
-<td align="right">14.32243</td>
-<td align="right">120.75934</td>
-<td align="right">1.291717</td>
-<td align="right">134.13407</td>
-<td align="right">10.063278</td>
-<td align="right">19.34164</td>
-<td align="right">4.368049</td>
+<td align="right">0.6128070</td>
+<td align="right">14.469485</td>
+<td align="right">96.25545</td>
+<td align="right">1.156949</td>
+<td align="right">99.91095</td>
+<td align="right">8.021288</td>
+<td align="right">18.53835</td>
+<td align="right">2.5148741</td>
 </tr>
 <tr class="even">
-<td align="right">1.7420702</td>
-<td align="right">10.48619</td>
-<td align="right">80.82368</td>
-<td align="right">1.136858</td>
-<td align="right">94.27328</td>
-<td align="right">6.735307</td>
-<td align="right">16.21066</td>
-<td align="right">1.951483</td>
+<td align="right">1.4560358</td>
+<td align="right">11.902353</td>
+<td align="right">149.16911</td>
+<td align="right">1.503988</td>
+<td align="right">182.54801</td>
+<td align="right">12.430759</td>
+<td align="right">20.44046</td>
+<td align="right">6.8496171</td>
 </tr>
 </tbody>
 </table>
@@ -330,7 +330,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <h3 class="hasAnchor">
 <a href="#create-a-dataset-for-concentration-time-curve-1" class="anchor"></a>Create a dataset for concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyConcTimeMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffConcTimeMulti.html">caffConcTimeMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>, <span class="dt">Repeat =</span> <span class="dv">10</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTimeMulti))</code></pre></div>
+knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTimeMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Subject</th>
@@ -341,32 +341,32 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.0</td>
-<td align="right">0.000000</td>
+<td align="right">0.00000</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.2</td>
-<td align="right">6.024967</td>
+<td align="right">11.75536</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.4</td>
-<td align="right">9.356353</td>
+<td align="right">12.28351</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.6</td>
-<td align="right">11.132210</td>
+<td align="right">11.99316</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.8</td>
-<td align="right">12.011381</td>
+<td align="right">11.65194</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">12.375245</td>
+<td align="right">11.31618</td>
 </tr>
 </tbody>
 </table>

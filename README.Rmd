@@ -12,7 +12,6 @@ editor_options:
 library(knitr)
 knitr::opts_chunk$set(fig.width=8, fig.height=4, dev = 'png', dpi = 150, 
                       fig.path='assets/figures/', echo=TRUE, warning=FALSE, message=FALSE, 
-                      #cache=TRUE, 
                       results = 'asis')
 ```
 
@@ -44,14 +43,14 @@ caffsim::caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 ```{r}
 library(caffsim)
 MyDataset <- caffDataset(Weight = 20, Dose = 200, N = 20)
-knitr::kable(head(MyDataset))
+knitr::kable(head(MyDataset), format = 'markdown')
 ```
 
 ### Create a dataset for concentration-time curve
 
 ```{r}
 MyConcTime <- caffConcTime(Weight = 20, Dose = 200, N = 20)
-knitr::kable(head(MyConcTime))
+knitr::kable(head(MyConcTime), format = 'markdown') 
 ```
 
 ### Create a concentration-time curve
@@ -87,14 +86,14 @@ plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
 
 ```{r}
 MyDatasetMulti <- caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
-knitr::kable(head(MyDatasetMulti))
+knitr::kable(head(MyDatasetMulti), format = 'markdown') 
 ```
 
 ### Create a dataset for concentration-time curve
 
 ```{r}
 MyConcTimeMulti <- caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, Repeat = 10)
-knitr::kable(head(MyConcTimeMulti))
+knitr::kable(head(MyConcTimeMulti), format = 'markdown')
 ```
 
 ### Create a concentration-time curve
