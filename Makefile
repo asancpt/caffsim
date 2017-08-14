@@ -9,3 +9,6 @@ roxygen:
 
 CRAN:
 	make roxygen; make rd2pdf; Rscript -e "devtools::build()"; R CMD check --as-cran ../caffsim_*.tar.gz; mv ../caffsim_*.tar.gz releases
+
+readme:
+	Rscript -e "rmarkdown::render('README.Rmd')"
