@@ -1,9 +1,9 @@
 Package: caffsim
 Title: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
-Version: 0.1.0
-Date: 2017-08-13
+Version: 0.2.0
+Date: 2017-08-14
 Authors@R: person("Sungpil", "Han", email = "shan@acp.kr", role = c("aut", "cre"))
-Description: Simulate plasma caffeine concentrations using population pharmacokinetic model.
+Description: Simulate plasma caffeine concentrations using population pharmacokinetic model described in Lee, Kim, Perera, McLachlan and Bae (2015) <doi:10.1007/s00431-015-2581-x>.
 Depends:
     R (>= 3.3.2)
 Encoding: UTF-8
@@ -16,3 +16,5 @@ URL: https://github.com/asancpt/caffsim
 BugReports: https://github.com/asancpt/caffsim/issues
 RoxygenNote: 6.0.1
 Maintainer: Sungpil Han <shan@acp.kr>
+
+
