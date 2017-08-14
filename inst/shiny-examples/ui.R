@@ -12,7 +12,7 @@ shinyUI(
     title = "Caffeine Concentration Predictor",
     tabPanel(
       
-      # single ----
+      # 1.single ----
       
       title = "Single",
       sidebarLayout(
@@ -50,7 +50,7 @@ shinyUI(
       )
     ),
     
-    # multiple ----
+    # 2.multiple ----
     
     tabPanel(
       title = "Multiple",
@@ -90,7 +90,7 @@ shinyUI(
       )
     ),
     
-    # Cmax ----
+    # 3.Cmax ----
     
     tabPanel(
       title = "Cmax",
@@ -123,7 +123,7 @@ shinyUI(
       )
     ),
     
-    # AUC ----
+    # 4.AUC ----
     
     tabPanel(
       title = "AUC",
@@ -154,14 +154,14 @@ shinyUI(
       )
     ),
     
-    # help ----
+    # 5.help ----
     
     tabPanel(
       title = "Help", 
       withMathJax(includeMarkdown("README.md"))
     ),
     
-    # contact ----
+    # 6.contact ----
     
     tabPanel(
       title = "Contact", 
