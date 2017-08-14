@@ -4,6 +4,7 @@ tests
 README_files/
 README_cache/
 README.html
+/caffsim.pdf
 
 # History files
 .Rhistory
