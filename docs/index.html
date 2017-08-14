@@ -92,132 +92,22 @@ caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumenta
 <a href="#create-a-pk-dataset-for-caffeine-single-dose" class="anchor"></a>Create a PK dataset for caffeine single dose</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(caffsim)
 MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffDataset.html">caffDataset</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDataset), <span class="dt">format =</span> <span class="st">"markdown"</span>)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">Tmax</th>
-<th align="right">Cmax</th>
-<th align="right">AUC</th>
-<th align="right">Half_life</th>
-<th align="right">CL</th>
-<th align="right">V</th>
-<th align="right">Ka</th>
-<th align="right">Ke</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1.8699726</td>
-<td align="right">11.942921</td>
-<td align="right">114.48959</td>
-<td align="right">5.170630</td>
-<td align="right">1.746884</td>
-<td align="right">13.03390</td>
-<td align="right">1.381629</td>
-<td align="right">0.1340262</td>
-</tr>
-<tr class="even">
-<td align="right">0.5069094</td>
-<td align="right">14.482812</td>
-<td align="right">169.40717</td>
-<td align="right">7.746728</td>
-<td align="right">1.180588</td>
-<td align="right">13.19725</td>
-<td align="right">9.237596</td>
-<td align="right">0.0894571</td>
-</tr>
-<tr class="odd">
-<td align="right">1.6279809</td>
-<td align="right">11.340108</td>
-<td align="right">114.30639</td>
-<td align="right">5.738594</td>
-<td align="right">1.749683</td>
-<td align="right">14.48878</td>
-<td align="right">1.769991</td>
-<td align="right">0.1207613</td>
-</tr>
-<tr class="even">
-<td align="right">1.1904161</td>
-<td align="right">13.476839</td>
-<td align="right">143.66517</td>
-<td align="right">6.507960</td>
-<td align="right">1.392126</td>
-<td align="right">13.07345</td>
-<td align="right">2.875141</td>
-<td align="right">0.1064850</td>
-</tr>
-<tr class="odd">
-<td align="right">0.8566043</td>
-<td align="right">13.792874</td>
-<td align="right">106.19384</td>
-<td align="right">4.702812</td>
-<td align="right">1.883348</td>
-<td align="right">12.78071</td>
-<td align="right">4.001634</td>
-<td align="right">0.1473586</td>
-</tr>
-<tr class="even">
-<td align="right">1.5520878</td>
-<td align="right">9.966516</td>
-<td align="right">88.54418</td>
-<td align="right">4.955475</td>
-<td align="right">2.258760</td>
-<td align="right">16.15184</td>
-<td align="right">1.778149</td>
-<td align="right">0.1398453</td>
-</tr>
-</tbody>
-</table>
+<span class="kw">head</span>(MyDataset)</code></pre></div>
+<pre><code>   Tmax      Cmax       AUC Half_life       CL        V         Ka</code></pre>
+<p>1 1.4655830 15.242413 192.15030 7.650004 1.040852 11.48993 2.2963746 2 0.6206477 13.394232 80.59684 3.713971 2.481487 13.29895 5.6941801 3 0.4287541 16.644154 153.47752 6.085728 1.303122 11.44365 10.7121364 4 2.3118151 13.733302 136.49352 4.999064 1.465271 10.56996 0.9882366 5 0.3769276 8.929723 46.23018 3.315964 4.326178 20.70051 10.6341988 6 1.8191187 6.068538 49.95030 4.235773 4.003980 24.47323 1.3051557 Ke 1 0.09058818 2 0.18659273 3 0.11387299 4 0.13862596 5 0.20898898 6 0.16360650</p>
 </div>
 <div id="create-a-dataset-for-concentration-time-curve" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-dataset-for-concentration-time-curve" class="anchor"></a>Create a dataset for concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyConcTime &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffConcTime.html">caffConcTime</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTime), <span class="dt">format =</span> <span class="st">"markdown"</span>)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">Subject</th>
-<th align="right">Time</th>
-<th align="right">Conc</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.0</td>
-<td align="right">0.000000</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.1</td>
-<td align="right">2.298616</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.2</td>
-<td align="right">4.236687</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.3</td>
-<td align="right">5.867879</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.4</td>
-<td align="right">7.237895</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.5</td>
-<td align="right">8.385654</td>
-</tr>
-</tbody>
-</table>
+<span class="kw">head</span>(MyConcTime)</code></pre></div>
+<p>Subject Time Conc 1 1 0.0 0.000000 2 1 0.1 3.631070 3 1 0.2 6.003892 4 1 0.3 7.534792 5 1 0.4 8.502650 6 1 0.5 9.094273</p>
 </div>
 <div id="create-a-concentration-time-curve" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-concentration-time-curve" class="anchor"></a>Create a concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/caffPlot.html">caffPlot</a></span>(MyConcTime)</code></pre></div>
-<p><img src="assets/figures/MyPlotMyConcTime-1.png" width="1200" style="display: block; margin: auto;"></p>
+<p><img src="assets/figures/MyPlotMyConcTime-1.png" width="1200"></p>
 </div>
 <div id="create-plots-for-publication-according-to-the-amount-of-caffeine" class="section level3">
 <h3 class="hasAnchor">
@@ -240,7 +130,7 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
           MyPlotPub[[<span class="dv">5</span>]], MyPlotPub[[<span class="dv">6</span>]],
           MyPlotPub[[<span class="dv">7</span>]], MyPlotPub[[<span class="dv">8</span>]],
           <span class="dt">labels=</span>LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">4</span>)</code></pre></div>
-<p><img src="assets/figures/MyPlotPub-1.png" width="1200" style="display: block; margin: auto;"></p>
+<p><img src="assets/figures/MyPlotPub-1.png" width="1200"></p>
 </div>
 </div>
 <div id="multiple-dose" class="section level2">
@@ -250,132 +140,31 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <h3 class="hasAnchor">
 <a href="#create-a-pk-dataset-for-caffeine-multiple-doses" class="anchor"></a>Create a PK dataset for caffeine multiple doses</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyDatasetMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffDatasetMulti.html">caffDatasetMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDatasetMulti), <span class="dt">format =</span> <span class="st">"markdown"</span>)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">TmaxS</th>
-<th align="right">CmaxS</th>
-<th align="right">AUCS</th>
-<th align="right">AI</th>
-<th align="right">Aavss</th>
-<th align="right">Cavss</th>
-<th align="right">Cmaxss</th>
-<th align="right">Cminss</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1.2623099</td>
-<td align="right">9.247759</td>
-<td align="right">128.61266</td>
-<td align="right">1.626616</td>
-<td align="right">209.22433</td>
-<td align="right">10.717722</td>
-<td align="right">16.63033</td>
-<td align="right">6.406447</td>
-</tr>
-<tr class="even">
-<td align="right">0.0596418</td>
-<td align="right">16.398417</td>
-<td align="right">94.34726</td>
-<td align="right">1.138330</td>
-<td align="right">94.69398</td>
-<td align="right">7.862271</td>
-<td align="right">18.86339</td>
-<td align="right">2.292285</td>
-</tr>
-<tr class="odd">
-<td align="right">0.3777523</td>
-<td align="right">10.492298</td>
-<td align="right">78.14808</td>
-<td align="right">1.223600</td>
-<td align="right">117.42354</td>
-<td align="right">6.512340</td>
-<td align="right">13.54401</td>
-<td align="right">2.475026</td>
-</tr>
-<tr class="even">
-<td align="right">0.5557049</td>
-<td align="right">10.430518</td>
-<td align="right">110.74592</td>
-<td align="right">1.434429</td>
-<td align="right">167.08721</td>
-<td align="right">9.228827</td>
-<td align="right">15.81277</td>
-<td align="right">4.789030</td>
-</tr>
-<tr class="odd">
-<td align="right">0.8842356</td>
-<td align="right">8.258662</td>
-<td align="right">62.43815</td>
-<td align="right">1.194683</td>
-<td align="right">110.00834</td>
-<td align="right">5.203179</td>
-<td align="right">11.27773</td>
-<td align="right">1.837797</td>
-</tr>
-<tr class="even">
-<td align="right">0.7963905</td>
-<td align="right">15.580584</td>
-<td align="right">82.18848</td>
-<td align="right">1.070070</td>
-<td align="right">73.21541</td>
-<td align="right">6.849040</td>
-<td align="right">19.97860</td>
-<td align="right">1.308234</td>
-</tr>
-</tbody>
-</table>
+<span class="kw">head</span>(MyDatasetMulti)</code></pre></div>
+<pre><code>  TmaxS     CmaxS      AUCS       AI     Aavss     Cavss    Cmaxss</code></pre>
+<p>1 0.6874280 13.464072 141.82443 1.417829 163.35101 11.818702 20.473750 2 0.4241709 10.966504 54.76227 1.077016 75.65927 4.563523 12.965405 3 0.7065063 7.140538 55.43862 1.221005 116.76742 4.619885 9.641678 4 0.9717726 14.418648 96.82411 1.136089 94.05287 8.068676 19.452172 5 1.0669306 12.002853 88.39679 1.168734 103.12543 7.366399 16.662146 6 1.7867751 9.243687 65.45688 1.095977 81.95498 5.454740 14.558817 Cminss 1 6.0335344 2 0.9271434 3 1.7451689 4 2.3301166 5 2.4055714 6 1.2749520</p>
 </div>
 <div id="create-a-dataset-for-concentration-time-curve-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-dataset-for-concentration-time-curve-1" class="anchor"></a>Create a dataset for concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyConcTimeMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffConcTimeMulti.html">caffConcTimeMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>, <span class="dt">Repeat =</span> <span class="dv">10</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTimeMulti), <span class="dt">format =</span> <span class="st">"markdown"</span>)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">Subject</th>
-<th align="right">Time</th>
-<th align="right">Conc</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.0</td>
-<td align="right">0.000000</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.2</td>
-<td align="right">9.830615</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.4</td>
-<td align="right">10.295711</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.6</td>
-<td align="right">9.952559</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.8</td>
-<td align="right">9.553892</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">1.0</td>
-<td align="right">9.165345</td>
-</tr>
-</tbody>
-</table>
+<span class="kw">head</span>(MyConcTimeMulti)</code></pre></div>
 </div>
+</div>
+</div>
+<div id="a-tibble-6-x-3" class="section level1">
+<h1 class="hasAnchor">
+<a href="#a-tibble-6-x-3" class="anchor"></a>A tibble: 6 x 3</h1>
+</div>
+<div id="groups-subject-1" class="section level1">
+<h1 class="hasAnchor">
+<a href="#groups-subject-1" class="anchor"></a>Groups: Subject [1]</h1>
+<p>Subject Time Conc <dbl><dbl><dbl> 1 1 0.0 0.00000 2 1 0.2 13.66385 3 1 0.4 15.43162 4 1 0.6 15.18948 5 1 0.8 14.62639 6 1 1.0 14.03011</dbl></dbl></dbl></p>
 <div id="create-a-concentration-time-curve-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-concentration-time-curve-1" class="anchor"></a>Create a concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/caffPlotMulti.html">caffPlotMulti</a></span>(MyConcTimeMulti)</code></pre></div>
-<p><img src="assets/figures/MyPlotMultiMyConcTimeMulti-1.png" width="1200" style="display: block; margin: auto;"></p>
+<p><img src="assets/figures/MyPlotMultiMyConcTimeMulti-1.png" width="1200"></p>
 </div>
 <div id="create-plots-for-publication-according-to-dosing-interval" class="section level3">
 <h3 class="hasAnchor">
@@ -398,8 +187,7 @@ MyPlotMultiPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
           MyPlotMultiPub[[<span class="dv">5</span>]], MyPlotMultiPub[[<span class="dv">6</span>]],
           MyPlotMultiPub[[<span class="dv">7</span>]], MyPlotMultiPub[[<span class="dv">8</span>]],
           <span class="dt">labels=</span>LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">4</span>)</code></pre></div>
-<p><img src="assets/figures/MyPlotMultiPub-1.png" width="1200" style="display: block; margin: auto;"></p>
-</div>
+<p><img src="assets/figures/MyPlotMultiPub-1.png" width="1200"></p>
 </div>
 </div>
 </div>
