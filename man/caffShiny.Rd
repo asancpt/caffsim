@@ -6,11 +6,8 @@
 \usage{
 caffShiny()
 }
-\value{
-shiny app
-}
 \description{
-\code{caffShiny} will run an internal shiny app \code{Caffeine Concentration Predictor} in order to interactively simulate plasma caffeine concentration.
+\code{caffShiny} runs an internal shiny app \code{Caffeine Concentration Predictor} in order to interactively simulate plasma caffeine concentration.
 }
 \seealso{
 \url{https://asan.shinyapps.io/caff/}

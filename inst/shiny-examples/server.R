@@ -19,14 +19,40 @@ paramValueDesc <- function(df) {
     select(param, value) 
 }
 
-round_df <- function(x, digits) {
+round_df <- function(df, digits) {
   # round all numeric variables
-  # x: data frame 
+  # df: data frame 
   # digits: number of digits to round
-  numeric_columns <- sapply(x, mode) == 'numeric'
-  x[numeric_columns] <-  round(x[numeric_columns], digits)
-  x
+  numeric_columns <- sapply(df, mode) == 'numeric'
+  df[numeric_columns] <-  round(df[numeric_columns], digits)
+  return(df)
 }
+
+caffOverLimit <- function(caffConcTime){
+  caffConcTime %>% 
+    mutate(Conc40 = ifelse(Conc >=40, 0.1, 0),
+           Conc80 = ifelse(Conc >=80, 0.1, 0)) %>% 
+    select(Subject, Conc40, Conc80) %>% 
+    group_by(Subject) %>% 
+    summarise(MeanConc80 = sum(Conc80), 
+              MeanConc40 = sum(Conc40)) %>% 
+    select(-Subject) %>% 
+    # paramValueDesc starts
+    gather(param, value) %>% 
+    group_by(param) %>% 
+    summarise_at(vars(value), funs(mean, sd, min, max)) %>% 
+    mutate(value = sprintf('%0.2f (%0.2f) [%0.2f-%0.2f]', mean, sd, min, max)) %>% 
+    select(param, value) %>% 
+    # paramValueDesc ends
+    mutate(param = ifelse(param == 'MeanConc40', 'Duration of conc. >40mg/L (hr)', 'Duration of conc. >80mg/L (hr)'))
+}
+
+#input <- list()
+#input$concBWT <- 50; input$concDose <- 200; input$concNum <- 20
+#input$cmaxDose <- 50; input$cmaxNum <- 20
+#input$aucDose <- 50; input$aucNum <- 20
+#input$Log <- FALSE
+#input$superBWT <- 20; input$superDose <- 500; input$superNum <- 20; input$superTau <- 5; input$superRepeat <- 3
 
 # main ----
 
@@ -98,26 +124,18 @@ shinyServer(function(input, output, session) {
   # overlimit ----
   
   output$overlimit <- renderTable({
-    Subject <- seq(1, input$concNum, length.out = input$concNum) # 
-    Time <- seq(0,30, by = 0.1)
-    Grid <- expand.grid(x = Subject, y = Time) %>% select(Subject=x, Time=y)
-    
-    ggConc <- caffDataset(input$concBWT, input$concDose, input$concNum) %>% 
-      select(CL, V, Ka, Ke) %>% 
-      mutate(Subject = row_number()) %>% 
-      left_join(Grid, by = "Subject") %>% 
-      mutate(Conc = input$concDose / V * Ka / (Ka - Ke) * (exp(-Ke * Time) - exp(-Ka * Time))) %>% 
-      mutate(Conc40 = ifelse(Conc >=40, 0.1, 0),
-             Conc80 = ifelse(Conc >=80, 0.1, 0)) %>% 
-      select(Subject, Conc40, Conc80) %>% 
-      group_by(Subject) %>% 
-      summarise(MeanConc80 = sum(Conc80), MeanConc40 = sum(Conc40)) %>% 
-      select(-Subject)
-    
-    OverLimit <- ggConc %>% 
-      paramValueDesc %>% 
-      mutate(param = ifelse(param == 'MeanConc40', 'Duration of conc. >40mg/L (hr)', 'Duration of conc. >80mg/L (hr)'))
-    return(OverLimit)
+    overLimit <- caffConcTime(input$concBWT, input$concDose, input$concNum) %>% 
+      caffOverdose()
+    return(overLimit)
+  })
+  
+  # overlimitMulti ----
+  
+  output$overlimitMulti <- renderTable({
+    overLimit <- caffConcTimeMulti(input$superBWT, input$superDose, input$superNum,
+                                   input$superTau, input$superRepeat) %>% 
+      caffOverdose()
+    return(overLimit)
   })
   
   # conccontents ----

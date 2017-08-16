@@ -10,7 +10,7 @@
 <img src=http://i.imgur.com/RYJHxNq.png width = 500 />
 
 - <https://asan.shinyapps.io/caff>
-- 2016-12 
+- 2016-12
 
 #### Online NonCompart
 <img src=http://i.imgur.com/k6VqHp2.png width = 500 />

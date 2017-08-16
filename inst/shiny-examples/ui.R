@@ -1,12 +1,5 @@
 # setup ----
 
-# input <- list()
-# input$concBWT <- 50; input$concDose <- 200; input$concNum <- 20
-# input$cmaxDose <- 50; input$cmaxNum <- 20
-# input$aucDose <- 50; input$aucNum <- 20
-# input$Log <- FALSE
-# input$superBWT <- 20; input$superDose <- 500; input$superNum <- 20; input$superTau <- 5; input$superRepeat <- 3
-
 shinyUI(
   navbarPage(
     title = "Caffeine Concentration Predictor",
@@ -83,6 +76,8 @@ shinyUI(
           tags$h3("Concentration-time Curves of Caffeine"),
           plotOutput("superplot"),
           includeMarkdown("reference.md"),
+          tags$h3("Duration of Toxic Concentration"),
+          tableOutput("overlimitMulti"),
           tags$h3("Descriptive Statistics of PK parameters"),
           tableOutput("supercontents")
           
