@@ -1,7 +1,7 @@
 Package: caffsim
 Title: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
-Version: 0.2.1
-Date: 2017-08-15
+Version: 0.2.2
+Date: 2017-08-17
 Authors@R: person("Sungpil", "Han", email = "shan@acp.kr", role = c("aut", "cre"))
 Description: Simulate plasma caffeine concentrations using population pharmacokinetic model described in Lee, Kim, Perera, McLachlan and Bae (2015) <doi:10.1007/s00431-015-2581-x>.
 Depends:
@@ -10,7 +10,7 @@ Encoding: UTF-8
 License: GPL-3 | file LICENSE
 LazyData: true
 Copyright: 2017, Sungpil Han
-Imports: mgcv, dplyr, ggplot2, shiny
+Imports: mgcv, dplyr, ggplot2, shiny, markdown
 NeedsCompilation: no
 URL: https://github.com/asancpt/caffsim
 BugReports: https://github.com/asancpt/caffsim/issues
