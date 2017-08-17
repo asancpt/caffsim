@@ -26,7 +26,6 @@ caffConcTime <- function(Weight, Dose, N = 20){
   return(ggConc)
 }
 
-
 #' Create a dataset of the concentration-time curve of multiple dosing of caffeine
 #'
 #' \code{caffConcTimeMulti} will create a dataset of the concentration-time curve of multiple oral administrations of caffeine
@@ -74,4 +73,3 @@ caffConcTimeMulti <- function(Weight, Dose, N = 20, Tau = 8, Repeat = 4){
   ggsuper <- ggsuper %>% select(Subject, Time, Conc)
   return(ggsuper)
 }
-
