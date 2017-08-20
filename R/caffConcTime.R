@@ -14,7 +14,7 @@
 #' @seealso \url{https://asancpt.github.io/caffsim}
 
 caffConcTime <- function(Weight, Dose, N = 20){
-  ggConc <- caffDataset(Weight, Dose, N) %>% 
+  ggConc <- caffPkparam(Weight, Dose, N) %>% 
     select(CL, V, Ka, Ke) %>% 
     mutate(Subject = row_number()) %>% 
     left_join(expand.grid(
@@ -53,7 +53,7 @@ caffConcTimeMulti <- function(Weight, Dose, N = 20, Tau = 8, Repeat = 4){
     as_tibble() %>% 
     select(Subject=x, Time=y)
   
-  ggsuper <- caffDataset(Weight, Dose, N) %>% 
+  ggsuper <- caffPkparam(Weight, Dose, N) %>% 
     select(CL, V, Ka, Ke) %>% 
     mutate(Subject = row_number()) %>% 
     left_join(Grid, by = "Subject") %>% 

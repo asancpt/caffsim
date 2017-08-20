@@ -7,7 +7,7 @@
 caffDescstat(caffPkparam)
 }
 \value{
-The dataset of pharmacokinetic parameters of subjects after multiple caffeine dose following multivariate normal
+The descriptive statistics of pharmacokinetic parameters
 }
 \description{
 \code{caffDescstat} will calculate descriptive statistics of simulated PK parameters
@@ -15,6 +15,10 @@ The dataset of pharmacokinetic parameters of subjects after multiple caffeine do
 \examples{
 caffDescstat(caffPkparam(20,500))
 caffDescstat(caffPkparamMulti(20,500))
+caffDescExample <- cbind(caffDescstat(caffPkparam(20,500)), 
+                         caffDescstat(caffPkparam(50,500))[,2])
+colnames(caffDescExample)[2:3] <- c('20 kg', '50 kg')      
+caffDescExample
 }
 \seealso{
 \url{https://asancpt.github.io/caffsim}
