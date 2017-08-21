@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create concentration-time curve after single dose of caffeine <U+2014> caffPlot bcaffsim</title>
+<title>Calculate a duration of plasma caffeine concentration over specified toxic limits <U+2014> caffOverdose bcaffsim</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -76,39 +76,43 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create concentration-time curve after single dose of caffeine</h1>
+    <h1>Calculate a duration of plasma caffeine concentration over specified toxic limits</h1>
     </div>
 
     
-    <p><code>caffPlot</code> will create concentration-time curve after single dose of caffeine</p>
+    <p><code>caffOverdose</code> calculates a time duration of plasma caffeine concentration over specified toxic limits (40 mg/L or 80 mg/L)</p>
     
 
-    <pre class="usage"><span class='fu'>caffPlot</span>(<span class='no'>caffConcTimeData</span>, <span class='kw'>log</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>caffOverdose</span>(<span class='no'>caffConcTimeData</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>caffConcTimeData</th>
-      <td><p>data frame of concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)</p></td>
-    </tr>
-    <tr>
-      <th>log</th>
-      <td><p>y axis log</p></td>
+      <td><p>data frame containing concentration-time data</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The concentration-time curve</p>
+    <p>descriptive statistics of duration of toxic concentrations</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href = 'https://asancpt.github.io/caffsim'>https://asancpt.github.io/caffsim</a></p>
+    <p><a href = 'https://asan.shinyapps.io/caff/'>https://asan.shinyapps.io/caff/</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>caffPlot</span>(<span class='fu'><a href='caffConcTime.html'>caffConcTime</a></span>(<span class='kw'>Weight</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Dose</span> <span class='kw'>=</span> <span class='fl'>200</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>))</div><img src='caffPlot-2.png' alt='' width='540' height='400' /></pre>
+    <pre class="examples"><div class='input'><span class='fu'>caffOverdose</span>(<span class='fu'><a href='caffConcTime.html'>caffConcTime</a></span>(<span class='kw'>Weight</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Dose</span> <span class='kw'>=</span> <span class='fl'>200</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>))</div><div class='output co'>#&gt; # A tibble: 2 x 2
+#&gt;                             param                         value
+#&gt;                             &lt;chr&gt;                         &lt;chr&gt;
+#&gt; 1 Duration of conc. &gt;40 mg/L (hr) 0.00 (0.00) [0.00-0.00],   0%
+#&gt; 2 Duration of conc. &gt;80 mg/L (hr) 0.00 (0.00) [0.00-0.00],   0%</div><div class='input'><span class='fu'>caffOverdose</span>(<span class='fu'><a href='caffConcTimeMulti.html'>caffConcTimeMulti</a></span>(<span class='kw'>Weight</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Dose</span> <span class='kw'>=</span> <span class='fl'>200</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Tau</span> <span class='kw'>=</span> <span class='fl'>8</span>, <span class='kw'>Repeat</span> <span class='kw'>=</span> <span class='fl'>4</span>))</div><div class='output co'>#&gt; # A tibble: 2 x 2
+#&gt;                             param                         value
+#&gt;                             &lt;chr&gt;                         &lt;chr&gt;
+#&gt; 1 Duration of conc. &gt;40 mg/L (hr) 0.00 (0.00) [0.00-0.00],   0%
+#&gt; 2 Duration of conc. &gt;80 mg/L (hr) 0.00 (0.00) [0.00-0.00],   0%</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

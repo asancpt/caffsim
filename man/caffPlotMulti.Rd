@@ -7,7 +7,7 @@
 caffPlotMulti(caffConcTimeMultiData, log = FALSE)
 }
 \arguments{
-\item{caffConcTimeMultiData}{Concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)}
+\item{caffConcTimeMultiData}{data frame of concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)}
 
 \item{log}{y axis log}
 }

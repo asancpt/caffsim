@@ -4,10 +4,10 @@
 \alias{caffOverdose}
 \title{Calculate a duration of plasma caffeine concentration over specified toxic limits}
 \usage{
-caffOverdose(caffConcTime)
+caffOverdose(caffConcTimeData)
 }
 \arguments{
-\item{caffConcTime}{data frame containing concentration-time data}
+\item{caffConcTimeData}{data frame containing concentration-time data}
 }
 \value{
 descriptive statistics of duration of toxic concentrations

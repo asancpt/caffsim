@@ -32,10 +32,10 @@ install.pacakges("devtools")
 devtools::install_github("asancpt/caffsim")
 
 # Simply create single dose dataset
-caffsim::caffDataset(Weight = 20, Dose = 200, N = 20) 
+caffsim::caffPkparam(Weight = 20, Dose = 200, N = 20) 
 
 # Simply create multiple dose dataset
-caffsim::caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) 
+caffsim::caffPkparamMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) 
 ```
 
 ## Single dose
@@ -44,7 +44,7 @@ caffsim::caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 
 ```{r}
 library(caffsim)
-MyDataset <- caffDataset(Weight = 20, Dose = 200, N = 20)
+MyDataset <- caffPkparam(Weight = 20, Dose = 200, N = 20)
 knitr::kable(head(MyDataset), format = 'markdown')
 ```
 
@@ -87,7 +87,7 @@ plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
 ### Create a PK dataset for caffeine multiple doses
 
 ```{r}
-MyDatasetMulti <- caffDatasetMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
+MyDatasetMulti <- caffPkparamMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 knitr::kable(head(MyDatasetMulti), format = 'markdown') 
 ```
 

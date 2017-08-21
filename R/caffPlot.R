@@ -2,7 +2,7 @@
 #'
 #' \code{caffPlot} will create concentration-time curve after single dose of caffeine
 #'
-#' @param caffConcTimeData Concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)
+#' @param caffConcTimeData data frame of concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)
 #' @param log y axis log 
 #' @return The concentration-time curve
 #' @export
@@ -13,7 +13,7 @@
 #' @seealso \url{https://asancpt.github.io/caffsim}
 
 caffPlot <- function(caffConcTimeData, log = FALSE){
-  caffConcTime <- caffConcTimeData
+  caffConcTime <- caffConcTimeData 
   p <- ggplot(caffConcTime, aes(x=Time, y=Conc)) + 
     xlab("Time (hour)") + ylab("Concentration (mg/L)") +
     scale_x_continuous(breaks = seq(from = 0, to = 24, by = 4)) +
@@ -31,7 +31,7 @@ caffPlot <- function(caffConcTimeData, log = FALSE){
 #'
 #' \code{caffPlotMulti} will create concentration-time curve after multiple doses of caffeine
 #'
-#' @param caffConcTimeMultiData Concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)
+#' @param caffConcTimeMultiData data frame of concentration-time dataset having column names Subject, Time, and Conc (case-sensitive)
 #' @param log y axis log 
 #' @return The concentration-time curve
 #' @export

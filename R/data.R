@@ -12,4 +12,4 @@
 
 "UnitTable"
 
-globVar <- utils::globalVariables(c('CL', 'V', 'Ka', 'Ke', 'x', 'y', 'Time', 'Subject', 'Conc', 'AI', 'AUC', 'Aavss', 'Cavss', 'Cmax', 'Cmaxss', 'Cminss', 'ConcOrig', 'ConcTemp', 'Half_life', 'Tmax', 'X1', 'X2', 'X3', 'eta1', 'eta2', 'eta3', 'Conc40', 'Conc80', 'gather', 'param', 'sd', 'value'))
+globVar <- utils::globalVariables(c('CL', 'V', 'Ka', 'Ke', 'x', 'y', 'Time', 'Subject', 'Conc', 'AI', 'AUC', 'Aavss', 'Cavss', 'Cmax', 'Cmaxss', 'Cminss', 'ConcOrig', 'ConcTemp', 'Half_life', 'Tmax', 'X1', 'X2', 'X3', 'eta1', 'eta2', 'eta3', 'Conc40', 'Conc80', 'gather', 'param', 'sd', 'value', 'subjid'))

@@ -29,12 +29,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="/index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li>
@@ -80,13 +74,13 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.pacakges</span>(<span class="st">"devtools"</span>)
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"asancpt/caffsim"</span>)
+devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"asancpt/caffsim"</span>)
 
 <span class="co"># Simply create single dose dataset</span>
-caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/caffsim/topics/caffDataset">caffDataset</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>) 
+caffsim<span class="op">::</span><span class="kw"><a href="reference/caffPkparam.html">caffPkparam</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>) 
 
 <span class="co"># Simply create multiple dose dataset</span>
-caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/caffsim/topics/caffDatasetMulti">caffDatasetMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>) </code></pre></div>
+caffsim<span class="op">::</span><span class="kw"><a href="reference/caffPkparamMulti.html">caffPkparamMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>) </code></pre></div>
 </div>
 <div id="single-dose" class="section level2">
 <h2 class="hasAnchor">
@@ -95,10 +89,11 @@ caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumenta
 <h3 class="hasAnchor">
 <a href="#create-a-pk-dataset-for-caffeine-single-dose" class="anchor"></a>Create a PK dataset for caffeine single dose</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(caffsim)
-MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffDataset.html">caffDataset</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDataset), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
+MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkparam.html">caffPkparam</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
+knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(MyDataset), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
+<th align="right">subjid</th>
 <th align="right">Tmax</th>
 <th align="right">Cmax</th>
 <th align="right">AUC</th>
@@ -110,64 +105,70 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="right">1.2983433</td>
-<td align="right">10.956116</td>
-<td align="right">81.53021</td>
-<td align="right">4.152302</td>
-<td align="right">2.453079</td>
-<td align="right">14.69830</td>
-<td align="right">2.1272561</td>
-<td align="right">0.1668954</td>
+<td align="right">1</td>
+<td align="right">0.9959953</td>
+<td align="right">9.670602</td>
+<td align="right">73.65128</td>
+<td align="right">4.532331</td>
+<td align="right">2.715499</td>
+<td align="right">17.75980</td>
+<td align="right">3.209090</td>
+<td align="right">0.1529014</td>
 </tr>
 <tr class="even">
-<td align="right">0.7804773</td>
-<td align="right">10.575096</td>
-<td align="right">74.49329</td>
-<td align="right">4.305330</td>
-<td align="right">2.684806</td>
-<td align="right">16.67962</td>
-<td align="right">4.3994784</td>
-<td align="right">0.1609633</td>
+<td align="right">2</td>
+<td align="right">0.7156960</td>
+<td align="right">10.211855</td>
+<td align="right">80.47951</td>
+<td align="right">4.939794</td>
+<td align="right">2.485105</td>
+<td align="right">17.71415</td>
+<td align="right">5.183737</td>
+<td align="right">0.1402893</td>
 </tr>
 <tr class="odd">
-<td align="right">0.6671724</td>
-<td align="right">11.523967</td>
-<td align="right">116.97827</td>
-<td align="right">6.555507</td>
-<td align="right">1.709719</td>
-<td align="right">16.17327</td>
-<td align="right">6.2111445</td>
-<td align="right">0.1057127</td>
+<td align="right">3</td>
+<td align="right">0.8594890</td>
+<td align="right">9.814400</td>
+<td align="right">73.36944</td>
+<td align="right">4.544231</td>
+<td align="right">2.725931</td>
+<td align="right">17.87483</td>
+<td align="right">3.934138</td>
+<td align="right">0.1525011</td>
 </tr>
 <tr class="even">
-<td align="right">6.7537305</td>
-<td align="right">6.566525</td>
-<td align="right">139.39721</td>
-<td align="right">8.460703</td>
-<td align="right">1.434749</td>
-<td align="right">17.51657</td>
-<td align="right">0.2428075</td>
-<td align="right">0.0819081</td>
+<td align="right">4</td>
+<td align="right">0.3514780</td>
+<td align="right">11.507595</td>
+<td align="right">62.23129</td>
+<td align="right">3.495375</td>
+<td align="right">3.213817</td>
+<td align="right">16.20995</td>
+<td align="right">11.831892</td>
+<td align="right">0.1982620</td>
 </tr>
 <tr class="odd">
-<td align="right">0.3146547</td>
-<td align="right">7.919618</td>
-<td align="right">50.31107</td>
-<td align="right">4.178585</td>
-<td align="right">3.975268</td>
-<td align="right">23.96969</td>
-<td align="right">14.3391304</td>
-<td align="right">0.1658456</td>
+<td align="right">5</td>
+<td align="right">0.7166909</td>
+<td align="right">10.788373</td>
+<td align="right">81.18156</td>
+<td align="right">4.690851</td>
+<td align="right">2.463614</td>
+<td align="right">16.67597</td>
+<td align="right">5.085271</td>
+<td align="right">0.1477344</td>
 </tr>
 <tr class="even">
-<td align="right">0.1376175</td>
-<td align="right">17.001494</td>
-<td align="right">151.15947</td>
-<td align="right">6.065307</td>
-<td align="right">1.323106</td>
-<td align="right">11.58015</td>
-<td align="right">43.2506543</td>
-<td align="right">0.1142564</td>
+<td align="right">6</td>
+<td align="right">0.5437633</td>
+<td align="right">13.477116</td>
+<td align="right">114.02343</td>
+<td align="right">5.473038</td>
+<td align="right">1.754026</td>
+<td align="right">13.85259</td>
+<td align="right">7.674990</td>
+<td align="right">0.1266207</td>
 </tr>
 </tbody>
 </table>
@@ -176,7 +177,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <h3 class="hasAnchor">
 <a href="#create-a-dataset-for-concentration-time-curve" class="anchor"></a>Create a dataset for concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyConcTime &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffConcTime.html">caffConcTime</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTime), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
+knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(MyConcTime), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Subject</th>
@@ -192,27 +193,27 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.1</td>
-<td align="right">7.196838</td>
+<td align="right">2.843399</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.2</td>
-<td align="right">9.214124</td>
+<td align="right">4.934570</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.3</td>
-<td align="right">9.682327</td>
+<td align="right">6.465163</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.4</td>
-<td align="right">9.689060</td>
+<td align="right">7.578073</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.5</td>
-<td align="right">9.560116</td>
+<td align="right">8.379840</td>
 </tr>
 </tbody>
 </table>
@@ -239,7 +240,7 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">"none"</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">"Single Dose "</span>, x, <span class="st">"mg"</span>)))
 
-<span class="kw"><a href="http://www.rdocumentation.org/packages/cowplot/topics/plot_grid">plot_grid</a></span>(MyPlotPub[[<span class="dv">1</span>]], MyPlotPub[[<span class="dv">2</span>]],
+<span class="kw">plot_grid</span>(MyPlotPub[[<span class="dv">1</span>]], MyPlotPub[[<span class="dv">2</span>]],
           MyPlotPub[[<span class="dv">3</span>]], MyPlotPub[[<span class="dv">4</span>]],
           MyPlotPub[[<span class="dv">5</span>]], MyPlotPub[[<span class="dv">6</span>]],
           MyPlotPub[[<span class="dv">7</span>]], MyPlotPub[[<span class="dv">8</span>]],
@@ -253,10 +254,11 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <div id="create-a-pk-dataset-for-caffeine-multiple-doses" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-pk-dataset-for-caffeine-multiple-doses" class="anchor"></a>Create a PK dataset for caffeine multiple doses</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyDatasetMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffDatasetMulti.html">caffDatasetMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDatasetMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyDatasetMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkparamMulti.html">caffPkparamMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>)
+knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(MyDatasetMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
 <table class="table">
 <thead><tr class="header">
+<th align="right">subjid</th>
 <th align="right">TmaxS</th>
 <th align="right">CmaxS</th>
 <th align="right">AUCS</th>
@@ -268,64 +270,70 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="right">0.9254117</td>
-<td align="right">11.166286</td>
-<td align="right">80.06682</td>
-<td align="right">1.166988</td>
-<td align="right">102.65300</td>
-<td align="right">6.672235</td>
-<td align="right">15.13881</td>
-<td align="right">2.166262</td>
+<td align="right">1</td>
+<td align="right">1.5629051</td>
+<td align="right">8.722438</td>
+<td align="right">70.67756</td>
+<td align="right">1.176771</td>
+<td align="right">105.2840</td>
+<td align="right">5.889797</td>
+<td align="right">13.13880</td>
+<td align="right">1.973675</td>
 </tr>
 <tr class="even">
-<td align="right">0.3046590</td>
-<td align="right">14.006319</td>
-<td align="right">112.70813</td>
-<td align="right">1.269043</td>
-<td align="right">128.66867</td>
-<td align="right">9.392344</td>
-<td align="right">18.48857</td>
-<td align="right">3.919663</td>
+<td align="right">2</td>
+<td align="right">0.6547279</td>
+<td align="right">17.948527</td>
+<td align="right">158.34469</td>
+<td align="right">1.296978</td>
+<td align="right">135.3908</td>
+<td align="right">13.195391</td>
+<td align="right">25.22852</td>
+<td align="right">5.776753</td>
 </tr>
 <tr class="odd">
-<td align="right">0.4415136</td>
-<td align="right">14.484040</td>
-<td align="right">82.77202</td>
-<td align="right">1.113441</td>
-<td align="right">87.38637</td>
-<td align="right">6.897669</td>
-<td align="right">17.54089</td>
-<td align="right">1.787126</td>
+<td align="right">3</td>
+<td align="right">0.9100442</td>
+<td align="right">9.783148</td>
+<td align="right">85.20940</td>
+<td align="right">1.269586</td>
+<td align="right">128.8005</td>
+<td align="right">7.100783</td>
+<td align="right">13.96936</td>
+<td align="right">2.966277</td>
 </tr>
 <tr class="even">
-<td align="right">0.6985521</td>
-<td align="right">9.811006</td>
-<td align="right">65.14641</td>
-<td align="right">1.150428</td>
-<td align="right">98.10446</td>
-<td align="right">5.428867</td>
-<td align="right">12.70591</td>
-<td align="right">1.661406</td>
+<td align="right">4</td>
+<td align="right">1.9478795</td>
+<td align="right">11.752491</td>
+<td align="right">152.08453</td>
+<td align="right">1.491204</td>
+<td align="right">179.7277</td>
+<td align="right">12.673711</td>
+<td align="right">20.98705</td>
+<td align="right">6.913154</td>
 </tr>
 <tr class="odd">
-<td align="right">1.0782927</td>
-<td align="right">8.723065</td>
-<td align="right">85.00293</td>
-<td align="right">1.329039</td>
-<td align="right">142.96488</td>
-<td align="right">7.083577</td>
-<td align="right">13.14276</td>
-<td align="right">3.253841</td>
+<td align="right">5</td>
+<td align="right">0.1781253</td>
+<td align="right">12.716551</td>
+<td align="right">105.53832</td>
+<td align="right">1.295502</td>
+<td align="right">135.0384</td>
+<td align="right">8.794860</td>
+<td align="right">16.83973</td>
+<td align="right">3.841112</td>
 </tr>
 <tr class="even">
-<td align="right">0.1194373</td>
-<td align="right">20.833512</td>
-<td align="right">211.70125</td>
-<td align="right">1.434080</td>
-<td align="right">167.00894</td>
-<td align="right">17.641771</td>
-<td align="right">30.23442</td>
-<td align="right">9.151622</td>
+<td align="right">6</td>
+<td align="right">1.1633927</td>
+<td align="right">11.340643</td>
+<td align="right">103.89571</td>
+<td align="right">1.280855</td>
+<td align="right">131.5264</td>
+<td align="right">8.657976</td>
+<td align="right">16.82787</td>
+<td align="right">3.689874</td>
 </tr>
 </tbody>
 </table>
@@ -334,7 +342,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <h3 class="hasAnchor">
 <a href="#create-a-dataset-for-concentration-time-curve-1" class="anchor"></a>Create a dataset for concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyConcTimeMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffConcTimeMulti.html">caffConcTimeMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>, <span class="dt">Repeat =</span> <span class="dv">10</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTimeMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
+knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(MyConcTimeMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Subject</th>
@@ -349,28 +357,28 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr>
 <tr class="even">
 <td align="right">1</td>
+<td align="right">0.1</td>
+<td align="right">1.004731</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
 <td align="right">0.2</td>
-<td align="right">9.086501</td>
+<td align="right">1.923327</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.3</td>
+<td align="right">2.762565</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.4</td>
-<td align="right">12.810610</td>
+<td align="right">3.528692</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
-<td align="right">0.6</td>
-<td align="right">14.145008</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.8</td>
-<td align="right">14.421318</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">1.0</td>
-<td align="right">14.235784</td>
+<td align="right">0.5</td>
+<td align="right">4.227468</td>
 </tr>
 </tbody>
 </table>
@@ -397,7 +405,7 @@ MyPlotMultiPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">"none"</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">"q"</span>, x, <span class="st">"hr"</span> )))
 
-<span class="kw"><a href="http://www.rdocumentation.org/packages/cowplot/topics/plot_grid">plot_grid</a></span>(MyPlotMultiPub[[<span class="dv">1</span>]], MyPlotMultiPub[[<span class="dv">2</span>]],
+<span class="kw">plot_grid</span>(MyPlotMultiPub[[<span class="dv">1</span>]], MyPlotMultiPub[[<span class="dv">2</span>]],
           MyPlotMultiPub[[<span class="dv">3</span>]], MyPlotMultiPub[[<span class="dv">4</span>]],
           MyPlotMultiPub[[<span class="dv">5</span>]], MyPlotMultiPub[[<span class="dv">6</span>]],
           MyPlotMultiPub[[<span class="dv">7</span>]], MyPlotMultiPub[[<span class="dv">8</span>]],
@@ -415,8 +423,7 @@ MyPlotMultiPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2 class="hasAnchor">
-<a href="#sidebar" class="anchor"></a>Links</h2>
+    <h2>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cran.r-project.org/package=caffsim">https://​cran.r-project.org/​package=caffsim</a>
 </li>
@@ -426,7 +433,7 @@ MyPlotMultiPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 </li>
 </ul>
 <h2>License</h2>
-<p><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a> | file <a href="LICENSE.html">LICENSE</a></p>
+<p><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a> | file <a href="LICENSE">LICENSE</a></p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Sungpil Han <br><small class="roles"> Author, maintainer </small> </li>
