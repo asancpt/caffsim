@@ -43,7 +43,6 @@ caffConcTime <- function(Weight, Dose, N = 20){
 #' @import dplyr
 #' @seealso \url{https://asancpt.github.io/caffsim}
 
-
 caffConcTimeMulti <- function(Weight, Dose, N = 20, Tau = 8, Repeat = 4){
 #Weight=20; Dose=300; N = 20; Tau = 8; Repeat = 4
   
