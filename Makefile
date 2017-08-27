@@ -1,5 +1,5 @@
 rd2pdf:
-	rm caffsim.pdf inst/doc/caffsim.pdf; R CMD Rd2pdf ../caffsim; cp caffsim.pdf inst/doc/caffsim.pdf
+	rm caffsim.pdf inst/doc/caffsim.pdf; cd ..; R CMD Rd2pdf caffsim; cp caffsim.pdf caffsim/inst/doc/caffsim.pdf
 
 pkgdown:
 	rm -rf docs;Rscript -e "Sys.setlocale('LC_ALL', 'C'); pkgdown::build_site()" 
