@@ -3,7 +3,7 @@
 
 # R package: caffsim
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.842649.svg)](https://doi.org/10.5281/zenodo.842649)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.842649.svg)](https://doi.org/10.5281/zenodo.842649) ![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/caffsim)
 
 > Monte Carlo Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
 
