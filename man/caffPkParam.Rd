@@ -2,7 +2,7 @@
 % Please edit documentation in R/caffPkparam.R
 \name{caffPkparam}
 \alias{caffPkparam}
-\title{Create a dataset for simulation of single dose of caffeine}
+\title{Create a dataset of pharmacokinetic parameters of single oral dosing of caffeine}
 \usage{
 caffPkparam(Weight, Dose, N = 20)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/caffPlot.R
 \name{caffPlot}
 \alias{caffPlot}
-\title{Create concentration-time curve after single dose of caffeine}
+\title{Plot plasma concentration-time curves of single oral dosing of caffeine}
 \usage{
 caffPlot(caffConcTimeData, log = FALSE)
 }

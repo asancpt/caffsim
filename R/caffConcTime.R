@@ -1,6 +1,6 @@
-#' Create a dataset of the concentration-time curve of single oral administration of caffeine
+#' Create a concentration-time dataset of single oral dosing of caffeine
 #'
-#' \code{caffConcTime} will create a dataset of the concentration-time curve
+#' \code{caffConcTime} will create a dataset of the concentration-time curve.
 #' 
 #' @param Weight Body weight (kg)
 #' @param Dose Dose of single caffeine (mg)
@@ -26,9 +26,9 @@ caffConcTime <- function(Weight, Dose, N = 20){
   return(ggConc)
 }
 
-#' Create a dataset of the concentration-time curve of multiple dosing of caffeine
+#' Create a concentration-time dataset of multiple oral dosing of caffeine
 #'
-#' \code{caffConcTimeMulti} will create a dataset of the concentration-time curve of multiple oral administrations of caffeine
+#' \code{caffConcTimeMulti} will create a dataset of the concentration-time curve of multiple oral administration of caffeine.
 #' 
 #' @param Weight Body weight (kg)
 #' @param Dose Dose of single caffeine (mg)
@@ -69,6 +69,7 @@ caffConcTimeMulti <- function(Weight, Dose, N = 20, Tau = 8, Repeat = 4){
       mutate(ConcTemp = lag(ConcOrig, n = Frame, default = 0))
   }
   
-  ggsuper <- ggsuper %>% select(Subject, Time, Conc)
+  ggsuper <- ggsuper %>% 
+    select(Subject, Time, Conc)
   return(ggsuper)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/caffConcTime.R
 \name{caffConcTimeMulti}
 \alias{caffConcTimeMulti}
-\title{Create a dataset of the concentration-time curve of multiple dosing of caffeine}
+\title{Create a concentration-time dataset of multiple oral dosing of caffeine}
 \usage{
 caffConcTimeMulti(Weight, Dose, N = 20, Tau = 8, Repeat = 4)
 }
@@ -21,7 +21,7 @@ caffConcTimeMulti(Weight, Dose, N = 20, Tau = 8, Repeat = 4)
 The dataset of concentration and time of simulated subjects of multiple dosing
 }
 \description{
-\code{caffConcTimeMulti} will create a dataset of the concentration-time curve of multiple oral administrations of caffeine
+\code{caffConcTimeMulti} will create a dataset of the concentration-time curve of multiple oral administration of caffeine.
 }
 \examples{
 caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 8, Repeat = 4)

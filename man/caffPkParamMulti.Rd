@@ -2,7 +2,7 @@
 % Please edit documentation in R/caffPkparam.R
 \name{caffPkparamMulti}
 \alias{caffPkparamMulti}
-\title{Create a dataset for simulation of multiple dose of caffeine}
+\title{Create a dataset of pharmacokinetic parameters of multiple oral dosing of caffeine}
 \usage{
 caffPkparamMulti(Weight, Dose, N = 20, Tau = 8)
 }
@@ -19,7 +19,7 @@ caffPkparamMulti(Weight, Dose, N = 20, Tau = 8)
 The dataset of pharmacokinetic parameters of subjects after multiple caffeine dose following multivariate normal
 }
 \description{
-\code{caffPkparamMulti} will create a dataset for simulation of multiple dose of caffeine
+\code{caffPkparamMulti} will create a dataset for simulation of multiple dose of caffeine.
 }
 \examples{
 caffPkparamMulti(Weight = 20, Dose = 200, N = 20, Tau = 8)

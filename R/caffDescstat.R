@@ -1,4 +1,4 @@
-#' Calculate descriptive statistics of simulated PK parameters
+#' Calculate descriptive statistics of simulated pharmacokinetic parameters
 #'
 #' \code{caffDescstat} will calculate descriptive statistics of simulated PK parameters
 #'

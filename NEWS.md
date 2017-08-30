@@ -1,8 +1,14 @@
+caffsim 0.2.3
+===========
+
+* Update manual
+
+
 caffsim 0.2.2
 ===========
 
 * Introduce a `shiny` example - `Caffeine Concentration Predictor`
-* Add several functions - 
+* Add several functions
 
 caffsim 0.2.0
 ===========

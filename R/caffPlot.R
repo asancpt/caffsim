@@ -1,4 +1,4 @@
-#' Create concentration-time curve after single dose of caffeine
+#' Plot plasma concentration-time curves of single oral dosing of caffeine
 #'
 #' \code{caffPlot} will create concentration-time curve after single dose of caffeine
 #'
@@ -27,7 +27,7 @@ caffPlot <- function(caffConcTimeData, log = FALSE){
   return(p)
 }
 
-#' Create concentration-time curve after multiple doses of caffeine
+#' Plot plasma concentration-time curves of multiple oral dosing of caffeine
 #'
 #' \code{caffPlotMulti} will create concentration-time curve after multiple doses of caffeine
 #'

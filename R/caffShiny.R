@@ -1,4 +1,4 @@
-#' Run shiny app to interactively simulate plasma caffeine concentration.
+#' Run Shiny app to interactively simulate single and multiple dosing for plasma caffeine concentration
 #' 
 #' \code{caffShiny} runs an internal shiny app \code{Caffeine Concentration Predictor} in order to interactively simulate plasma caffeine concentration.
 #' 

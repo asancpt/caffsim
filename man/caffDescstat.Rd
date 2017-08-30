@@ -2,7 +2,7 @@
 % Please edit documentation in R/caffDescstat.R
 \name{caffDescstat}
 \alias{caffDescstat}
-\title{Calculate descriptive statistics of simulated PK parameters}
+\title{Calculate descriptive statistics of simulated pharmacokinetic parameters}
 \usage{
 caffDescstat(caffPkparamData)
 }

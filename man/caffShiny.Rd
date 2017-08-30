@@ -2,7 +2,7 @@
 % Please edit documentation in R/caffShiny.R
 \name{caffShiny}
 \alias{caffShiny}
-\title{Run shiny app to interactively simulate plasma caffeine concentration.}
+\title{Run Shiny app to interactively simulate single and multiple dosing for plasma caffeine concentration}
 \usage{
 caffShiny()
 }

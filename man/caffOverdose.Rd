@@ -2,7 +2,7 @@
 % Please edit documentation in R/caffOverdose.R
 \name{caffOverdose}
 \alias{caffOverdose}
-\title{Calculate a duration of plasma caffeine concentration over specified toxic limits}
+\title{Calculate a duration of toxic concentration over specified levels (40 mg/L or 80 mg/L)}
 \usage{
 caffOverdose(caffConcTimeData)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/caffConcTime.R
 \name{caffConcTime}
 \alias{caffConcTime}
-\title{Create a dataset of the concentration-time curve of single oral administration of caffeine}
+\title{Create a concentration-time dataset of single oral dosing of caffeine}
 \usage{
 caffConcTime(Weight, Dose, N = 20)
 }
@@ -17,7 +17,7 @@ caffConcTime(Weight, Dose, N = 20)
 The dataset of concentration and time of simulated subjects
 }
 \description{
-\code{caffConcTime} will create a dataset of the concentration-time curve
+\code{caffConcTime} will create a dataset of the concentration-time curve.
 }
 \examples{
 caffConcTime(Weight = 20, Dose = 200, N = 20)

@@ -1,4 +1,4 @@
-#' Calculate a duration of plasma caffeine concentration over specified toxic limits
+#' Calculate a duration of toxic concentration over specified levels (40 mg/L or 80 mg/L) 
 #' 
 #' \code{caffOverdose} calculates a time duration of plasma caffeine concentration over specified toxic limits (40 mg/L or 80 mg/L)
 #' 

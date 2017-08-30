@@ -1,4 +1,4 @@
-#' Create a dataset for simulation of single dose of caffeine 
+#' Create a dataset of pharmacokinetic parameters of single oral dosing of caffeine
 #'
 #' \code{caffPkparam} will create a dataset for simulation of single dose of caffeine 
 #' 
@@ -32,9 +32,9 @@ caffPkparam <- function(Weight, Dose, N = 20){
     select(subjid, Tmax, Cmax, AUC, Half_life, CL, V, Ka, Ke)
 }
 
-#' Create a dataset for simulation of multiple dose of caffeine 
+#' Create a dataset of pharmacokinetic parameters of multiple oral dosing of caffeine
 #'
-#' \code{caffPkparamMulti} will create a dataset for simulation of multiple dose of caffeine 
+#' \code{caffPkparamMulti} will create a dataset for simulation of multiple dose of caffeine.
 #'
 #' @param Weight Body weight (kg)
 #' @param Dose Dose of multiple caffeine (mg)
