@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate descriptive statistics of simulated pharmacokinetic parameters <U+2014> caffDescstat <e2><80><a2> caffsim</title>
+<title>Calculate descriptive statistics of simulated pharmacokinetic parameters <U+2014> caffDescstat bcaffsim</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -52,7 +52,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -111,7 +111,7 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkparam.html'>caffPkparam</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>))</div><div class='output co'>#&gt; # A tibble: 8 x 2
+    <pre class="examples"><div class='input'><span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkParam.html'>caffPkparam</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>))</div><div class='output co'>#&gt; # A tibble: 8 x 2
 #&gt;   `PK parameters`    `value: mean (sd) [min-max]`
 #&gt;             &lt;chr&gt;                           &lt;chr&gt;
 #&gt; 1             AUC 305.90 (132.21) [153.55-629.94]
@@ -121,7 +121,7 @@
 #&gt; 5              Ka        7.89 (9.07) [1.02-37.12]
 #&gt; 6              Ke         0.12 (0.03) [0.06-0.19]
 #&gt; 7            Tmax         1.02 (0.69) [0.15-2.36]
-#&gt; 8               V       15.14 (3.32) [9.40-22.26]</div><div class='input'><span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkparamMulti.html'>caffPkparamMulti</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>))</div><div class='output co'>#&gt; # A tibble: 8 x 2
+#&gt; 8               V       15.14 (3.32) [9.40-22.26]</div><div class='input'><span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkParamMulti.html'>caffPkparamMulti</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>))</div><div class='output co'>#&gt; # A tibble: 8 x 2
 #&gt;   `PK parameters`    `value: mean (sd) [min-max]`
 #&gt;             &lt;chr&gt;                           &lt;chr&gt;
 #&gt; 1              AI         1.59 (0.28) [1.19-2.17]
@@ -131,8 +131,8 @@
 #&gt; 5           CmaxS      30.88 (7.40) [17.44-45.92]
 #&gt; 6          Cmaxss     54.99 (18.70) [25.55-85.13]
 #&gt; 7          Cminss      20.81 (12.33) [5.31-44.93]
-#&gt; 8           TmaxS         0.81 (0.68) [0.16-2.60]</div><div class='input'><span class='no'>caffDescExample</span> <span class='kw'>&lt;-</span> <span class='fu'>cbind</span>(<span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkparam.html'>caffPkparam</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>)),
-                         <span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkparam.html'>caffPkparam</a></span>(<span class='fl'>50</span>,<span class='fl'>500</span>))[,<span class='fl'>2</span>])
+#&gt; 8           TmaxS         0.81 (0.68) [0.16-2.60]</div><div class='input'><span class='no'>caffDescExample</span> <span class='kw'>&lt;-</span> <span class='fu'>cbind</span>(<span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkParam.html'>caffPkparam</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>)),
+                         <span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkParam.html'>caffPkparam</a></span>(<span class='fl'>50</span>,<span class='fl'>500</span>))[,<span class='fl'>2</span>])
 <span class='fu'>colnames</span>(<span class='no'>caffDescExample</span>)[<span class='fl'>2</span>:<span class='fl'>3</span>] <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='st'>'20 kg'</span>, <span class='st'>'50 kg'</span>)
 <span class='no'>caffDescExample</span></div><div class='output co'>#&gt;   PK parameters                          20 kg                         50 kg
 #&gt; 1           AUC 254.35 (98.78) [134.98-510.81] 130.33 (69.53) [61.84-351.74]

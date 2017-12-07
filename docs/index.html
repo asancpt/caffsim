@@ -29,7 +29,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="/index.html">
+  <a href="index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -96,7 +96,7 @@ caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumenta
 <h3 class="hasAnchor">
 <a href="#create-a-pk-dataset-for-caffeine-single-dose" class="anchor"></a>Create a PK dataset for caffeine single dose</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(caffsim)
-MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkparam.html">caffPkparam</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
+MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkParam.html">caffPkparam</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDataset), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
@@ -113,69 +113,69 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
-<td align="right">0.1755183</td>
-<td align="right">11.961889</td>
-<td align="right">91.96552</td>
-<td align="right">5.204864</td>
-<td align="right">2.174728</td>
-<td align="right">16.33357</td>
-<td align="right">31.227435</td>
-<td align="right">0.1331447</td>
+<td align="right">0.2781901</td>
+<td align="right">16.299610</td>
+<td align="right">125.20877</td>
+<td align="right">5.126964</td>
+<td align="right">1.597332</td>
+<td align="right">11.81741</td>
+<td align="right">17.647838</td>
+<td align="right">0.1351677</td>
 </tr>
 <tr class="even">
 <td align="right">2</td>
-<td align="right">0.3917770</td>
-<td align="right">11.808679</td>
-<td align="right">99.68889</td>
-<td align="right">5.572083</td>
-<td align="right">2.006241</td>
-<td align="right">16.13123</td>
-<td align="right">11.729427</td>
-<td align="right">0.1243700</td>
+<td align="right">0.5565830</td>
+<td align="right">10.728715</td>
+<td align="right">102.41967</td>
+<td align="right">6.217668</td>
+<td align="right">1.952750</td>
+<td align="right">17.52027</td>
+<td align="right">7.727372</td>
+<td align="right">0.1114566</td>
 </tr>
 <tr class="odd">
 <td align="right">3</td>
-<td align="right">1.6512903</td>
-<td align="right">9.034697</td>
-<td align="right">73.51650</td>
-<td align="right">4.329187</td>
-<td align="right">2.720478</td>
-<td align="right">16.99489</td>
-<td align="right">1.525215</td>
-<td align="right">0.1600762</td>
+<td align="right">0.9007702</td>
+<td align="right">12.994067</td>
+<td align="right">82.84571</td>
+<td align="right">3.738962</td>
+<td align="right">2.414126</td>
+<td align="right">13.02500</td>
+<td align="right">3.422455</td>
+<td align="right">0.1853455</td>
 </tr>
 <tr class="even">
 <td align="right">4</td>
-<td align="right">0.7079911</td>
-<td align="right">10.254461</td>
-<td align="right">60.77550</td>
-<td align="right">3.581395</td>
-<td align="right">3.290799</td>
-<td align="right">17.00671</td>
-<td align="right">4.698946</td>
-<td align="right">0.1935000</td>
+<td align="right">0.3732394</td>
+<td align="right">11.610341</td>
+<td align="right">84.87737</td>
+<td align="right">4.800425</td>
+<td align="right">2.356341</td>
+<td align="right">16.32242</td>
+<td align="right">11.983940</td>
+<td align="right">0.1443622</td>
 </tr>
 <tr class="odd">
 <td align="right">5</td>
-<td align="right">1.4542434</td>
-<td align="right">7.578151</td>
-<td align="right">55.87057</td>
-<td align="right">3.961629</td>
-<td align="right">3.579702</td>
-<td align="right">20.46385</td>
-<td align="right">1.764076</td>
-<td align="right">0.1749280</td>
+<td align="right">0.6580394</td>
+<td align="right">8.668066</td>
+<td align="right">57.27125</td>
+<td align="right">4.096386</td>
+<td align="right">3.492153</td>
+<td align="right">20.64243</td>
+<td align="right">5.444634</td>
+<td align="right">0.1691735</td>
 </tr>
 <tr class="even">
 <td align="right">6</td>
-<td align="right">0.5988607</td>
-<td align="right">13.619321</td>
-<td align="right">114.46316</td>
-<td align="right">5.392901</td>
-<td align="right">1.747287</td>
-<td align="right">13.59732</td>
-<td align="right">6.741115</td>
-<td align="right">0.1285023</td>
+<td align="right">0.2167747</td>
+<td align="right">14.895759</td>
+<td align="right">116.98109</td>
+<td align="right">5.289969</td>
+<td align="right">1.709678</td>
+<td align="right">13.05071</td>
+<td align="right">24.207636</td>
+<td align="right">0.1310027</td>
 </tr>
 </tbody>
 </table>
@@ -195,32 +195,32 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.0</td>
-<td align="right">0.00000</td>
+<td align="right">0.000000</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.1</td>
-<td align="right">7.18530</td>
+<td align="right">1.183370</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.2</td>
-<td align="right">10.39168</td>
+<td align="right">2.255218</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.3</td>
-<td align="right">11.78347</td>
+<td align="right">3.225132</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.4</td>
-<td align="right">12.34810</td>
+<td align="right">4.101883</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.5</td>
-<td align="right">12.53606</td>
+<td align="right">4.893495</td>
 </tr>
 </tbody>
 </table>
@@ -247,7 +247,7 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">"none"</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">"Single Dose "</span>, x, <span class="st">"mg"</span>)))
 
-<span class="kw"><a href="http://www.rdocumentation.org/packages/cowplot/topics/plot_grid">plot_grid</a></span>(MyPlotPub[[<span class="dv">1</span>]], MyPlotPub[[<span class="dv">2</span>]],
+<span class="kw">plot_grid</span>(MyPlotPub[[<span class="dv">1</span>]], MyPlotPub[[<span class="dv">2</span>]],
           MyPlotPub[[<span class="dv">3</span>]], MyPlotPub[[<span class="dv">4</span>]],
           MyPlotPub[[<span class="dv">5</span>]], MyPlotPub[[<span class="dv">6</span>]],
           MyPlotPub[[<span class="dv">7</span>]], MyPlotPub[[<span class="dv">8</span>]],
@@ -261,7 +261,7 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <div id="create-a-pk-dataset-for-caffeine-multiple-doses" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-pk-dataset-for-caffeine-multiple-doses" class="anchor"></a>Create a PK dataset for caffeine multiple doses</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyDatasetMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkparamMulti.html">caffPkparamMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyDatasetMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkParamMulti.html">caffPkparamMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>)
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDatasetMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
 <table class="table">
 <thead><tr class="header">
@@ -278,69 +278,69 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
-<td align="right">1.6268195</td>
-<td align="right">9.200505</td>
-<td align="right">72.97937</td>
-<td align="right">1.160530</td>
-<td align="right">100.8942</td>
-<td align="right">6.081614</td>
-<td align="right">13.96159</td>
-<td align="right">1.931232</td>
+<td align="right">0.7892156</td>
+<td align="right">16.432409</td>
+<td align="right">151.33767</td>
+<td align="right">1.313927</td>
+<td align="right">139.41181</td>
+<td align="right">12.611473</td>
+<td align="right">23.72265</td>
+<td align="right">5.667883</td>
 </tr>
 <tr class="even">
 <td align="right">2</td>
-<td align="right">1.5296273</td>
-<td align="right">11.593268</td>
-<td align="right">127.56700</td>
-<td align="right">1.382678</td>
-<td align="right">155.3687</td>
-<td align="right">10.630583</td>
-<td align="right">18.88167</td>
-<td align="right">5.225805</td>
+<td align="right">0.9814616</td>
+<td align="right">10.376238</td>
+<td align="right">72.76305</td>
+<td align="right">1.153230</td>
+<td align="right">98.88306</td>
+<td align="right">6.063588</td>
+<td align="right">14.11397</td>
+<td align="right">1.875323</td>
 </tr>
 <tr class="odd">
 <td align="right">3</td>
-<td align="right">0.2050212</td>
-<td align="right">11.838104</td>
-<td align="right">77.33469</td>
-<td align="right">1.176404</td>
-<td align="right">105.1859</td>
-<td align="right">6.444557</td>
-<td align="right">14.38526</td>
-<td align="right">2.157099</td>
+<td align="right">1.4645092</td>
+<td align="right">11.886684</td>
+<td align="right">111.18826</td>
+<td align="right">1.269427</td>
+<td align="right">128.76205</td>
+<td align="right">9.265688</td>
+<td align="right">18.23154</td>
+<td align="right">3.869523</td>
 </tr>
 <tr class="even">
 <td align="right">4</td>
-<td align="right">0.2143581</td>
-<td align="right">19.441150</td>
-<td align="right">178.71832</td>
-<td align="right">1.356214</td>
-<td align="right">149.2863</td>
-<td align="right">14.893193</td>
-<td align="right">27.00361</td>
-<td align="right">7.092581</td>
+<td align="right">1.0438727</td>
+<td align="right">7.993353</td>
+<td align="right">50.22344</td>
+<td align="right">1.106444</td>
+<td align="right">85.24528</td>
+<td align="right">4.185287</td>
+<td align="right">10.84201</td>
+<td align="right">1.043038</td>
 </tr>
 <tr class="odd">
 <td align="right">5</td>
-<td align="right">0.9573942</td>
-<td align="right">11.423032</td>
-<td align="right">70.61073</td>
-<td align="right">1.106631</td>
-<td align="right">85.3031</td>
-<td align="right">5.884228</td>
-<td align="right">15.23537</td>
-<td align="right">1.468022</td>
+<td align="right">3.8238176</td>
+<td align="right">11.715678</td>
+<td align="right">188.47544</td>
+<td align="right">1.547940</td>
+<td align="right">192.18227</td>
+<td align="right">15.706287</td>
+<td align="right">25.24877</td>
+<td align="right">8.937565</td>
 </tr>
 <tr class="even">
 <td align="right">6</td>
-<td align="right">0.9285346</td>
-<td align="right">17.631420</td>
-<td align="right">225.96355</td>
-<td align="right">1.570486</td>
-<td align="right">197.0905</td>
-<td align="right">18.830296</td>
-<td align="right">29.94686</td>
-<td align="right">10.878331</td>
+<td align="right">1.2959792</td>
+<td align="right">11.373545</td>
+<td align="right">147.51378</td>
+<td align="right">1.551279</td>
+<td align="right">192.91036</td>
+<td align="right">12.292815</td>
+<td align="right">19.72928</td>
+<td align="right">7.011204</td>
 </tr>
 </tbody>
 </table>
@@ -365,27 +365,27 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.1</td>
-<td align="right">5.126530</td>
+<td align="right">4.264050</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.2</td>
-<td align="right">8.690905</td>
+<td align="right">7.161610</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.3</td>
-<td align="right">11.151409</td>
+<td align="right">9.116208</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0.4</td>
-<td align="right">12.832083</td>
+<td align="right">10.420257</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="right">0.5</td>
-<td align="right">13.962045</td>
+<td align="right">11.275641</td>
 </tr>
 </tbody>
 </table>
@@ -412,7 +412,7 @@ MyPlotMultiPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">"none"</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">"q"</span>, x, <span class="st">"hr"</span> )))
 
-<span class="kw"><a href="http://www.rdocumentation.org/packages/cowplot/topics/plot_grid">plot_grid</a></span>(MyPlotMultiPub[[<span class="dv">1</span>]], MyPlotMultiPub[[<span class="dv">2</span>]],
+<span class="kw">plot_grid</span>(MyPlotMultiPub[[<span class="dv">1</span>]], MyPlotMultiPub[[<span class="dv">2</span>]],
           MyPlotMultiPub[[<span class="dv">3</span>]], MyPlotMultiPub[[<span class="dv">4</span>]],
           MyPlotMultiPub[[<span class="dv">5</span>]], MyPlotMultiPub[[<span class="dv">6</span>]],
           MyPlotMultiPub[[<span class="dv">7</span>]], MyPlotMultiPub[[<span class="dv">8</span>]],
