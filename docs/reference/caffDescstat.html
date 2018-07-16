@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate descriptive statistics of simulated pharmacokinetic parameters <U+2014> caffDescstat bcaffsim</title>
+<title>Calculate descriptive statistics of simulated pharmacokinetic parameters — caffDescstat • caffsim</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,25 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Calculate descriptive statistics of simulated pharmacokinetic parameters — caffDescstat" />
+
+<meta property="og:description" content="caffDescstat will calculate descriptive statistics of simulated PK parameters" />
+<meta name="twitter:card" content="summary" />
+
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,8 +59,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">caffsim</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">caffsim</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.3.9001</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -61,7 +77,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -73,6 +89,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -80,19 +97,23 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Calculate descriptive statistics of simulated pharmacokinetic parameters</h1>
+    <small class="dont-index">Source: <a href='https://github.com/asancpt/caffsim/blob/master/R/caffDescstat.R'><code>R/caffDescstat.R</code></a></small>
+    <div class="hidden name"><code>caffDescstat.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p><code>caffDescstat</code> will calculate descriptive statistics of simulated PK parameters</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>caffDescstat</span>(<span class='no'>caffPkparamData</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -107,32 +128,32 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href='https://asancpt.github.io/caffsim'>https://asancpt.github.io/caffsim</a></p>
+    <div class='dont-index'><p><a href='https://asancpt.github.io/caffsim'>https://asancpt.github.io/caffsim</a></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkParam.html'>caffPkparam</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>))</div><div class='output co'>#&gt; # A tibble: 8 x 2
-#&gt;   `PK parameters`    `value: mean (sd) [min-max]`
-#&gt;             &lt;chr&gt;                           &lt;chr&gt;
-#&gt; 1             AUC 305.90 (132.21) [153.55-629.94]
-#&gt; 2              CL         1.91 (0.75) [0.79-3.26]
-#&gt; 3            Cmax      30.84 (7.99) [19.27-51.49]
-#&gt; 4       Half_life        6.04 (1.98) [3.59-12.06]
-#&gt; 5              Ka        7.89 (9.07) [1.02-37.12]
-#&gt; 6              Ke         0.12 (0.03) [0.06-0.19]
-#&gt; 7            Tmax         1.02 (0.69) [0.15-2.36]
-#&gt; 8               V       15.14 (3.32) [9.40-22.26]</div><div class='input'><span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkParamMulti.html'>caffPkparamMulti</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>))</div><div class='output co'>#&gt; # A tibble: 8 x 2
-#&gt;   `PK parameters`    `value: mean (sd) [min-max]`
-#&gt;             &lt;chr&gt;                           &lt;chr&gt;
-#&gt; 1              AI         1.59 (0.28) [1.19-2.17]
-#&gt; 2            AUCS 279.43 (124.04) [111.83-497.41]
-#&gt; 3           Aavss 497.69 (152.79) [269.34-807.29]
-#&gt; 4           Cavss     34.93 (15.50) [13.98-62.18]
-#&gt; 5           CmaxS      30.88 (7.40) [17.44-45.92]
-#&gt; 6          Cmaxss     54.99 (18.70) [25.55-85.13]
-#&gt; 7          Cminss      20.81 (12.33) [5.31-44.93]
-#&gt; 8           TmaxS         0.81 (0.68) [0.16-2.60]</div><div class='input'><span class='no'>caffDescExample</span> <span class='kw'>&lt;-</span> <span class='fu'>cbind</span>(<span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkParam.html'>caffPkparam</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>)),
-                         <span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkParam.html'>caffPkparam</a></span>(<span class='fl'>50</span>,<span class='fl'>500</span>))[,<span class='fl'>2</span>])
+    <pre class="examples"><div class='input'><span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkparam.html'>caffPkparam</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>))</div><div class='output co'>#&gt; # A tibble: 8 x 2
+#&gt;   `PK parameters` `value: mean (sd) [min-max]`   
+#&gt;   &lt;chr&gt;           &lt;chr&gt;                          
+#&gt; 1 AUC             305.90 (132.21) [153.55-629.94]
+#&gt; 2 CL              1.91 (0.75) [0.79-3.26]        
+#&gt; 3 Cmax            30.84 (7.99) [19.27-51.49]     
+#&gt; 4 Half_life       6.04 (1.98) [3.59-12.06]       
+#&gt; 5 Ka              7.89 (9.07) [1.02-37.12]       
+#&gt; 6 Ke              0.12 (0.03) [0.06-0.19]        
+#&gt; 7 Tmax            1.02 (0.69) [0.15-2.36]        
+#&gt; 8 V               15.14 (3.32) [9.40-22.26]      </div><div class='input'><span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkparamMulti.html'>caffPkparamMulti</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>))</div><div class='output co'>#&gt; # A tibble: 8 x 2
+#&gt;   `PK parameters` `value: mean (sd) [min-max]`   
+#&gt;   &lt;chr&gt;           &lt;chr&gt;                          
+#&gt; 1 Aavss           497.69 (152.79) [269.34-807.29]
+#&gt; 2 AI              1.59 (0.28) [1.19-2.17]        
+#&gt; 3 AUCS            279.43 (124.04) [111.83-497.41]
+#&gt; 4 Cavss           34.93 (15.50) [13.98-62.18]    
+#&gt; 5 CmaxS           30.88 (7.40) [17.44-45.92]     
+#&gt; 6 Cmaxss          54.99 (18.70) [25.55-85.13]    
+#&gt; 7 Cminss          20.81 (12.33) [5.31-44.93]     
+#&gt; 8 TmaxS           0.81 (0.68) [0.16-2.60]        </div><div class='input'><span class='no'>caffDescExample</span> <span class='kw'>&lt;-</span> <span class='fu'>cbind</span>(<span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkparam.html'>caffPkparam</a></span>(<span class='fl'>20</span>,<span class='fl'>500</span>)),
+                         <span class='fu'>caffDescstat</span>(<span class='fu'><a href='caffPkparam.html'>caffPkparam</a></span>(<span class='fl'>50</span>,<span class='fl'>500</span>))[,<span class='fl'>2</span>])
 <span class='fu'>colnames</span>(<span class='no'>caffDescExample</span>)[<span class='fl'>2</span>:<span class='fl'>3</span>] <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='st'>'20 kg'</span>, <span class='st'>'50 kg'</span>)
 <span class='no'>caffDescExample</span></div><div class='output co'>#&gt;   PK parameters                          20 kg                         50 kg
 #&gt; 1           AUC 254.35 (98.78) [134.98-510.81] 130.33 (69.53) [61.84-351.74]
@@ -165,11 +186,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

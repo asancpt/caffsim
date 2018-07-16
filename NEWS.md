@@ -1,3 +1,8 @@
+caffsum 0.2.4
+===========
+
+* Update `shiny` app
+
 caffsim 0.2.3
 ===========
 

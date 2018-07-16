@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a dataset of pharmacokinetic parameters of single oral dosing of caffeine <U+2014> caffPkparam bcaffsim</title>
+<title>Create a dataset of pharmacokinetic parameters of single oral dosing of caffeine — caffPkparam • caffsim</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,25 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Create a dataset of pharmacokinetic parameters of single oral dosing of caffeine — caffPkparam" />
+
+<meta property="og:description" content="caffPkparam will create a dataset for simulation of single dose of caffeine" />
+<meta name="twitter:card" content="summary" />
+
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,8 +59,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">caffsim</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">caffsim</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.3.9001</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -61,7 +77,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -73,6 +89,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -80,19 +97,23 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create a dataset of pharmacokinetic parameters of single oral dosing of caffeine</h1>
+    <small class="dont-index">Source: <a href='https://github.com/asancpt/caffsim/blob/master/R/caffPkparam.R'><code>R/caffPkparam.R</code></a></small>
+    <div class="hidden name"><code>caffPkparam.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p><code>caffPkparam</code> will create a dataset for simulation of single dose of caffeine</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>caffPkparam</span>(<span class='no'>Weight</span>, <span class='no'>Dose</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -115,57 +136,55 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href='https://asancpt.github.io/caffsim'>https://asancpt.github.io/caffsim</a></p>
+    <div class='dont-index'><p><a href='https://asancpt.github.io/caffsim'>https://asancpt.github.io/caffsim</a></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>caffPkparam</span>(<span class='kw'>Weight</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>Dose</span> <span class='kw'>=</span> <span class='fl'>200</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>20</span>)</div><div class='output co'>#&gt; # A tibble: 20 x 9
-#&gt;    subjid      Tmax      Cmax       AUC Half_life       CL         V         Ka
-#&gt;     &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-#&gt;  1      1 0.6815481 10.610739  78.20646  4.610404 2.557333 17.013477  5.4071000
-#&gt;  2      2 0.1694741 16.804692 102.75059  4.118142 1.946461 11.566814 30.9339220
-#&gt;  3      3 1.5710684 11.488799  92.99001  4.372848 2.150769 13.571406  1.6496186
-#&gt;  4      4 0.6811672 21.919667 160.46253  4.575837 1.246397  8.229884  5.3975246
-#&gt;  5      5 2.4401053 12.863231 139.39826  5.532100 1.434738 11.453268  0.9597418
-#&gt;  6      6 0.8101356 10.882741  61.51036  3.304979 3.251485 15.506620  3.7789715
-#&gt;  7      7 0.5553883 13.602520 166.28455  8.077405 1.202758 14.018990  8.3229345
-#&gt;  8      8 2.2193872  7.839475  76.24080  4.934916 2.623267 18.680526  1.0445897
-#&gt;  9      9 1.7117636 14.087598 169.53124  7.047684 1.179724 11.997575  1.7951140
-#&gt; 10     10 0.4691640 12.134696 114.66068  6.214367 1.744277 15.641527  9.6101287
-#&gt; 11     11 0.9819875 16.931253 159.54174  5.808091 1.253590 10.506447  3.5842571
-#&gt; 12     12 0.6060609 12.718825  70.66952  3.403497 2.830074 13.899204  5.7019745
-#&gt; 13     13 2.0976086 15.506734 199.04914  7.286779 1.004777 10.565062  1.3651436
-#&gt; 14     14 0.4121059 11.557513  69.27030  3.857088 2.887240 16.069755  9.9108198
-#&gt; 15     15 0.5563496 12.732747 129.86167  6.671018 1.540100 14.825451  7.8860207
-#&gt; 16     16 0.7913932 13.186071  93.45329  4.326770 2.140107 13.361832  4.3248879
-#&gt; 17     17 1.9177109 11.108858  98.10531  4.578100 2.038626 13.467578  1.2538461
-#&gt; 18     18 0.9127606 11.968976  90.48517  4.560554 2.210307 14.545777  3.6280847
-#&gt; 19     19 0.7194890 11.968891  76.44736  3.894378 2.616179 14.701863  4.7399030
-#&gt; 20     20 1.8863042  9.131570  92.31756  5.531439 2.166435 17.292212  1.4077880
-#&gt; # ... with 1 more variables: Ke &lt;dbl&gt;</div><div class='input'><span class='fu'>caffPkparam</span>(<span class='fl'>20</span>,<span class='fl'>500</span>)</div><div class='output co'>#&gt; # A tibble: 20 x 9
-#&gt;    subjid      Tmax     Cmax       AUC Half_life        CL         V         Ka
-#&gt;     &lt;int&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-#&gt;  1      1 1.9454813 21.13020 193.21449  4.779185 2.5877977 17.846413  1.2538279
-#&gt;  2      2 0.4387019 37.56361 248.86438  4.276137 2.0091264 12.397258  9.4234136
-#&gt;  3      3 1.1086791 27.67530 249.11127  5.412317 2.0071352 15.675689  2.9611134
-#&gt;  4      4 0.1232268 43.37299 468.53392  7.400197 1.0671586 11.395648 51.2607518
-#&gt;  5      5 1.1377766 34.02069 339.66595  6.077064 1.4720345 12.908583  2.9829199
-#&gt;  6      6 0.6516363 29.76417 313.51130  6.832650 1.5948389 15.724351  6.4813008
-#&gt;  7      7 1.0397441 50.05456 494.15797  6.076561 1.0118222  8.872150  3.3709646
-#&gt;  8      8 3.8309176 28.04247 416.66666  7.075377 1.2000000 12.251735  0.5468741
-#&gt;  9      9 0.3665183 16.08659  99.93516  4.042997 5.0032443 29.189181 11.6923846
-#&gt; 10     10 1.7087332 30.78990 276.38911  4.880634 1.8090438 12.740663  1.5352345
-#&gt; 11     11 1.6257622 30.12170 365.07472  7.179286 1.3695826 14.188493  1.9432102
-#&gt; 12     12 1.0651067 42.99016 469.13322  6.782634 1.0657953 10.431313  3.3900437
-#&gt; 13     13 3.5382221 20.39996 265.25744  5.979905 1.8849613 16.265353  0.5622465
-#&gt; 14     14 0.7612997 27.93256 180.02725  3.901516 2.7773574 15.636226  4.3910093
-#&gt; 15     15 0.5114560 34.41342 241.29515  4.490276 2.0721510 13.426449  7.8321785
-#&gt; 16     16 1.4139333 32.47826 347.51777  6.355684 1.4387754 13.195384  2.2498195
-#&gt; 17     17 0.3469954 21.53754 191.61730  5.920131 2.6093677 22.291197 13.8794740
-#&gt; 18     18 0.8287644 46.47351 547.41778  7.566247 0.9133792  9.972370  4.8913845
-#&gt; 19     19 0.9549840 29.59051 164.86649  3.123991 3.0327570 13.671437  2.9211632
-#&gt; 20     20 0.9534631 42.03426 265.11656  3.646457 1.8859629  9.923641  3.1274414
-#&gt; # ... with 1 more variables: Ke &lt;dbl&gt;</div></pre>
+#&gt;    subjid  Tmax  Cmax   AUC Half_life    CL     V     Ka     Ke
+#&gt;     &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+#&gt;  1      1 0.682 10.6   78.2      4.61  2.56 17.0   5.41  0.150 
+#&gt;  2      2 0.169 16.8  103.       4.12  1.95 11.6  30.9   0.168 
+#&gt;  3      3 1.57  11.5   93.0      4.37  2.15 13.6   1.65  0.158 
+#&gt;  4      4 0.681 21.9  160.       4.58  1.25  8.23  5.40  0.151 
+#&gt;  5      5 2.44  12.9  139.       5.53  1.43 11.5   0.960 0.125 
+#&gt;  6      6 0.810 10.9   61.5      3.30  3.25 15.5   3.78  0.210 
+#&gt;  7      7 0.555 13.6  166.       8.08  1.20 14.0   8.32  0.0858
+#&gt;  8      8 2.22   7.84  76.2      4.93  2.62 18.7   1.04  0.140 
+#&gt;  9      9 1.71  14.1  170.       7.05  1.18 12.0   1.80  0.0983
+#&gt; 10     10 0.469 12.1  115.       6.21  1.74 15.6   9.61  0.112 
+#&gt; 11     11 0.982 16.9  160.       5.81  1.25 10.5   3.58  0.119 
+#&gt; 12     12 0.606 12.7   70.7      3.40  2.83 13.9   5.70  0.204 
+#&gt; 13     13 2.10  15.5  199.       7.29  1.00 10.6   1.37  0.0951
+#&gt; 14     14 0.412 11.6   69.3      3.86  2.89 16.1   9.91  0.180 
+#&gt; 15     15 0.556 12.7  130.       6.67  1.54 14.8   7.89  0.104 
+#&gt; 16     16 0.791 13.2   93.5      4.33  2.14 13.4   4.32  0.160 
+#&gt; 17     17 1.92  11.1   98.1      4.58  2.04 13.5   1.25  0.151 
+#&gt; 18     18 0.913 12.0   90.5      4.56  2.21 14.5   3.63  0.152 
+#&gt; 19     19 0.719 12.0   76.4      3.89  2.62 14.7   4.74  0.178 
+#&gt; 20     20 1.89   9.13  92.3      5.53  2.17 17.3   1.41  0.125 </div><div class='input'><span class='fu'>caffPkparam</span>(<span class='fl'>20</span>,<span class='fl'>500</span>)</div><div class='output co'>#&gt; # A tibble: 20 x 9
+#&gt;    subjid  Tmax  Cmax   AUC Half_life    CL     V     Ka     Ke
+#&gt;     &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+#&gt;  1      1 1.95   21.1 193.       4.78 2.59  17.8   1.25  0.145 
+#&gt;  2      2 0.439  37.6 249.       4.28 2.01  12.4   9.42  0.162 
+#&gt;  3      3 1.11   27.7 249.       5.41 2.01  15.7   2.96  0.128 
+#&gt;  4      4 0.123  43.4 469.       7.40 1.07  11.4  51.3   0.0936
+#&gt;  5      5 1.14   34.0 340.       6.08 1.47  12.9   2.98  0.114 
+#&gt;  6      6 0.652  29.8 314.       6.83 1.59  15.7   6.48  0.101 
+#&gt;  7      7 1.04   50.1 494.       6.08 1.01   8.87  3.37  0.114 
+#&gt;  8      8 3.83   28.0 417.       7.08 1.20  12.3   0.547 0.0979
+#&gt;  9      9 0.367  16.1  99.9      4.04 5.00  29.2  11.7   0.171 
+#&gt; 10     10 1.71   30.8 276.       4.88 1.81  12.7   1.54  0.142 
+#&gt; 11     11 1.63   30.1 365.       7.18 1.37  14.2   1.94  0.0965
+#&gt; 12     12 1.07   43.0 469.       6.78 1.07  10.4   3.39  0.102 
+#&gt; 13     13 3.54   20.4 265.       5.98 1.88  16.3   0.562 0.116 
+#&gt; 14     14 0.761  27.9 180.       3.90 2.78  15.6   4.39  0.178 
+#&gt; 15     15 0.511  34.4 241.       4.49 2.07  13.4   7.83  0.154 
+#&gt; 16     16 1.41   32.5 348.       6.36 1.44  13.2   2.25  0.109 
+#&gt; 17     17 0.347  21.5 192.       5.92 2.61  22.3  13.9   0.117 
+#&gt; 18     18 0.829  46.5 547.       7.57 0.913  9.97  4.89  0.0916
+#&gt; 19     19 0.955  29.6 165.       3.12 3.03  13.7   2.92  0.222 
+#&gt; 20     20 0.953  42.0 265.       3.65 1.89   9.92  3.13  0.190 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -188,11 +207,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

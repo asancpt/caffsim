@@ -47,12 +47,16 @@ caffOverLimit <- function(caffConcTime){
     mutate(param = ifelse(param == 'MeanConc40', 'Duration of conc. >40mg/L (hr)', 'Duration of conc. >80mg/L (hr)'))
 }
 
-#input <- list()
-#input$concBWT <- 50; input$concDose <- 200; input$concNum <- 20
-#input$cmaxDose <- 50; input$cmaxNum <- 20
-#input$aucDose <- 50; input$aucNum <- 20
-#input$Log <- FALSE
-#input$superBWT <- 20; input$superDose <- 500; input$superNum <- 20; input$superTau <- 5; input$superRepeat <- 3
+# (START) These lines are for test purpose.
+
+input <- list()
+input$concBWT <- 50; input$concDose <- 200; input$concNum <- 20
+input$cmaxDose <- 50; input$cmaxNum <- 20
+input$aucDose <- 50; input$aucNum <- 20
+input$Log <- FALSE
+input$superBWT <- 20; input$superDose <- 500; input$superNum <- 20; input$superTau <- 5; input$superRepeat <- 3
+
+# (END) These lines are for test purpose. 
 
 # main ----
 
@@ -62,9 +66,7 @@ shinyServer(function(input, output, session) {
   
   output$showdata <- renderDataTable({
     #set.seed(Seed)
-    showdataTable <- round_df(caffDataset(input$concBWT, input$concDose, input$concNum), 2) %>% 
-      mutate(SUBJID = row_number()) %>% 
-      select(9, 1:8)
+    showdataTable <- round_df(caffsim::caffPkparam(input$concBWT, input$concDose, input$concNum), 2)
     return(showdataTable)
   }, options = list(pageLength = 10))
   
@@ -75,9 +77,7 @@ shinyServer(function(input, output, session) {
       return(NULL)
     
     #set.seed(Seed)
-    showall <- round_df(caffDataset(input$concBWT, input$concDose, input$concNum), 2) %>% 
-      mutate(SUBJID = as.character(row_number())) %>% 
-      select(9, 1:8)
+    showall <- round_df(caffsim::caffPkparam(input$concBWT, input$concDose, input$concNum), 2) 
     return(showall)
   })
   
@@ -85,7 +85,7 @@ shinyServer(function(input, output, session) {
   
   output$plot <- renderPlot({
     ggDset <- lapply(selectBwt, function(x){
-      caffDataset(x, input$cmaxDose, input$cmaxNum) %>% 
+      caffsim::caffPkparam(x, input$cmaxDose, input$cmaxNum) %>% 
         select(Cmax) %>% 
         mutate(BWT = x)
     }) %>% 
@@ -96,7 +96,8 @@ shinyServer(function(input, output, session) {
       geom_hline(yintercept = 80, colour="red") + 
       geom_hline(yintercept = 40, colour="blue") + 
       geom_hline(yintercept = 10, colour="green") +
-      scale_colour_gradient(low="navy", high="red", space="Lab") + theme_linedraw()
+      scale_colour_gradient(low="navy", high="red", space="Lab") + 
+      theme_linedraw()
     if (input$pformat == "Jitter") print(p + geom_jitter(position = position_jitter(width = .1)))
     if (input$pformat == "Point") print(p + geom_point())
     if (input$pformat == "Boxplot") print(p + geom_boxplot())
@@ -106,7 +107,7 @@ shinyServer(function(input, output, session) {
   
   output$aucplot <- renderPlot({
     ggDset <- lapply(selectBwt, function(x){
-      caffDataset(x, input$aucDose, input$aucNum) %>% 
+      caffsim::caffPkparam(x, input$aucDose, input$aucNum) %>% 
         select(AUC) %>% 
         mutate(BWT = x)
     }) %>% 
@@ -124,24 +125,24 @@ shinyServer(function(input, output, session) {
   # overlimit ----
   
   output$overlimit <- renderTable({
-    overLimit <- caffConcTime(input$concBWT, input$concDose, input$concNum) %>% 
-      caffOverdose()
+    overLimit <- caffsim::caffConcTime(input$concBWT, input$concDose, input$concNum) %>% 
+      caffsim::caffOverdose()
     return(overLimit)
   })
   
   # overlimitMulti ----
   
   output$overlimitMulti <- renderTable({
-    overLimit <- caffConcTimeMulti(input$superBWT, input$superDose, input$superNum,
-                                   input$superTau, input$superRepeat) %>% 
-      caffOverdose()
+    overLimit <- caffsim::caffConcTimeMulti(input$superBWT, input$superDose, input$superNum,
+                                            input$superTau, input$superRepeat) %>% 
+      caffsim::caffOverdose()
     return(overLimit)
   })
   
   # conccontents ----
   
   output$conccontents <- renderTable({
-    descParam <- caffDataset(input$concBWT, input$concDose, input$concNum) %>% 
+    descParam <- caffsim::caffPkparam(input$concBWT, input$concDose, input$concNum) %>% 
       gather(param, value) %>% 
       paramValueDesc() %>% 
       left_join(tribble(~param, ~name,
@@ -167,7 +168,7 @@ shinyServer(function(input, output, session) {
   # supercontents ----
   
   output$supercontents <- renderTable({
-    descParam <- caffDatasetMulti(input$superBWT, input$superDose, input$superNum, input$superTau) %>% 
+    descParam <- caffsim::caffPkparamMulti(input$superBWT, input$superDose, input$superNum, input$superTau) %>% 
       gather(param, value) %>% 
       paramValueDesc()
     return(descParam)
@@ -181,7 +182,7 @@ shinyServer(function(input, output, session) {
   
   output$superplot <- renderPlot({
     
-    p <- caffPlotMulti(caffConcTimeMulti(input$superBWT, input$superDose, input$superNum, input$superTau, input$superRepeat), 
+    p <- caffsim::caffPlotMulti(caffsim::caffConcTimeMulti(input$superBWT, input$superDose, input$superNum, input$superTau, input$superRepeat), 
                        log = input$Log)
     return(p)
   })

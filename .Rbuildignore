@@ -12,3 +12,5 @@
 ^Makefile$
 ^docs$
 ^releases$
+^_pkgdown\.yml$
+

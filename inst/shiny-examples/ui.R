@@ -21,8 +21,7 @@ shinyUI(
           helpText('Red Bull®, 80 mg / Monster® and Rockstar®, 160 mg / 5 h Energy Extra
                          Strength® 242 mg'),
           
-          sliderInput('concNum', 'Simulations N', min=5, max=2000,
-                      value=20, step=5),
+          sliderInput('concNum', 'Simulations N', min=5, max=2000, value=20, step=5),
           checkboxInput(inputId = "Log", label = "Log scale")
         ),
         
