@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">caffsim</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.3.9001</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.4</span>
       </span>
     </div>
 
@@ -90,10 +90,10 @@
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"asancpt/caffsim"</span>)
 
 <span class="co"># Simply create single dose dataset</span>
-caffsim<span class="op">::</span><span class="kw">caffPkparam</span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>) 
+caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/caffsim/topics/caffPkparam">caffPkparam</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>) 
 
 <span class="co"># Simply create multiple dose dataset</span>
-caffsim<span class="op">::</span><span class="kw">caffPkparamMulti</span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>) </code></pre></div>
+caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/caffsim/topics/caffPkparamMulti">caffPkparamMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>) </code></pre></div>
 </div>
 <div id="single-dose" class="section level2">
 <h2 class="hasAnchor">
@@ -103,133 +103,31 @@ caffsim<span class="op">::</span><span class="kw">caffPkparamMulti</span>(<span 
 <a href="#create-a-pk-dataset-for-caffeine-single-dose" class="anchor"></a>Create a PK dataset for caffeine single dose</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(caffsim)
 MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkparam.html">caffPkparam</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDataset), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">subjid</th>
-<th align="right">Tmax</th>
-<th align="right">Cmax</th>
-<th align="right">AUC</th>
-<th align="right">Half_life</th>
-<th align="right">CL</th>
-<th align="right">V</th>
-<th align="right">Ka</th>
-<th align="right">Ke</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.1073632</td>
-<td align="right">12.108139</td>
-<td align="right">68.96636</td>
-<td align="right">3.872115</td>
-<td align="right">2.899964</td>
-<td align="right">16.20346</td>
-<td align="right">53.223451</td>
-<td align="right">0.1789720</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">0.3858505</td>
-<td align="right">18.910872</td>
-<td align="right">145.01381</td>
-<td align="right">5.039501</td>
-<td align="right">1.379179</td>
-<td align="right">10.02940</td>
-<td align="right">11.640799</td>
-<td align="right">0.1375136</td>
-</tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">1.2401424</td>
-<td align="right">14.173605</td>
-<td align="right">162.78691</td>
-<td align="right">7.045219</td>
-<td align="right">1.228600</td>
-<td align="right">12.49027</td>
-<td align="right">2.798053</td>
-<td align="right">0.0983646</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">1.7676822</td>
-<td align="right">6.740193</td>
-<td align="right">63.71728</td>
-<td align="right">5.168812</td>
-<td align="right">3.138866</td>
-<td align="right">23.41155</td>
-<td align="right">1.500281</td>
-<td align="right">0.1340734</td>
-</tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">1.5718446</td>
-<td align="right">12.547318</td>
-<td align="right">129.66074</td>
-<td align="right">5.966217</td>
-<td align="right">1.542487</td>
-<td align="right">13.27967</td>
-<td align="right">1.891155</td>
-<td align="right">0.1161540</td>
-</tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="right">0.8417080</td>
-<td align="right">11.904877</td>
-<td align="right">145.90113</td>
-<td align="right">7.887701</td>
-<td align="right">1.370791</td>
-<td align="right">15.60230</td>
-<td align="right">4.854210</td>
-<td align="right">0.0878583</td>
-</tr>
-</tbody>
-</table>
+<span class="kw">head</span>(MyDataset)</code></pre></div>
+<pre><code>## # A tibble: 6 x 9
+##   subjid  Tmax  Cmax   AUC Half_life    CL     V     Ka     Ke
+##    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1      1 4.98   8.89 141.       6.48 1.41  13.2   0.339 0.107 
+## 2      2 0.711  7.84  39.8      2.98 5.03  21.6   4.36  0.232 
+## 3      3 5.17  10.5  162.       5.71 1.24  10.2   0.289 0.121 
+## 4      4 0.441 19.5  219.       7.46 0.912  9.82 10.9   0.0928
+## 5      5 0.476 10.1   43.7      2.65 4.57  17.5   7.23  0.262 
+## 6      6 0.195 11.4   61.1      3.57 3.28  16.9  25.1   0.194</code></pre>
 </div>
 <div id="create-a-dataset-for-concentration-time-curve" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-dataset-for-concentration-time-curve" class="anchor"></a>Create a dataset for concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyConcTime &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffConcTime.html">caffConcTime</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTime), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">Subject</th>
-<th align="right">Time</th>
-<th align="right">Conc</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.0</td>
-<td align="right">0.00000</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.1</td>
-<td align="right">6.84696</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.2</td>
-<td align="right">10.95754</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.3</td>
-<td align="right">13.38885</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.4</td>
-<td align="right">14.79011</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.5</td>
-<td align="right">15.56004</td>
-</tr>
-</tbody>
-</table>
+<span class="kw">head</span>(MyConcTime)</code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##   Subject  Time  Conc
+##     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1       1   0     0  
+## 2       1   0.1  10.9
+## 3       1   0.2  12.1
+## 4       1   0.3  12.0
+## 5       1   0.4  11.8
+## 6       1   0.5  11.6</code></pre>
 </div>
 <div id="create-a-concentration-time-curve" class="section level3">
 <h3 class="hasAnchor">
@@ -268,133 +166,32 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <h3 class="hasAnchor">
 <a href="#create-a-pk-dataset-for-caffeine-multiple-doses" class="anchor"></a>Create a PK dataset for caffeine multiple doses</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyDatasetMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkparamMulti.html">caffPkparamMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyDatasetMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>) </code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">subjid</th>
-<th align="right">TmaxS</th>
-<th align="right">CmaxS</th>
-<th align="right">AUCS</th>
-<th align="right">AI</th>
-<th align="right">Aavss</th>
-<th align="right">Cavss</th>
-<th align="right">Cmaxss</th>
-<th align="right">Cminss</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">1.5778320</td>
-<td align="right">10.080758</td>
-<td align="right">71.79344</td>
-<td align="right">1.115034</td>
-<td align="right">87.86792</td>
-<td align="right">5.982787</td>
-<td align="right">15.152601</td>
-<td align="right">1.5632438</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">0.8612034</td>
-<td align="right">11.778101</td>
-<td align="right">90.30266</td>
-<td align="right">1.203287</td>
-<td align="right">112.23986</td>
-<td align="right">7.525222</td>
-<td align="right">16.101536</td>
-<td align="right">2.7202473</td>
-</tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">0.3996631</td>
-<td align="right">8.255546</td>
-<td align="right">38.46769</td>
-<td align="right">1.062724</td>
-<td align="right">70.52825</td>
-<td align="right">3.205641</td>
-<td align="right">9.640466</td>
-<td align="right">0.5689999</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">0.5383297</td>
-<td align="right">18.437510</td>
-<td align="right">112.66070</td>
-<td align="right">1.129759</td>
-<td align="right">92.22577</td>
-<td align="right">9.388392</td>
-<td align="right">22.953581</td>
-<td align="right">2.6363448</td>
-</tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">0.3227662</td>
-<td align="right">12.613247</td>
-<td align="right">91.95817</td>
-<td align="right">1.217044</td>
-<td align="right">115.76264</td>
-<td align="right">7.663181</td>
-<td align="right">16.079506</td>
-<td align="right">2.8675727</td>
-</tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="right">2.8166201</td>
-<td align="right">13.720886</td>
-<td align="right">182.02771</td>
-<td align="right">1.432036</td>
-<td align="right">166.54992</td>
-<td align="right">15.168976</td>
-<td align="right">26.031039</td>
-<td align="right">7.8533976</td>
-</tr>
-</tbody>
-</table>
+<span class="kw">head</span>(MyDatasetMulti)</code></pre></div>
+<pre><code>## # A tibble: 6 x 9
+##   subjid TmaxS CmaxS  AUCS    AI Aavss Cavss Cmaxss Cminss
+##    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1      1 1.02   8.75  78.0  1.28 130.   6.50   12.7   2.74
+## 2      2 2.00  11.7  134.   1.38 154.  11.1    19.9   5.43
+## 3      3 0.521 13.0  101.   1.23 119.   8.38   17.3   3.24
+## 4      4 0.271 12.8   65.0  1.09  80.2  5.42   14.7   1.22
+## 5      5 0.898 20.4  237.   1.48 178.  19.8    32.9  10.7 
+## 6      6 0.753 12.3   82.3  1.15  98.1  6.86   16.0   2.10</code></pre>
 </div>
 <div id="create-a-dataset-for-concentration-time-curve-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-dataset-for-concentration-time-curve-1" class="anchor"></a>Create a dataset for concentration-time curve</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MyConcTimeMulti &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffConcTimeMulti.html">caffConcTimeMulti</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>, <span class="dt">Tau =</span> <span class="dv">12</span>, <span class="dt">Repeat =</span> <span class="dv">10</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(MyConcTimeMulti), <span class="dt">format =</span> <span class="st">'markdown'</span>)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="right">Subject</th>
-<th align="right">Time</th>
-<th align="right">Conc</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.0</td>
-<td align="right">0.00000</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.1</td>
-<td align="right">11.63022</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.2</td>
-<td align="right">12.35919</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.3</td>
-<td align="right">12.25145</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0.4</td>
-<td align="right">12.08165</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">0.5</td>
-<td align="right">11.90938</td>
-</tr>
-</tbody>
-</table>
+<span class="kw">head</span>(MyConcTimeMulti)</code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+## # Groups:   Subject [1]
+##   Subject  Time  Conc
+##     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1       1   0    0   
+## 2       1   0.1  7.71
+## 3       1   0.2 11.5 
+## 4       1   0.3 13.2 
+## 5       1   0.4 14.0 
+## 6       1   0.5 14.2</code></pre>
 </div>
 <div id="create-a-concentration-time-curve-1" class="section level3">
 <h3 class="hasAnchor">
