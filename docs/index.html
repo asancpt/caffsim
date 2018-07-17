@@ -105,14 +105,14 @@ caffsim<span class="op">::</span><span class="kw"><a href="http://www.rdocumenta
 MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caffPkparam.html">caffPkparam</a></span>(<span class="dt">Weight =</span> <span class="dv">20</span>, <span class="dt">Dose =</span> <span class="dv">200</span>, <span class="dt">N =</span> <span class="dv">20</span>)
 <span class="kw">head</span>(MyDataset)</code></pre></div>
 <pre><code>## # A tibble: 6 x 9
-##   subjid  Tmax  Cmax   AUC Half_life    CL     V     Ka     Ke
-##    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-## 1      1 4.98   8.89 141.       6.48 1.41  13.2   0.339 0.107 
-## 2      2 0.711  7.84  39.8      2.98 5.03  21.6   4.36  0.232 
-## 3      3 5.17  10.5  162.       5.71 1.24  10.2   0.289 0.121 
-## 4      4 0.441 19.5  219.       7.46 0.912  9.82 10.9   0.0928
-## 5      5 0.476 10.1   43.7      2.65 4.57  17.5   7.23  0.262 
-## 6      6 0.195 11.4   61.1      3.57 3.28  16.9  25.1   0.194</code></pre>
+##   subjid  Tmax  Cmax   AUC Half_life    CL     V    Ka     Ke
+##    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1      1 0.183  16.1 191.       8.07  1.05  12.2 32.5  0.0858
+## 2      2 0.532  11.2  82.8      4.75  2.41  16.6  7.58 0.146 
+## 3      3 2.36   10.2 150.       8.33  1.34  16.1  1.22 0.0832
+## 4      4 0.731  10.5  62.8      3.60  3.19  16.6  4.51 0.192 
+## 5      5 0.599  12.9  62.0      2.89  3.23  13.4  5.46 0.240 
+## 6      6 1.08   12.4 104.       5.01  1.92  13.9  2.99 0.138</code></pre>
 </div>
 <div id="create-a-dataset-for-concentration-time-curve" class="section level3">
 <h3 class="hasAnchor">
@@ -122,12 +122,12 @@ MyDataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/caff
 <pre><code>## # A tibble: 6 x 3
 ##   Subject  Time  Conc
 ##     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1       1   0     0  
-## 2       1   0.1  10.9
-## 3       1   0.2  12.1
-## 4       1   0.3  12.0
-## 5       1   0.4  11.8
-## 6       1   0.5  11.6</code></pre>
+## 1       1   0    0   
+## 2       1   0.1  6.46
+## 3       1   0.2 10.2 
+## 4       1   0.3 12.4 
+## 5       1   0.4 13.5 
+## 6       1   0.5 14.1</code></pre>
 </div>
 <div id="create-a-concentration-time-curve" class="section level3">
 <h3 class="hasAnchor">
@@ -170,12 +170,12 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 <pre><code>## # A tibble: 6 x 9
 ##   subjid TmaxS CmaxS  AUCS    AI Aavss Cavss Cmaxss Cminss
 ##    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-## 1      1 1.02   8.75  78.0  1.28 130.   6.50   12.7   2.74
-## 2      2 2.00  11.7  134.   1.38 154.  11.1    19.9   5.43
-## 3      3 0.521 13.0  101.   1.23 119.   8.38   17.3   3.24
-## 4      4 0.271 12.8   65.0  1.09  80.2  5.42   14.7   1.22
-## 5      5 0.898 20.4  237.   1.48 178.  19.8    32.9  10.7 
-## 6      6 0.753 12.3   82.3  1.15  98.1  6.86   16.0   2.10</code></pre>
+## 1      1 1.20   10.2  75.9  1.16 102.   6.32   14.4   2.04
+## 2      2 2.56   12.0 165.   1.50 181.  13.7    22.7   7.51
+## 3      3 0.193  15.0 105.   1.21 114.   8.75   18.6   3.21
+## 4      4 1.04   12.9  86.0  1.13  92.1  7.17   17.5   2.01
+## 5      5 1.10   13.9 114.   1.22 116.   9.51   19.9   3.58
+## 6      6 0.804  12.9 103.   1.23 119.   8.62   17.8   3.33</code></pre>
 </div>
 <div id="create-a-dataset-for-concentration-time-curve-1" class="section level3">
 <h3 class="hasAnchor">
@@ -187,11 +187,11 @@ MyPlotPub &lt;-<span class="st"> </span><span class="kw">lapply</span>(
 ##   Subject  Time  Conc
 ##     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1       1   0    0   
-## 2       1   0.1  7.71
-## 3       1   0.2 11.5 
-## 4       1   0.3 13.2 
-## 5       1   0.4 14.0 
-## 6       1   0.5 14.2</code></pre>
+## 2       1   0.1  6.76
+## 3       1   0.2 10.8 
+## 4       1   0.3 13.1 
+## 5       1   0.4 14.5 
+## 6       1   0.5 15.2</code></pre>
 </div>
 <div id="create-a-concentration-time-curve-1" class="section level3">
 <h3 class="hasAnchor">

@@ -23,6 +23,7 @@ rd2pdf:
 pkgdown: roxygen
 	rm -rf docs ;\
 	Rscript -e "Sys.setlocale('LC_ALL', 'C'); pkgdown::build_site()"
+	cp -rf assets docs
 
 readme: 
 	Rscript -e "rmarkdown::render('README.Rmd', output_format = 'github_document')"
