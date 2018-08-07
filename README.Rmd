@@ -26,6 +26,8 @@ knitr::opts_chunk$set(fig.width=8, fig.height=4, dev = 'png', dpi = 150,
 
 > Simulate plasma caffeine concentrations using population pharmacokinetic model described in Lee, Kim, Perera, McLachlan and Bae (2015) <doi:10.1007/s00431-015-2581-x> and the package was published <doi:10.12793/tcp.2017.25.3.141>.
 
+![](inst/doc/cover.png)
+
 - Github: <https://github.com/asancpt/caffsim>
 - Package vignettes and references by `pkgdown`: <http://asancpt.github.io/caffsim> 
 
