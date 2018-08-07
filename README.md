@@ -1,16 +1,20 @@
 
-`caffsim` R package: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
-===========================================================================================================
+# `caffsim` R package: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.842649.svg)](https://doi.org/10.5281/zenodo.842649) ![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/caffsim) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/caffsim)](https://cran.r-project.org/package=caffsim)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.842649.svg)](https://doi.org/10.5281/zenodo.842649)
+![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/caffsim)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/caffsim)](https://cran.r-project.org/package=caffsim)
 
-> Simulate plasma caffeine concentrations using population pharmacokinetic model described in Lee, Kim, Perera, McLachlan and Bae (2015) <doi:10.1007/s00431-015-2581-x> and the package was published <doi:10.12793/tcp.2017.25.3.141>.
+> Simulate plasma caffeine concentrations using population
+> pharmacokinetic model described in Lee, Kim, Perera, McLachlan and Bae
+> (2015) <doi:10.1007/s00431-015-2581-x> and the package was published
+> <doi:10.12793/tcp.2017.25.3.141>.
 
--   Github: <https://github.com/asancpt/caffsim>
--   Package vignettes and references by `pkgdown`: <http://asancpt.github.io/caffsim>
+  - Github: <https://github.com/asancpt/caffsim>
+  - Package vignettes and references by `pkgdown`:
+    <http://asancpt.github.io/caffsim>
 
-Installation
-------------
+## Installation
 
 ``` r
 install.pacakges("devtools")
@@ -23,8 +27,7 @@ caffsim::caffPkparam(Weight = 20, Dose = 200, N = 20)
 caffsim::caffPkparamMulti(Weight = 20, Dose = 200, N = 20, Tau = 12) 
 ```
 
-Single dose
------------
+## Single dose
 
 ### Create a PK dataset for caffeine single dose
 
@@ -34,14 +37,18 @@ MyDataset <- caffPkparam(Weight = 20, Dose = 200, N = 20)
 head(MyDataset)
 ```
 
-|  subjid|       Tmax|       Cmax|        AUC|  Half\_life|        CL|         V|         Ka|         Ke|
-|-------:|----------:|----------:|----------:|-----------:|---------:|---------:|----------:|----------:|
-|       1|  0.2444945|  10.244873|   73.99342|    4.832740|  2.702943|  18.84938|  20.425808|  0.1433969|
-|       2|  1.6472994|  10.325239|  111.75991|    6.248489|  1.789550|  16.13562|   1.804037|  0.1109068|
-|       3|  1.3032554|   9.885904|   94.43513|    5.640402|  2.117856|  17.23746|   2.405027|  0.1228636|
-|       4|  0.5653782|  12.872081|  143.03957|    7.298371|  1.398214|  14.72538|   7.919218|  0.0949527|
-|       5|  1.4494859|  11.884657|  108.24482|    5.203813|  1.847663|  13.87431|   2.003498|  0.1331716|
-|       6|  0.4786689|   6.346586|   34.08360|    3.373099|  5.867924|  28.56146|   7.804011|  0.2054490|
+<div class="kable-table">
+
+| subjid |      Tmax |      Cmax |       AUC | Half\_life |       CL |        V |        Ka |        Ke |
+| -----: | --------: | --------: | --------: | ---------: | -------: | -------: | --------: | --------: |
+|      1 | 0.5194596 |  9.710550 |  97.80219 |   6.609751 | 2.044944 | 19.50443 |  8.585470 | 0.1048451 |
+|      2 | 0.4870795 | 10.748842 |  91.26817 |   5.536198 | 2.191345 | 17.50609 |  8.873428 | 0.1251762 |
+|      3 | 0.4368455 |  8.540756 |  55.79357 |   4.213235 | 3.584642 | 21.79356 |  9.433785 | 0.1644817 |
+|      4 | 0.2012653 | 14.228951 | 101.69723 |   4.811495 | 1.966622 | 13.65424 | 25.950362 | 0.1440301 |
+|      5 | 0.3205941 | 11.129203 |  93.31792 |   5.584126 | 2.143211 | 17.26979 | 15.100645 | 0.1241018 |
+|      6 | 1.2226137 | 12.247683 |  78.30448 |   3.471000 | 2.554132 | 12.79277 |  2.139577 | 0.1996543 |
+
+</div>
 
 ### Create a dataset for concentration-time curve
 
@@ -50,14 +57,18 @@ MyConcTime <- caffConcTime(Weight = 20, Dose = 200, N = 20)
 head(MyConcTime)
 ```
 
-|  Subject|  Time|      Conc|
-|--------:|-----:|---------:|
-|        1|   0.0|  0.000000|
-|        1|   0.1|  5.859353|
-|        1|   0.2|  8.296127|
-|        1|   0.3|  9.253273|
-|        1|   0.4|  9.571682|
-|        1|   0.5|  9.615264|
+<div class="kable-table">
+
+| Subject | Time |     Conc |
+| ------: | ---: | -------: |
+|       1 |  0.0 |  0.00000 |
+|       1 |  0.1 | 10.49597 |
+|       1 |  0.2 | 14.03678 |
+|       1 |  0.3 | 15.14666 |
+|       1 |  0.4 | 15.40790 |
+|       1 |  0.5 | 15.37391 |
+
+</div>
 
 ### Create a concentration-time curve
 
@@ -65,11 +76,13 @@ head(MyConcTime)
 caffPlot(MyConcTime)
 ```
 
-![](README_files/figure-markdown_github/MyPlotMyConcTime-1.png)
+![](assets/figures/MyPlotMyConcTime-1.png)<!-- -->
 
 ### Create plots for publication (according to the amount of caffeine)
 
--   `cowplot` package is required
+  - `cowplot` package is required
+
+<!-- end list -->
 
 ``` r
 #install.packages("cowplot") # if you don't have it
@@ -88,10 +101,9 @@ plot_grid(MyPlotPub[[1]], MyPlotPub[[2]],
           labels=LETTERS[1:8], ncol = 2, nrow = 4)
 ```
 
-![](README_files/figure-markdown_github/MyPlotPub-1.png)
+![](assets/figures/MyPlotPub-1.png)<!-- -->
 
-Multiple dose
--------------
+## Multiple dose
 
 ### Create a PK dataset for caffeine multiple doses
 
@@ -100,14 +112,18 @@ MyDatasetMulti <- caffPkparamMulti(Weight = 20, Dose = 200, N = 20, Tau = 12)
 head(MyDatasetMulti)
 ```
 
-|  subjid|      TmaxS|      CmaxS|       AUCS|        AI|     Aavss|      Cavss|    Cmaxss|     Cminss|
-|-------:|----------:|----------:|----------:|---------:|---------:|----------:|---------:|----------:|
-|       1|  1.2873291|  12.765341|  133.34867|  1.362487|  150.7342|  11.112389|  20.04719|   5.333515|
-|       2|  5.5838436|  10.181435|  213.25042|  1.744547|  234.3983|  17.770868|  26.39750|  11.266068|
-|       3|  2.4336995|  11.220361|  143.88301|  1.436229|  167.4912|  11.990251|  20.52039|   6.232704|
-|       4|  2.5286374|   8.855724|  113.71990|  1.428269|  165.7031|   9.476659|  16.30272|   4.888400|
-|       5|  0.9151676|  15.523376|  189.91775|  1.527100|  187.6255|  15.826479|  25.70902|   8.873824|
-|       6|  0.9451444|   9.077402|   65.24636|  1.166641|  102.5588|   5.437197|  12.34425|   1.763228|
+<div class="kable-table">
+
+| subjid |     TmaxS |     CmaxS |      AUCS |       AI |     Aavss |     Cavss |   Cmaxss |   Cminss |
+| -----: | --------: | --------: | --------: | -------: | --------: | --------: | -------: | -------: |
+|      1 | 0.2541962 | 13.100236 | 102.85866 | 1.259286 | 126.28953 |  8.571555 | 17.05856 | 3.512344 |
+|      2 | 1.8335190 | 14.234663 | 122.88886 | 1.188412 | 108.36693 | 10.240738 | 22.41440 | 3.553600 |
+|      3 | 2.7633525 |  8.409590 | 125.63729 | 1.568712 | 196.70501 | 10.469774 | 16.66444 | 6.041433 |
+|      4 | 0.9212741 |  7.392237 |  66.14558 | 1.285233 | 132.57961 |  5.512132 | 10.66474 | 2.366834 |
+|      5 | 0.7089271 | 14.195035 |  91.27202 | 1.137239 |  94.38233 |  7.606002 | 18.29125 | 2.207343 |
+|      6 | 2.7223495 | 10.932040 | 136.36315 | 1.380501 | 154.87087 | 11.363596 | 20.21662 | 5.572216 |
+
+</div>
 
 ### Create a dataset for concentration-time curve
 
@@ -116,14 +132,18 @@ MyConcTimeMulti <- caffConcTimeMulti(Weight = 20, Dose = 200, N = 20, Tau = 12, 
 head(MyConcTimeMulti)
 ```
 
-|  Subject|  Time|      Conc|
-|--------:|-----:|---------:|
-|        1|   0.0|  0.000000|
-|        1|   0.1|  2.246175|
-|        1|   0.2|  3.967582|
-|        1|   0.3|  5.278256|
-|        1|   0.4|  6.267589|
-|        1|   0.5|  7.005656|
+<div class="kable-table">
+
+| Subject | Time |      Conc |
+| ------: | ---: | --------: |
+|       1 |  0.0 | 0.0000000 |
+|       1 |  0.1 | 0.6703409 |
+|       1 |  0.2 | 1.2834175 |
+|       1 |  0.3 | 1.8436798 |
+|       1 |  0.4 | 2.3552351 |
+|       1 |  0.5 | 2.8218749 |
+
+</div>
 
 ### Create a concentration-time curve
 
@@ -131,11 +151,13 @@ head(MyConcTimeMulti)
 caffPlotMulti(MyConcTimeMulti)
 ```
 
-![](README_files/figure-markdown_github/MyPlotMultiMyConcTimeMulti-1.png)
+![](assets/figures/MyPlotMultiMyConcTimeMulti-1.png)<!-- -->
 
 ### Create plots for publication (according to dosing interval)
 
--   `cowplot` package is required
+  - `cowplot` package is required
+
+<!-- end list -->
 
 ``` r
 #install.packages("cowplot") # if you don't have it
@@ -154,10 +176,9 @@ plot_grid(MyPlotMultiPub[[1]], MyPlotMultiPub[[2]],
           labels=LETTERS[1:8], ncol = 2, nrow = 4)
 ```
 
-![](README_files/figure-markdown_github/MyPlotMultiPub-1.png)
+![](assets/figures/MyPlotMultiPub-1.png)<!-- -->
 
-Interactive shiny app
----------------------
+## Interactive shiny app
 
 ``` r
 caffShiny()
